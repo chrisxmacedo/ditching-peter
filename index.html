@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ditching Peter — A Path to Organisational Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── FORCE LIGHT MODE — override any OS dark mode ── */
+  @media (prefers-color-scheme: dark) {
+    html, body { background-color: #ffffff !important; color: #1f2937 !important; }
+
+    body, p, li, span, div, h1, h2, h3, h4, blockquote,
+    .detail-body p, .section-intro, .fw-card p, .fw-card-key,
+    .process-note, .process-action, .meeting-desc, .meeting-cause,
+    .peter-body, .diagnostic-gap-body, .spec-panel-left p,
+    .ai-intro, .prompt-body, .ex-input-body, .ex-out-text,
+    .ai-principle p, .conclusion-inner p, .diagnostic-item,
+    .hero-subtitle, .cost-label, .ara-def, .role-item-text,
+    .meeting-name { color: #1f2937 !important; }
+
+    h1, h2, h3, h4, .hero-title, .section-title,
+    .detail-body h3, .fw-card h3, .process-action,
+    .meeting-name, .spec-panel-left h3, .ai-principle h4,
+    .conclusion-inner h2, .peter-quote, .diagnostic-gap-title { color: #0d0d0d !important; }
+
+    nav, .nav-inner, .nav-drawer,
+    .hero-text, .hero-diagram,
+    section, .full-bleed,
+    .fw-card, .framework-grid,
+    .role-card, .role-card-body,
+    .intro-strip,
+    .cost-callout,
+    .meeting-item, .meeting-item.bad, .meeting-item.good,
+    .diagnostic-card, .diagnostic-gap,
+    .spec-example,
+    .prompt-block, .prompt-body,
+    .ex-input, .ex-output, .ex-input-body,
+    .ai-section, .ai-principles, .ai-principle,
+    .conclusion-wrap, .conclusion-inner, .diagnostic,
+    footer { background-color: #ffffff !important; }
+
+    .hero-diagram, .bg-tint, [class*="tint"],
+    .role-card-head, .role-card-body,
+    .spec-example, .ex-input-head { background-color: #f9fafb !important; }
+
+    .intro-strip { background-color: #eff6ff !important; }
+    .meeting-item.bad { background-color: #fff1f2 !important; }
+    .meeting-item.good { background-color: #f0fdf4 !important; }
+    .ai-section, [class*="ai-section"] { background-color: #f5f3ff !important; }
+    .prompt-block-head, .diagnostic-card-head,
+    .diagnostic-head, .spec-example-head { background-color: #eff6ff !important; }
+    .ex-output-head, .prompt-note { background-color: #f5f3ff !important; }
+    .ara-item:nth-child(2) { background-color: #1d4ed8 !important; }
+
+    .rule, [class*="rule"] { border-color: #e5e7eb !important; }
+    * { border-color: #e5e7eb; }
+  }
+  :root {
+    --ink:          #0d0d0d;
+    --ink-soft:     #1f2937;
+    --muted:        #374151;
+    --bg:           #ffffff;
+    --bg-tint:      #f9fafb;
+    --rule:         #e5e7eb;
+    --accent:       #1d4ed8;
+    --accent-dark:  #1e3a8a;
+    --accent-light: #eff6ff;
+    --accent-mid:   #2563eb;
+    --bad:          #991b1b;
+    --bad-light:    #fff1f2;
+    --good:         #14532d;
+    --good-light:   #f0fdf4;
+    --ai:           #4c1d95;
+    --ai-mid:       #6d28d9;
+    --ai-light:     #f5f3ff;
+  }
+
+  /* Explicit light backgrounds on every major container */
+  html, body, nav, section, div, header, footer,
+  .hero, .hero-text, .hero-diagram,
+  .intro-strip, .framework-grid, .fw-card,
+  .role-card, .role-card-body, .role-card-head,
+  .process-flow, .meeting-item,
+  .cost-callout, .meetings-grid,
+  .peter-layout, .diagnostic-card,
+  .spec-tabs, .spec-panel, .spec-example,
+  .prompt-block, .ex-input, .ex-output,
+  .ai-principles, .ai-principle,
+  .conclusion-wrap, .conclusion-inner, .diagnostic {
+    background-color: inherit;
+  }
+
+  html { background-color: #ffffff; }
+  body { background-color: #ffffff; color: #1f2937; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 17px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 58px;
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none; font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-soft); text-decoration: none;
+    transition: color 0.2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-burger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .nav-burger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--ink); transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-drawer {
+    display: none; flex-direction: column;
+    padding: 8px 24px 20px; border-top: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .nav-drawer.open { display: flex; }
+  .nav-drawer a {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    padding: 14px 0; border-bottom: 1px solid var(--rule);
+    transition: color 0.2s;
+  }
+  .nav-drawer a:last-child { border-bottom: none; }
+  .nav-drawer a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: grid;
+    grid-template-columns: 1fr 1fr; padding-top: 58px;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 56px 80px 80px;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.02em; margin-bottom: 28px; color: var(--ink);
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-subtitle {
+    font-size: 18px; font-weight: 400; color: var(--ink-soft);
+    max-width: 420px; line-height: 1.65; margin-bottom: 44px;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff;
+    text-decoration: none; padding: 14px 28px;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.2s; align-self: flex-start;
+  }
+  .hero-cta:hover { background: var(--accent-dark); }
+  .hero-diagram {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-tint); padding: 80px 60px;
+  }
+  .ara-diagram { display: flex; flex-direction: column; width: 100%; max-width: 340px; }
+  .ara-item {
+    background: var(--bg); border: 1px solid var(--rule);
+    border-bottom: none; padding: 28px 32px;
+    opacity: 0; transform: translateX(16px);
+    animation: slideIn 0.5s forwards;
+  }
+  .ara-item:last-child { border-bottom: 1px solid var(--rule); }
+  .ara-item:nth-child(1) { animation-delay: 0.2s; }
+  .ara-item:nth-child(2) { animation-delay: 0.4s; background: var(--accent); border-color: var(--accent); }
+  .ara-item:nth-child(2) .ara-letter { color: rgba(255,255,255,0.25); }
+  .ara-item:nth-child(2) .ara-word { color: #fff; letter-spacing: 0.12em; }
+  .ara-item:nth-child(2) .ara-def { color: #fff; font-weight: 400; }
+  .ara-item:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+  .ara-letter {
+    font-family: 'Playfair Display', serif; font-size: 56px;
+    font-weight: 900; font-style: italic; color: var(--accent-light);
+    line-height: 1; margin-bottom: 2px;
+  }
+  .ara-word {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .ara-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* ── SECTION CHROME ── */
+  .section-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.1em; flex-shrink: 0;
+  }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+  section {
+    padding: 96px 80px; max-width: 1200px; margin: 0 auto;
+  }
+  section + section { border-top: 1px solid var(--rule); }
+  .full-bleed { max-width: none; padding-left: 0; padding-right: 0; }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.5vw, 46px);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .section-intro {
+    color: var(--muted); font-size: 17px;
+    max-width: 580px; margin-bottom: 56px; line-height: 1.7;
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    background: var(--accent-light);
+    border-top: 3px solid var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding: 80px; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .intro-strip h2 {
+    font-family: 'Playfair Display', serif; font-size: 36px;
+    font-weight: 700; line-height: 1.2; color: var(--ink);
+  }
+  .intro-strip h2 em { font-style: italic; color: var(--accent-dark); }
+  .intro-strip p {
+    color: var(--ink-soft); font-size: 16px;
+    line-height: 1.75; margin-bottom: 18px;
+  }
+  .intro-strip p:last-child { margin-bottom: 0; }
+
+  /* ── FRAMEWORK GRID ── */
+  .framework-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    border: 1px solid var(--rule); margin-bottom: 0;
+  }
+  .fw-card {
+    padding: 44px 36px; border-right: 1px solid var(--rule);
+    position: relative; overflow: hidden;
+  }
+  .fw-card:last-child { border-right: none; }
+  .fw-card::before {
+    content: attr(data-letter);
+    position: absolute; bottom: -8px; right: 16px;
+    font-family: 'Playfair Display', serif; font-size: 110px;
+    font-weight: 900; font-style: italic; color: #e5e7eb;
+    line-height: 1; pointer-events: none; transition: color 0.3s;
+  }
+  .fw-card:hover::before { color: #bfdbfe; }
+  .fw-card-tag {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px; display: block;
+  }
+  .fw-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 26px;
+    font-weight: 700; margin-bottom: 14px; color: var(--ink);
+  }
+  .fw-card p { font-size: 15px; color: var(--muted); line-height: 1.7; position: relative; z-index: 1; }
+  .fw-card-key {
+    margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--muted); line-height: 1.7; position: relative; z-index: 1;
+  }
+  .fw-card-key strong {
+    color: var(--ink); font-weight: 500; display: block;
+    margin-bottom: 4px; letter-spacing: 0.04em;
+  }
+
+  /* ── DETAIL LAYOUT ── */
+  .detail-layout {
+    display: grid; grid-template-columns: 1fr 1.15fr;
+    gap: 72px; align-items: start;
+  }
+  .detail-body h3 {
+    font-family: 'Playfair Display', serif; font-size: 21px;
+    font-weight: 700; margin-bottom: 12px; margin-top: 32px; color: var(--ink);
+  }
+  .detail-body h3:first-child { margin-top: 0; }
+  .detail-body p {
+    font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 14px;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* ── ROLE CARDS ── */
+  .role-stack { display: flex; flex-direction: column; }
+  .role-card { border: 1px solid var(--rule); border-bottom: none; }
+  .role-card:last-child { border-bottom: 1px solid var(--rule); }
+  .role-card-head {
+    padding: 15px 22px; display: flex; align-items: center;
+    justify-content: space-between; cursor: pointer; user-select: none;
+    transition: background 0.15s; background: var(--bg-tint);
+  }
+  .role-card-head:hover { background: var(--accent-light); }
+  .role-card-head.open { background: var(--accent); color: #ffffff; }
+  .role-card-head.open .role-card-title { color: #ffffff; }
+  .role-card-head.open .role-card-arrow  { color: #ffffff; }
+  .role-card-title {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .role-card-arrow { font-size: 14px; transition: transform 0.3s; }
+  .role-card-head.open .role-card-arrow { transform: rotate(180deg); }
+  .role-card-body {
+    display: none; padding: 20px 22px;
+    background: var(--bg); border-top: 1px solid var(--rule);
+  }
+  .role-card-body.open { display: block; }
+  .role-item {
+    display: grid; grid-template-columns: 64px 1fr;
+    gap: 12px; padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px; align-items: baseline;
+  }
+  .role-item:last-child { border-bottom: none; }
+  .role-item-type {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 6px; border-radius: 3px; text-align: center;
+    font-weight: 500; align-self: start; margin-top: 2px;
+  }
+  .type-auth   { background: var(--accent-light); color: var(--accent-dark); }
+  .type-resp   { background: var(--good-light);   color: var(--good); }
+  .type-ability{ background: #fef3c7;              color: #92400e; }
+  .role-item-text { color: var(--ink); line-height: 1.5; }
+
+  /* ── PROCESS FLOW ── */
+  .process-flow { margin: 40px 0; position: relative; }
+  .process-step {
+    display: grid; grid-template-columns: 44px 1fr;
+    gap: 20px; position: relative;
+  }
+  .process-step::before {
+    content: ''; position: absolute; left: 21px; top: 44px; bottom: -44px;
+    width: 2px; background: var(--rule);
+  }
+  .process-step:last-child::before { display: none; }
+  .process-num {
+    width: 44px; height: 44px; border: 2px solid var(--accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent);
+    background: var(--bg); flex-shrink: 0; position: relative; z-index: 1;
+  }
+  .process-content { padding-bottom: 44px; }
+  .process-role {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 5px;
+  }
+  .process-action { font-size: 16px; font-weight: 500; margin-bottom: 6px; color: var(--ink); }
+  .process-note { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* ── MEETINGS ── */
+  .meetings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 0; }
+  .meetings-col-head {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 10px 0; border-bottom: 2px solid; margin-bottom: 20px;
+  }
+  .meetings-col-head.bad  { border-color: var(--bad);  color: var(--bad); }
+  .meetings-col-head.good { border-color: var(--good); color: var(--good); }
+  .meeting-item {
+    padding: 18px 20px; border: 1px solid var(--rule);
+    margin-bottom: 10px; border-radius: 2px;
+  }
+  .meeting-item.bad  { border-left: 3px solid var(--bad);  background: var(--bad-light); }
+  .meeting-item.good { border-left: 3px solid var(--good); background: var(--good-light); }
+  .meeting-name {
+    font-family: 'Playfair Display', serif; font-size: 17px;
+    font-weight: 700; font-style: italic; margin-bottom: 3px; color: var(--ink);
+  }
+  .meeting-cause {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .meeting-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
+  .cost-callout {
+    background: var(--bg-tint); border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 40px 48px; display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 0; margin: 0 0 48px;
+  }
+  .cost-stat { padding: 0 32px; border-right: 1px solid var(--rule); }
+  .cost-stat:first-child { padding-left: 0; }
+  .cost-stat:last-child  { border-right: none; }
+  .cost-value {
+    font-family: 'Playfair Display', serif; font-size: 34px;
+    font-weight: 900; color: var(--accent-dark); line-height: 1; margin-bottom: 6px;
+  }
+  .cost-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); line-height: 1.4;
+  }
+
+  /* ── PETER ── */
+  .peter-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start; }
+  .peter-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.4vw, 24px);
+    font-style: italic; font-weight: 400; line-height: 1.5; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0;
+  }
+  .peter-body { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+
+  .diagnostic-card {
+    border: 1px solid var(--rule); background: var(--bg);
+  }
+  .diagnostic-card-head {
+    padding: 14px 24px; background: var(--accent-light);
+    border-bottom: 2px solid var(--accent);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-dark);
+  }
+  .diagnostic-gap {
+    padding: 20px 24px; border-bottom: 1px solid var(--rule);
+  }
+  .diagnostic-gap:last-child { border-bottom: none; }
+  .diagnostic-gap-title {
+    font-family: 'Playfair Display', serif; font-size: 17px;
+    font-weight: 700; margin-bottom: 6px; color: var(--ink);
+  }
+  .diagnostic-gap-body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* ── JOB SPECS ── */
+  .spec-tabs {
+    display: flex; border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px; gap: 0;
+  }
+  .spec-tab {
+    padding: 13px 24px; font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s; user-select: none; white-space: nowrap;
+  }
+  .spec-tab.active { color: var(--ink); border-color: var(--accent); }
+  .spec-tab:hover:not(.active) { color: var(--ink); }
+  .spec-panel { display: none; }
+  .spec-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .spec-panel-left h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px;
+    font-weight: 700; margin-bottom: 14px; color: var(--ink);
+  }
+  .spec-panel-left p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .spec-example {
+    background: var(--bg-tint); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 28px 30px; align-self: start;
+  }
+  .spec-example-head {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 16px;
+  }
+  .spec-example-item {
+    font-size: 14px; color: var(--ink-soft);
+    padding: 10px 0; border-bottom: 1px solid var(--rule); line-height: 1.5;
+  }
+  .spec-example-item:last-child { border-bottom: none; }
+  .spec-example-item::before {
+    content: '→'; color: var(--accent);
+    margin-right: 10px; font-family: 'DM Mono', monospace;
+  }
+
+  /* ── AI SECTION ── */
+  .ai-section { background: var(--bg-tint); border-top: 1px solid var(--rule); }
+
+  .ai-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ai-light); color: var(--ai);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px; margin-bottom: 20px;
+  }
+  .ai-badge::before { content: '✦'; font-size: 10px; }
+
+  .ai-intro {
+    font-size: 17px; color: var(--muted); line-height: 1.75;
+    max-width: 640px; margin-bottom: 56px;
+  }
+
+  /* Prompt block */
+  .prompt-block {
+    border: 1px solid var(--ai); background: var(--bg);
+    margin-bottom: 56px;
+  }
+  .prompt-block-head {
+    background: var(--ai-light); border-bottom: 2px solid var(--ai);
+    padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .prompt-block-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ai);
+  }
+  .prompt-copy {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--ai); border: none;
+    color: #fff; padding: 5px 12px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .prompt-copy:hover { background: #4c1d95; }
+  .prompt-copy.copied { background: var(--good); }
+  .prompt-body {
+    padding: 28px 28px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    line-height: 1.8; color: var(--ink-soft);
+    white-space: pre-wrap; word-break: break-word;
+    border-bottom: 1px solid var(--rule);
+  }
+  .prompt-body .ph {
+    color: var(--ai); font-style: italic; font-weight: 500;
+  }
+  .prompt-note {
+    padding: 14px 28px; background: var(--ai-light);
+    font-size: 13px; color: var(--ai); line-height: 1.6;
+  }
+
+  /* Examples grid */
+  .examples-intro {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px;
+  }
+  .examples-tabs {
+    display: flex; gap: 0; border-bottom: 1px solid var(--rule); margin-bottom: 32px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+  .ex-tab {
+    padding: 12px 22px; font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    color: var(--muted); border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.2s, border-color 0.2s;
+    user-select: none; white-space: nowrap;
+  }
+  .ex-tab.active { color: var(--ai); border-color: var(--ai); }
+  .ex-tab:hover:not(.active) { color: var(--ink); }
+  .ex-panel { display: none; }
+  .ex-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .ex-input, .ex-output {
+    border: 1px solid var(--rule); background: var(--bg);
+  }
+  .ex-input-head, .ex-output-head {
+    padding: 10px 20px; border-bottom: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .ex-input-head  { color: var(--muted); background: var(--bg-tint); border-bottom: 1px solid var(--rule); }
+  .ex-output-head { color: var(--ai);    background: var(--ai-light); border-bottom: 1px solid #c4b5fd; }
+  .ex-input-body {
+    padding: 18px 20px; font-size: 14px; color: var(--ink-soft);
+    line-height: 1.7; font-family: 'DM Mono', monospace;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .ex-output-body { padding: 18px 20px; }
+  .ex-out-row {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule);
+    font-size: 13px; align-items: baseline;
+  }
+  .ex-out-row:last-child { border-bottom: none; }
+  .ex-out-type {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 6px; border-radius: 3px; text-align: center;
+    font-weight: 500; align-self: start; margin-top: 2px;
+  }
+  .ex-out-text { color: var(--ink); line-height: 1.5; }
+
+  /* Principles */
+  .ai-principles {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 0; border: 1px solid var(--rule); margin-top: 56px;
+  }
+  .ai-principle {
+    padding: 32px 28px; border-right: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .ai-principle:last-child { border-right: none; }
+  .ai-principle-num {
+    font-family: 'DM Mono', monospace; font-size: 22px;
+    font-weight: 500; color: var(--accent); line-height: 1; margin-bottom: 12px;
+  }
+  .ai-principle h4 {
+    font-family: 'Playfair Display', serif; font-size: 18px;
+    font-weight: 700; margin-bottom: 10px; color: var(--ink);
+  }
+  .ai-principle p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+  /* ── CONCLUSION ── */
+  .conclusion-wrap { background: var(--bg-tint); padding: 96px 80px; border-top: 1px solid var(--rule); }
+  .conclusion-inner { max-width: 720px; margin: 0 auto; }
+  .conclusion-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px); font-weight: 900;
+    line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .conclusion-inner p { font-size: 17px; line-height: 1.8; color: var(--muted); margin-bottom: 22px; }
+  .diagnostic {
+    margin: 44px 0; border: 1px solid var(--rule); background: var(--bg);
+  }
+  .diagnostic-head {
+    padding: 14px 26px; background: var(--accent-light);
+    border-bottom: 2px solid var(--accent);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-dark);
+  }
+  .diagnostic-item {
+    padding: 16px 26px; border-bottom: 1px solid var(--rule);
+    font-size: 16px; display: flex; gap: 16px; align-items: baseline; color: var(--ink);
+  }
+  .diagnostic-item:last-child { border-bottom: none; }
+  .diagnostic-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--accent); flex-shrink: 0; width: 18px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule); padding: 36px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase;
+  }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .nav-inner { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 48px 24px 40px; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-diagram { padding: 40px 24px; }
+    .ara-diagram { max-width: 100%; }
+
+    section { padding: 56px 24px; }
+    .section-intro { font-size: 15px; }
+
+    .intro-strip { grid-template-columns: 1fr; gap: 28px; padding: 56px 24px; }
+    .intro-strip h2 { font-size: 26px; }
+
+    .framework-grid { grid-template-columns: 1fr; }
+    .fw-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 30px 22px; }
+    .fw-card:last-child { border-bottom: none; }
+    .fw-card::before { font-size: 80px; }
+
+    .detail-layout { grid-template-columns: 1fr; gap: 32px; }
+    .detail-body p { font-size: 15px; }
+
+    .cost-callout { grid-template-columns: 1fr 1fr; gap: 20px; padding: 28px 20px; }
+    .cost-stat { border-right: none; padding: 0; }
+    .cost-value { font-size: 26px; }
+    .meetings-grid { grid-template-columns: 1fr; }
+
+    .peter-layout { grid-template-columns: 1fr; gap: 32px; }
+
+    .spec-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .spec-tab { padding: 12px 14px; }
+    .spec-panel.active { grid-template-columns: 1fr; }
+
+    .ex-panel.active { grid-template-columns: 1fr; }
+    .ai-principles { grid-template-columns: 1fr; }
+    .ai-principle { border-right: none; border-bottom: 1px solid var(--rule); }
+    .ai-principle:last-child { border-bottom: none; }
+    .examples-tabs { overflow-x: auto; }
+
+    .conclusion-wrap { padding: 56px 24px; }
+    .diagnostic-item { padding: 14px 18px; font-size: 15px; }
+    footer { padding: 28px 24px; flex-direction: column; gap: 10px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#authority">Authority</a></li>
+      <li><a href="#responsibility">Responsibility</a></li>
+      <li><a href="#ability">Ability</a></li>
+      <li><a href="#meetings">Meetings</a></li>
+      <li><a href="#jobs">Job Specs</a></li>
+      <li><a href="#ai" style="color:var(--ai)">AI</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#framework"    onclick="closeNav()">Framework</a>
+    <a href="#authority"    onclick="closeNav()">Authority</a>
+    <a href="#responsibility" onclick="closeNav()">Responsibility</a>
+    <a href="#ability"      onclick="closeNav()">Ability</a>
+    <a href="#meetings"     onclick="closeNav()">Meetings</a>
+    <a href="#jobs"         onclick="closeNav()">Job Specs</a>
+    <a href="#ai"           onclick="closeNav()" style="color:var(--ai)">Adapting for AI</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">A Framework for Organisational Health</p>
+    <h1 class="hero-title">Ditch<em>ing</em><br>Peter</h1>
+    <p class="hero-subtitle">Most workplace dysfunction comes down to three things: nobody knows who can decide what, nobody knows who is supposed to deliver what, and nobody knows what skills the job actually requires.</p>
+    <a href="#framework" class="hero-cta">Read the framework ↓</a>
+  </div>
+  <div class="hero-diagram">
+    <div class="ara-diagram">
+      <div class="ara-item">
+        <div class="ara-letter">A</div>
+        <div class="ara-word">Authority</div>
+        <div class="ara-def">Who can decide what, and up to what limit</div>
+      </div>
+      <div class="ara-item">
+        <div class="ara-letter">R</div>
+        <div class="ara-word">Responsibility</div>
+        <div class="ara-def">What must be delivered, and to whom</div>
+      </div>
+      <div class="ara-item">
+        <div class="ara-letter">A</div>
+        <div class="ara-word">Ability</div>
+        <div class="ara-def">What skills and tools the role requires</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip full-bleed">
+  <div>
+    <h2>Three years. Countless organisations.<br><em>One pattern.</em></h2>
+  </div>
+  <div>
+    <p>The pain points were always a consequence of misunderstanding or lack of communication. But telling people to "communicate more" or "get on the same page" wasn't enough — it never is.</p>
+    <p>The problem wasn't the will to communicate. It was the absence of a shared language for what each person was supposed to decide, deliver, and be capable of. ARA provides that language.</p>
+    <p>This site distils the framework: three pillars, how they interact, how to apply them to meetings, job specs — and how to put them to work with AI.</p>
+  </div>
+</div>
+
+<!-- FRAMEWORK -->
+<section id="framework">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">The ARA Framework</h2>
+  <p class="section-intro reveal">Authority, Responsibility, and Ability are distinct dimensions of every role. Conflating them — or leaving any one undefined — is the root cause of most organisational dysfunction.</p>
+  <div class="framework-grid reveal">
+    <div class="fw-card" data-letter="A">
+      <span class="fw-card-tag">01 — Authority</span>
+      <h3>Who decides</h3>
+      <p>Authority is the right to make a specific decision without seeking approval. It has explicit limits — financial thresholds, personnel scope, contractual commitments — and those limits should be documented and agreed in advance.</p>
+      <div class="fw-card-key"><strong>The key question</strong>What decisions can this person make without asking anyone?</div>
+    </div>
+    <div class="fw-card" data-letter="R">
+      <span class="fw-card-tag">02 — Responsibility</span>
+      <h3>What gets delivered</h3>
+      <p>Responsibility is a deliverable, not an activity. "Attends weekly meetings" is an activity. "Delivers a pipeline report to the Sales Director by end of day Friday" is a responsibility. The difference matters enormously at review time.</p>
+      <div class="fw-card-key"><strong>The key question</strong>What must this person produce, and who receives it?</div>
+    </div>
+    <div class="fw-card" data-letter="A">
+      <span class="fw-card-tag">03 — Ability</span>
+      <h3>What's required</h3>
+      <p>Ability is the specific set of skills, tools, and knowledge the role requires in practice — not aspirational nice-to-haves. If the role requires administering a CRM and presenting to a board, both belong in the Ability column.</p>
+      <div class="fw-card-key"><strong>The key question</strong>What does this person need to know how to do on day one?</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section id="authority">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="detail-layout">
+    <div class="detail-body">
+      <h2 class="section-title reveal">Authority</h2>
+      <div class="reveal">
+        <h3>The problem</h3>
+        <p>In many organisations — especially young ones — authority remains centralised long after the organisation outgrows it. The CEO approves every expenditure. The director signs off every hire. The result is a bottleneck that slows execution and signals distrust to the people being managed.</p>
+        <h3>The solution</h3>
+        <p>Authority is devolved deliberately, with explicit limits at each level. A Sales Director might be authorised to spend up to $50,000 per quarter without approval. A Sales Executive might be authorised to sign contracts up to $70,000. Anything outside those limits escalates — but only those things.</p>
+        <h3>Risk and remuneration</h3>
+        <p>What dictates a wage packet is not the depth of someone's knowledge but the risk they are taking on behalf of the company. A clearly documented authority list makes that risk legible — and gives employees an honest basis for salary conversations.</p>
+        <h3>What good looks like</h3>
+        <p>Authority should be specific, not broad. "Authorization to discount a sale up to 7% of the value of the contract" is good. "Manages the sales process" is not. If you can't put a number or a boundary on it, you haven't finished defining it.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="role-stack">
+        <div class="role-card">
+          <div class="role-card-head" onclick="toggleCard(this)"><span class="role-card-title">CEO</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Increase Sales Director's maintenance budget</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Increase Sales and Marketing budget</span></div>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-head open" onclick="toggleCard(this)"><span class="role-card-title">Sales Director</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body open">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Quarterly sales budget of $50,000 (salaries, software, hardware)</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Discretionary fund of $10,000 p.a. for events and travel</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Retain new employees within budget</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Sign contracts up to $150,000</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Discount a sale up to 7% of contract value</span></div>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-head" onclick="toggleCard(this)"><span class="role-card-title">Sales Executive</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Sign contracts up to $70,000</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Discount a sale up to 5% of contract value</span></div>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-head" onclick="toggleCard(this)"><span class="role-card-title">Programme Director</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Retain new employees within budget</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSIBILITY -->
+<section id="responsibility">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="detail-layout">
+    <div class="detail-body">
+      <h2 class="section-title reveal">Responsibility</h2>
+      <div class="reveal">
+        <h3>Authority is not enough</h3>
+        <p>Being authorised to do something and being responsible for its execution are different things. Without an explicit responsibility, information simply doesn't flow — and no one is at fault, because no one was ever told it was their job.</p>
+        <h3>What a responsibility looks like</h3>
+        <p>A well-defined responsibility names a deliverable, a recipient, and ideally a cadence. It answers: what must this role produce, who receives it, and how often?</p>
+        <h3>Responsibilities define process</h3>
+        <p>When you map responsibilities across roles, you get a process map almost for free. Each handoff between roles — where one person's responsibility produces something that triggers another person's — is a step in your delivery process.</p>
+        <h3>Format vs. content</h3>
+        <p>Defining the responsibility doesn't dictate how information moves. Whether a sale is communicated via email, CRM update, or shared dashboard is a format decision. The responsibility defines the content: what must flow, and in which direction.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <div class="process-role">Sales Executive</div>
+            <div class="process-action">Informs PMO of new sales and details</div>
+            <div class="process-note">Client name, address, contacts, products purchased, support required. This triggers the PMO to initiate delivery.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <div class="process-role">Programme Director</div>
+            <div class="process-action">Distributes project information for general consumption</div>
+            <div class="process-note">Once the project is underway, keeps the organisation informed of progress and availability.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <div class="process-role">Sales Director</div>
+            <div class="process-action">Maintains list of products available for sale</div>
+            <div class="process-note">This catalogue is what Sales Executives are permitted to sell. No more selling products that haven't been built yet.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <div class="process-role">Sales Executive</div>
+            <div class="process-action">Sells exclusively from approved product list</div>
+            <div class="process-note">The loop closes. Authority, responsibility and catalogue maintain a consistent, predictable delivery process.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABILITY -->
+<section id="ability">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="detail-layout">
+    <div class="detail-body">
+      <h2 class="section-title reveal">Ability</h2>
+      <div class="reveal">
+        <h3>The subtlest of the three</h3>
+        <p>Authority and Responsibility tell you what decisions a role makes and what it produces. Ability answers the question: does this person actually have the skills to do it?</p>
+        <h3>The IT Support metaphor</h3>
+        <p>IT Support's role is infrastructure: the network, the servers, the hardware. Think of them as engineers who maintain the roads. The roads are your network. The car parks are your servers. But it is not their job to teach you to drive your car.</p>
+        <p>When a manager needed to extract reporting data from the company CRM, she went to IT Support. Technically capable — yes. Their responsibility — no. Knowing how to use the tools your role requires is an Ability requirement of your own role, not a burden to pass to infrastructure teams.</p>
+        <h3>Ability as a diagnostic</h3>
+        <p>When someone underperforms, the ARA framework tells you where to look. Are they making decisions without authority? Not producing what they're responsible for? Or do they simply lack the tools, training, or access to do the job? Three different problems. Three different solutions.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="role-stack">
+        <div class="role-card">
+          <div class="role-card-head open" onclick="toggleCard(this)"><span class="role-card-title">Sales Director — Full ARA</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body open">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Sign contracts up to $150,000</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Discount a sale up to 7% of contract value</span></div>
+            <div class="role-item"><span class="role-item-type type-resp">Resp</span><span class="role-item-text">Maintain list of products available for general distribution</span></div>
+            <div class="role-item"><span class="role-item-type type-ability">Ability</span><span class="role-item-text">Administer the lead / CRM system</span></div>
+            <div class="role-item"><span class="role-item-type type-ability">Ability</span><span class="role-item-text">Generate reports from the lead system</span></div>
+            <div class="role-item"><span class="role-item-type type-ability">Ability</span><span class="role-item-text">Add lead data and manage contract information</span></div>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-head open" onclick="toggleCard(this)"><span class="role-card-title">Sales Executive — Full ARA</span><span class="role-card-arrow">↓</span></div>
+          <div class="role-card-body open">
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Sign contracts up to $70,000</span></div>
+            <div class="role-item"><span class="role-item-type type-auth">Auth</span><span class="role-item-text">Discount a sale up to 5% of contract value</span></div>
+            <div class="role-item"><span class="role-item-type type-resp">Resp</span><span class="role-item-text">Inform PMO of new sales and details</span></div>
+            <div class="role-item"><span class="role-item-type type-resp">Resp</span><span class="role-item-text">Sell exclusively from approved product list</span></div>
+            <div class="role-item"><span class="role-item-type type-ability">Ability</span><span class="role-item-text">Generate reports from the lead system</span></div>
+            <div class="role-item"><span class="role-item-type type-ability">Ability</span><span class="role-item-text">Add lead data and manage contract information</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEETINGS -->
+<section id="meetings">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">Meetings and Decisions</h2>
+  <p class="section-intro reveal">Every unnecessary meeting is a symptom of an ARA gap. Before scheduling a meeting, ask: which of the three pillars is missing?</p>
+  <div class="cost-callout reveal">
+    <div class="cost-stat"><div class="cost-value">4</div><div class="cost-label">Attendees at £65k avg salary</div></div>
+    <div class="cost-stat"><div class="cost-value">£159</div><div class="cost-label">Cost per one-hour meeting</div></div>
+    <div class="cost-stat"><div class="cost-value">£624</div><div class="cost-label">Monthly cost at 2× per week</div></div>
+    <div class="cost-stat"><div class="cost-value">£7,488</div><div class="cost-label">Annual cost if nothing changes</div></div>
+  </div>
+  <div class="meetings-grid reveal">
+    <div>
+      <div class="meetings-col-head bad">Meetings to eliminate</div>
+      <div class="meeting-item bad">
+        <div class="meeting-name">The Consensus</div>
+        <div class="meeting-cause">Symptom: lack of authority</div>
+        <div class="meeting-desc">Nobody knows who should make the decision, so everyone sits in a room until the discomfort of deciding is distributed thinly enough that it no longer feels like anyone's fault. Define authority. Eliminate the meeting.</div>
+      </div>
+      <div class="meeting-item bad">
+        <div class="meeting-name">The Update</div>
+        <div class="meeting-cause">Symptom: lack of responsibility</div>
+        <div class="meeting-desc">Person A tells Person B what has happened. If that transfer is regular and predictable, it should be a dashboard, a report, or a notification — not a meeting. The meeting is covering for an undefined responsibility.</div>
+      </div>
+      <div class="meeting-item bad">
+        <div class="meeting-name">The Presentation</div>
+        <div class="meeting-cause">Symptom: lack of ability</div>
+        <div class="meeting-desc">Someone is being taught something they should already know how to do. The cost is doubled: the presenter's preparation time plus the attendee's sitting time. Train the ability. Eliminate the meeting.</div>
+      </div>
+    </div>
+    <div>
+      <div class="meetings-col-head good">Meetings to keep</div>
+      <div class="meeting-item good">
+        <div class="meeting-name">The Escalation</div>
+        <div class="meeting-cause">Purpose: authority decision required</div>
+        <div class="meeting-desc">A decision must be made that falls outside someone's defined authority. The meeting has a clear owner, a clear question, and leaves with a clear answer. It is focused, time-bounded, and produces an explicit outcome.</div>
+      </div>
+      <div class="meeting-item good">
+        <div class="meeting-name">The Planning</div>
+        <div class="meeting-cause">Purpose: responsibilities being assigned</div>
+        <div class="meeting-desc">Responsibilities are being allocated, timelines agreed, and deliverables defined. Every item on the agenda maps directly to someone's responsibility column.</div>
+      </div>
+      <div class="meeting-item good">
+        <div class="meeting-name">The Review</div>
+        <div class="meeting-cause">Purpose: deliverable assessed against expectation</div>
+        <div class="meeting-desc">A responsibility has been executed and the output is being assessed against what was expected. It is evidence-based, not opinion-based.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PETER -->
+<section id="peter">
+  <div class="section-header reveal">
+    <span class="section-num">06</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="peter-layout">
+    <div class="reveal">
+      <h2 class="section-title">A word on the Peter Principle</h2>
+      <blockquote class="peter-quote">"In a hierarchical organisation, every individual who is continuously promoted will eventually reach a role beyond their ability."</blockquote>
+      <p class="peter-body">The Principle, formulated by Laurence J. Peter and Raymond Hull in 1969, describes how hierarchical organisations systematically produce incompetence. People are promoted on the basis of performance in their current role, until they reach one they cannot perform.</p>
+      <p class="peter-body">The ARA framework addresses this directly. Ditching Peter is not about dismissing the person — it is about dismantling the conditions that allow the mismatch to go undetected.</p>
+      <p class="peter-body">When authority is documented, you know exactly what decisions a person is making. When responsibility is documented, you know exactly what they are producing. When ability is documented, you know whether the person in the role has what the role requires.</p>
+    </div>
+    <div class="reveal">
+      <div class="diagnostic-card">
+        <div class="diagnostic-card-head">The ARA diagnostic</div>
+        <div class="diagnostic-gap">
+          <div class="diagnostic-gap-title">Authority gap</div>
+          <div class="diagnostic-gap-body">They are making decisions outside their defined scope — overreaching, or paralysed by lack of clarity. The fix is a clearer authority list, not a personality conversation.</div>
+        </div>
+        <div class="diagnostic-gap">
+          <div class="diagnostic-gap-title">Responsibility gap</div>
+          <div class="diagnostic-gap-body">They are not producing what was expected — but nobody ever wrote down what was expected. The fix is explicit deliverables, not a performance plan built on assumptions.</div>
+        </div>
+        <div class="diagnostic-gap">
+          <div class="diagnostic-gap-title">Ability gap</div>
+          <div class="diagnostic-gap-body">They lack the skills, tools, or training the role requires. The fix is targeted training or role redesign — and an honest conversation about whether the gap is bridgeable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB SPECS -->
+<section id="jobs">
+  <div class="section-header reveal">
+    <span class="section-num">07</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">Getting your job specs right</h2>
+  <p class="section-intro reveal">A job specification built around ARA is an organisational contract. It sets expectations before anyone is hired — and becomes your tool for performance reviews, training plans, and succession planning.</p>
+  <div class="reveal">
+    <div class="spec-tabs">
+      <div class="spec-tab active" onclick="switchTab(this,'tab-auth')">Authority</div>
+      <div class="spec-tab" onclick="switchTab(this,'tab-resp')">Responsibility</div>
+      <div class="spec-tab" onclick="switchTab(this,'tab-abil')">Ability</div>
+      <div class="spec-tab" onclick="switchTab(this,'tab-living')">Living document</div>
+    </div>
+    <div id="tab-auth" class="spec-panel active">
+      <div class="spec-panel-left">
+        <h3>Documenting authority</h3>
+        <p>List the decisions this role is empowered to make without escalation. Be specific about the limits: financial thresholds, personnel decisions, client commitments.</p>
+        <p>If the hiring manager can't fill in this section, that is a signal that the organisation hasn't finished its own ARA work. The vacancy is an opportunity to do it.</p>
+        <p>Vague authority language — "manages the sales process", "owns client relationships" — tells a candidate nothing and sets up a dispute later.</p>
+      </div>
+      <div class="spec-example">
+        <div class="spec-example-head">Example — Sales Executive</div>
+        <div class="spec-example-item">Sign contracts on behalf of the company up to $70,000</div>
+        <div class="spec-example-item">Discount a sale up to 5% of contract value without approval</div>
+        <div class="spec-example-item">Anything above these limits requires Sales Director sign-off</div>
+      </div>
+    </div>
+    <div id="tab-resp" class="spec-panel">
+      <div class="spec-panel-left">
+        <h3>Documenting responsibility</h3>
+        <p>List what this role must deliver and to whom. Not activities — deliverables. Each responsibility should name a deliverable, a recipient, and ideally a cadence or trigger.</p>
+        <p>The distinction matters at review time. You cannot assess "attends client meetings" against a standard. You can assess "delivers a qualified pipeline report to the Sales Director by 17:00 every Friday".</p>
+      </div>
+      <div class="spec-example">
+        <div class="spec-example-head">Example — Sales Executive</div>
+        <div class="spec-example-item">Inform PMO of new sales within 24 hours of contract signing</div>
+        <div class="spec-example-item">Provide full client contact details and product list at handover</div>
+        <div class="spec-example-item">Sell exclusively from the Sales Director's approved product list</div>
+        <div class="spec-example-item">Maintain accurate lead data in the CRM at all times</div>
+      </div>
+    </div>
+    <div id="tab-abil" class="spec-panel">
+      <div class="spec-panel-left">
+        <h3>Documenting ability</h3>
+        <p>List the specific skills, tools, and knowledge required in practice — not aspirational nice-to-haves. What will the person use in their first month?</p>
+        <p>This section serves two purposes: it tells a candidate what they will actually be doing, and it gives a manager a diagnostic when someone is underperforming. If the ability was never documented, you cannot legitimately hold someone to it.</p>
+      </div>
+      <div class="spec-example">
+        <div class="spec-example-head">Example — Sales Executive</div>
+        <div class="spec-example-item">Proficient in CRM data entry and lead management</div>
+        <div class="spec-example-item">Able to generate and interpret sales reports from the system</div>
+        <div class="spec-example-item">Capable of preparing and delivering client proposals independently</div>
+      </div>
+    </div>
+    <div id="tab-living" class="spec-panel">
+      <div class="spec-panel-left">
+        <h3>The job spec as a living document</h3>
+        <p>A spec updated whenever authority changes, or a new responsibility is added, is a genuinely useful document. One last edited at hiring is a historical artefact.</p>
+        <p>It becomes the basis for performance reviews, succession planning, and the conversation nobody wants to have when someone is promoted beyond their level. The Peter Principle thrives in organisations without this document.</p>
+      </div>
+      <div class="spec-example">
+        <div class="spec-example-head">When to update the spec</div>
+        <div class="spec-example-item">An authority threshold changes (financial or contractual)</div>
+        <div class="spec-example-item">A new deliverable is added to the role</div>
+        <div class="spec-example-item">A tool or system changes requiring new ability</div>
+        <div class="spec-example-item">A promotion discussion is underway</div>
+        <div class="spec-example-item">A performance review is coming up</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section id="ai" class="ai-section" style="max-width:none; padding: 96px 80px;">
+<div style="max-width:1200px; margin:0 auto;">
+  <div class="section-header reveal">
+    <span class="section-num" style="color:var(--ai)">08</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="ai-badge reveal">Adapting for AI</div>
+  <h2 class="section-title reveal">Using ARA to prompt AI effectively</h2>
+  <p class="ai-intro reveal">AI assistants are powerful — but they fail in the same three ways that employees do. They overstep when authority is unclear. They produce the wrong thing when responsibility is undefined. And they underperform when they lack the context that amounts to ability. The fix is the same: define all three before you start.</p>
+
+  <!-- PROMPT -->
+  <div class="reveal">
+    <p class="examples-intro">The ARA prompt template</p>
+    <div class="prompt-block">
+      <div class="prompt-block-head">
+        <span class="prompt-block-label">Master Prompt — copy and adapt</span>
+        <button class="prompt-copy" id="copyBtn" onclick="copyPrompt()">Copy</button>
+      </div>
+      <div class="prompt-body" id="promptText">You are acting as <span class="ph">[role title]</span> within <span class="ph">[organisation or team context]</span>.
+
+<b>Authority — decisions you can make without checking:</b>
+- <span class="ph">[specific decision + limit, e.g. "Approve copy changes that do not alter pricing or product claims"]</span>
+- <span class="ph">[specific decision + limit]</span>
+- Anything outside these limits: flag it and ask before proceeding.
+
+<b>Responsibility — what you must produce:</b>
+- <span class="ph">[deliverable + recipient, e.g. "A final draft delivered to me, ready to publish"]</span>
+- <span class="ph">[deliverable + recipient]</span>
+- Format: <span class="ph">[specify format, length, tone]</span>
+
+<b>Ability — what you know and can use:</b>
+- <span class="ph">[context, e.g. "You have access to our brand guidelines and tone of voice document below"]</span>
+- <span class="ph">[relevant knowledge, e.g. "You know our product is aimed at SME finance teams, not enterprise"]</span>
+- <span class="ph">[constraints, e.g. "Do not reference competitor products by name"]</span>
+
+Now: <span class="ph">[the actual task]</span></div>
+      <div class="prompt-note">
+        <strong>Why this works:</strong> Authority stops the AI guessing what it should decide vs. flag. Responsibility pins the output so it doesn't wander. Ability gives the context the AI needs to produce something usable rather than generic.
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMPLES -->
+  <div class="reveal">
+    <p class="examples-intro">Worked examples across roles</p>
+    <div class="examples-tabs">
+      <div class="ex-tab active"   onclick="switchEx(this,'ex-marketing')">Marketing</div>
+      <div class="ex-tab"          onclick="switchEx(this,'ex-ops')">Operations</div>
+      <div class="ex-tab"          onclick="switchEx(this,'ex-hr')">HR</div>
+      <div class="ex-tab"          onclick="switchEx(this,'ex-exec')">Executive</div>
+    </div>
+
+    <!-- Marketing -->
+    <div id="ex-marketing" class="ex-panel active">
+      <div class="ex-input">
+        <div class="ex-input-head">Prompt sent to AI</div>
+        <div class="ex-input-body">You are acting as a Senior Copywriter for a B2B SaaS company selling expense management software to finance teams at companies with 50–500 employees.
+
+Authority:
+- Adjust headline and body copy freely
+- You may reorder sections for flow
+- Do not change pricing, feature names, or CTAs without flagging
+
+Responsibility:
+- Deliver a revised landing page hero section (headline + subheadline + 3 bullet points)
+- Tone: direct, no fluff, confident but not aggressive
+- Length: headline under 10 words, subheadline under 25 words
+
+Ability:
+- Our customers' main pain: month-end close takes 3 days because receipts are missing
+- Differentiator: auto-reconciliation against bank feeds, no manual upload
+- Avoid: words like "seamless", "powerful", "robust"
+
+Now: Rewrite the hero section. Current copy is below.</div>
+      </div>
+      <div class="ex-output">
+        <div class="ex-output-head">What the AI now knows to do</div>
+        <div class="ex-output-body">
+          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Can rewrite copy freely — but will flag if asked to change pricing or CTA</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces: hero headline + subheadline + 3 bullets, within specified length</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone and format are explicit — no guessing what "good" looks like</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the specific pain point (month-end close) and the differentiator (auto-reconciliation)</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Has an explicit word blocklist — removes the most common AI copy filler</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Operations -->
+    <div id="ex-ops" class="ex-panel">
+      <div class="ex-input">
+        <div class="ex-input-head">Prompt sent to AI</div>
+        <div class="ex-input-body">You are acting as an Operations Analyst for a logistics company running 12 regional depots.
+
+Authority:
+- Recommend process changes freely
+- Do not recommend changes that require capex over £50,000 — flag these instead
+- Do not recommend headcount reductions — flag these for senior review
+
+Responsibility:
+- Produce a written summary of the three highest-impact process inefficiencies in the data below
+- For each: state the problem, the likely root cause (using ARA if applicable), and one actionable fix
+- Output as a short briefing document, not a bullet list
+
+Ability:
+- You have access to the depot performance data pasted below
+- Industry benchmark: order processing time under 4 hours; our current average is 6.2 hours
+- Key constraint: depot managers have limited IT ability — solutions must be low-tech
+
+Now: Analyse the data and produce the briefing.</div>
+      </div>
+      <div class="ex-output">
+        <div class="ex-output-head">What the AI now knows to do</div>
+        <div class="ex-output-body">
+          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Recommends process fixes freely — escalates anything with capex or headcount implications</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces a structured briefing — not a generic list — covering exactly 3 issues</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Each issue follows a fixed structure: problem → root cause → fix</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the benchmark (4 hours) and current gap (6.2 hours) — analysis is grounded</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the constraint (low IT literacy) — won't recommend software-heavy solutions</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HR -->
+    <div id="ex-hr" class="ex-panel">
+      <div class="ex-input">
+        <div class="ex-input-head">Prompt sent to AI</div>
+        <div class="ex-input-body">You are acting as an HR Business Partner drafting a job specification for a new role.
+
+Authority:
+- Draft the full job specification
+- You may define the ARA structure (authority, responsibility, ability) for this role
+- Do not set salary ranges — leave a placeholder; this is decided separately
+- Do not make any commitments about remote working policy — leave a placeholder
+
+Responsibility:
+- Produce a complete job specification using the ARA format:
+  1. Role overview (3–4 sentences)
+  2. Authority: decisions the role can make, with explicit limits
+  3. Responsibility: deliverables and recipients
+  4. Ability: required skills and tools
+- Avoid vague language ("excellent communicator", "team player")
+
+Ability:
+- The role is: Customer Success Manager at a 60-person B2B software company
+- Reports to: Head of Customer Success
+- Key tools used: Salesforce, Intercom, Google Workspace
+- Team context: CS team of 4, covering 200 accounts ranging from SME to mid-market
+
+Now: Draft the job specification.</div>
+      </div>
+      <div class="ex-output">
+        <div class="ex-output-head">What the AI now knows to do</div>
+        <div class="ex-output-body">
+          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Will define role authority — but leaves salary and remote policy as explicit placeholders</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces a complete ARA-structured spec in a fixed four-part format</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Vague language is explicitly banned — output will be concrete and testable</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the tools (Salesforce, Intercom) — ability section will be tool-specific, not generic</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the team size and account range — authority limits will be calibrated to actual scope</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive -->
+    <div id="ex-exec" class="ex-panel">
+      <div class="ex-input">
+        <div class="ex-input-head">Prompt sent to AI</div>
+        <div class="ex-input-body">You are acting as Chief of Staff preparing a board briefing.
+
+Authority:
+- Structure and draft the briefing freely
+- You may reframe problems and suggest priorities
+- Do not include financial projections or forward guidance — these require CFO sign-off; flag where they would normally appear
+- Do not attribute statements to named individuals without flagging
+
+Responsibility:
+- Produce a board briefing of no more than 600 words covering: (1) Q3 performance summary, (2) the two most urgent issues requiring board decision, (3) recommended next actions
+- Tone: direct, executive-level — assume board members have read the data pack
+- No preamble, no executive summary of the executive summary
+
+Ability:
+- Context: Series B SaaS company, ARR £4.2m, growing 40% YoY but burn rate has increased
+- The two issues flagged by the CEO are: (a) a key enterprise customer at churn risk, (b) a hiring freeze debate
+- Board composition: 3 investors, 2 founders, 1 independent — investors are focused on burn
+
+Now: Draft the briefing.</div>
+      </div>
+      <div class="ex-output">
+        <div class="ex-output-head">What the AI now knows to do</div>
+        <div class="ex-output-body">
+          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Drafts and reframes freely — flags where financials or named attributions would normally appear</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces exactly: Q3 summary + 2 decision items + next actions, under 600 words</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone is calibrated: executive-level, no preamble — AI won't pad or summarise the summary</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the two issues and their context — can frame them with appropriate urgency</span></div>
+          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Knows the board composition — investor focus on burn will shape how issues are framed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="ai-principles reveal">
+    <div class="ai-principle">
+      <div class="ai-principle-num">01</div>
+      <h4>Undefined authority produces scope creep</h4>
+      <p>An AI without authority boundaries will make decisions you didn't intend to delegate. It will rewrite the CTA, change the product name, alter the tone entirely. Every decision the AI makes that you didn't explicitly grant is a decision made without authority.</p>
+    </div>
+    <div class="ai-principle">
+      <div class="ai-principle-num">02</div>
+      <h4>Undefined responsibility produces drift</h4>
+      <p>Without a clear deliverable — format, length, recipient, purpose — the AI produces something technically responsive but practically useless. It answered the question you typed, not the question you needed answered. Responsibility pins the output.</p>
+    </div>
+    <div class="ai-principle">
+      <div class="ai-principle-num">03</div>
+      <h4>Undefined ability produces generic output</h4>
+      <p>An AI with no context about your organisation, your audience, your constraints, or your tools will produce output that could belong to any company in any industry. Ability is the difference between a useful first draft and something you have to rewrite entirely.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONCLUSION -->
+<div class="conclusion-wrap">
+  <div class="conclusion-inner">
+    <h2 class="reveal">The test is simple.</h2>
+    <p class="reveal">Pick any role in your organisation — your own, if you like — and try to write down three answers to each of the following questions.</p>
+    <div class="diagnostic reveal">
+      <div class="diagnostic-head">The ARA self-check</div>
+      <div class="diagnostic-item"><span class="diagnostic-num">A</span><span>Three decisions you are empowered to make without asking anyone — with specific limits attached to each.</span></div>
+      <div class="diagnostic-item"><span class="diagnostic-num">R</span><span>Three things you are explicitly responsible for delivering, named as deliverables with a recipient.</span></div>
+      <div class="diagnostic-item"><span class="diagnostic-num">A</span><span>Three specific skills or tools you are expected to use competently as part of the role.</span></div>
+    </div>
+    <p class="reveal">If that exercise is straightforward, your organisation has done some of this work already. If it's difficult — if you find yourself writing "it depends" for the first two — you know where to start.</p>
+    <p class="reveal">Ditch Peter not by removing the person, but by building the kind of organisation where the conditions for his rise never form in the first place.</p>
+    <p class="reveal" style="font-style:italic; color:var(--ink); margin-top:8px;">The rest, as it turns out, is just communication.</p>
+    <p class="reveal" style="margin-top:44px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--muted); text-align:right;">— Christian Macedo</p>
+  </div>
+</div>
+
+<footer>
+  <p>Ditching Peter — A Path to Organisational Health</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 55);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Role card accordion
+  function toggleCard(head) {
+    head.classList.toggle('open');
+    head.nextElementSibling.classList.toggle('open');
+  }
+
+  // Job spec tabs
+  function switchTab(tab, id) {
+    document.querySelectorAll('.spec-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.spec-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Example tabs
+  function switchEx(tab, id) {
+    document.querySelectorAll('.ex-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.ex-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Copy prompt
+  function copyPrompt() {
+    const el = document.getElementById('promptText');
+    const text = el.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // Mobile nav
+  function toggleNav(btn) {
+    btn.classList.toggle('open');
+    document.getElementById('navDrawer').classList.toggle('open');
+  }
+  function closeNav() {
+    document.querySelector('.nav-burger').classList.remove('open');
+    document.getElementById('navDrawer').classList.remove('open');
+  }
+
+  // Nav active highlight
+  const sections = document.querySelectorAll('section[id], div[id]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur
+        ? (cur === 'ai' ? 'var(--ai)' : 'var(--accent)')
+        : '';
+    });
+  });
+</script>
+</body>
+</html>
