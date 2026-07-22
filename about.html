@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ditching Peter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── FORCE LIGHT MODE — override any OS dark mode ── */
+  @media (prefers-color-scheme: dark) {
+    html, body { background-color: #ffffff !important; color: #1f2937 !important; }
+
+    body, p, li, span, div, h1, h2, h3, h4, blockquote,
+    .detail-body p, .section-intro, .fw-card p, .fw-card-key,
+    .process-note, .process-action, .meeting-desc, .meeting-cause,
+    .peter-body, .diagnostic-gap-body, .spec-panel-left p,
+    .ai-intro, .prompt-body, .ex-input-body, .ex-out-text,
+    .ai-principle p, .conclusion-inner p, .diagnostic-item,
+    .hero-subtitle, .cost-label, .ara-def, .role-item-text,
+    .meeting-name { color: #1f2937 !important; }
+
+    h1, h2, h3, h4, .hero-title, .section-title,
+    .detail-body h3, .fw-card h3, .process-action,
+    .meeting-name, .spec-panel-left h3, .ai-principle h4,
+    .conclusion-inner h2, .peter-quote, .diagnostic-gap-title { color: #0d0d0d !important; }
+
+    nav, .nav-inner, .nav-drawer,
+    .hero-text, .hero-diagram,
+    section, .full-bleed,
+    .fw-card, .framework-grid,
+    .role-card, .role-card-body,
+    .intro-strip,
+    .cost-callout,
+    .meeting-item, .meeting-item.bad, .meeting-item.good,
+    .diagnostic-card, .diagnostic-gap,
+    .spec-example,
+    .prompt-block, .prompt-body,
+    .ex-input, .ex-output, .ex-input-body,
+    .ai-section, .ai-principles, .ai-principle,
+    .conclusion-wrap, .conclusion-inner, .diagnostic,
+    footer { background-color: #ffffff !important; }
+
+    .hero-diagram, .bg-tint, [class*="tint"],
+    .role-card-head, .role-card-body,
+    .spec-example, .ex-input-head { background-color: #f9fafb !important; }
+
+    .intro-strip { background-color: #eff6ff !important; }
+    .meeting-item.bad { background-color: #fff1f2 !important; }
+    .meeting-item.good { background-color: #f0fdf4 !important; }
+    .ai-section, [class*="ai-section"] { background-color: #f5f3ff !important; }
+    .prompt-block-head, .diagnostic-card-head,
+    .diagnostic-head, .spec-example-head { background-color: #eff6ff !important; }
+    .ex-output-head, .prompt-note { background-color: #f5f3ff !important; }
+    .ara-item:nth-child(2) { background-color: #1d4ed8 !important; }
+    .ara-item:nth-child(2) .ara-word,
+    .ara-item:nth-child(2) .ara-def { color: #ffffff !important; }
+    .ara-item:nth-child(2) .ara-letter { color: rgba(255,255,255,0.25) !important; }
+
+    .rule, [class*="rule"] { border-color: #e5e7eb !important; }
+    * { border-color: #e5e7eb; }
+  }
+  :root {
+    --ink:          #0d0d0d;
+    --ink-soft:     #1f2937;
+    --muted:        #374151;
+    --bg:           #ffffff;
+    --bg-tint:      #f9fafb;
+    --rule:         #e5e7eb;
+    --accent:       #1d4ed8;
+    --accent-dark:  #1e3a8a;
+    --accent-light: #eff6ff;
+    --accent-mid:   #2563eb;
+    --bad:          #991b1b;
+    --bad-light:    #fff1f2;
+    --good:         #14532d;
+    --good-light:   #f0fdf4;
+    --ai:           #4c1d95;
+    --ai-mid:       #6d28d9;
+    --ai-light:     #f5f3ff;
+  }
+
+  /* Explicit light backgrounds on every major container */
+  html, body, nav, section, div, header, footer,
+  .hero, .hero-text, .hero-diagram,
+  .intro-strip, .framework-grid, .fw-card,
+  .role-card, .role-card-body, .role-card-head,
+  .process-flow, .meeting-item,
+  .cost-callout, .meetings-grid,
+  .peter-layout, .diagnostic-card,
+  .spec-tabs, .spec-panel, .spec-example,
+  .prompt-block, .ex-input, .ex-output,
+  .ai-principles, .ai-principle,
+  .conclusion-wrap, .conclusion-inner, .diagnostic {
+    background-color: inherit;
+  }
+
+  html { background-color: #ffffff; }
+  body { background-color: #ffffff; color: #1f2937; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 17px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 58px;
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none; font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-soft); text-decoration: none;
+    transition: color 0.2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-burger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .nav-burger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--ink); transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-drawer {
+    display: none; flex-direction: column;
+    padding: 8px 24px 20px; border-top: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .nav-drawer.open { display: flex; }
+  .nav-drawer a {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    padding: 14px 0; border-bottom: 1px solid var(--rule);
+    transition: color 0.2s;
+  }
+  .nav-drawer a:last-child { border-bottom: none; }
+  .nav-drawer a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: grid;
+    grid-template-columns: 1fr 1fr; padding-top: 58px;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 56px 80px 80px;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.02em; margin-bottom: 28px; color: var(--ink);
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-subtitle {
+    font-size: 18px; font-weight: 400; color: var(--ink-soft);
+    max-width: 420px; line-height: 1.65; margin-bottom: 44px;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff;
+    text-decoration: none; padding: 14px 28px;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.2s; align-self: flex-start;
+  }
+  .hero-cta:hover { background: var(--accent-dark); }
+  .hero-diagram {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-tint); padding: 80px 60px;
+  }
+  .ara-diagram { display: flex; flex-direction: column; width: 100%; max-width: 340px; }
+  .ara-item {
+    background: var(--bg); border: 1px solid var(--rule);
+    border-bottom: none; padding: 28px 32px;
+    opacity: 0; transform: translateX(16px);
+    animation: slideIn 0.5s forwards;
+  }
+  .ara-item:last-child { border-bottom: 1px solid var(--rule); }
+  .ara-item:nth-child(1) { animation-delay: 0.2s; }
+  .ara-item:nth-child(2) { animation-delay: 0.4s; background: var(--accent); border-color: var(--accent); }
+  .ara-item:nth-child(2) .ara-letter { color: rgba(255,255,255,0.25); }
+  .ara-item:nth-child(2) .ara-word { color: #fff; letter-spacing: 0.12em; }
+  .ara-item:nth-child(2) .ara-def { color: #fff; font-weight: 400; }
+  .ara-item:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+  .ara-letter {
+    font-family: 'Playfair Display', serif; font-size: 56px;
+    font-weight: 900; font-style: italic; color: var(--accent-light);
+    line-height: 1; margin-bottom: 2px;
+  }
+  .ara-word {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .ara-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* ── SECTION CHROME ── */
+  .section-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.1em; flex-shrink: 0;
+  }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+  section {
+    padding: 96px 80px; max-width: 1200px; margin: 0 auto;
+  }
+  section + section { border-top: 1px solid var(--rule); }
+  .full-bleed { max-width: none; padding-left: 0; padding-right: 0; }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.5vw, 46px);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .section-intro {
+    color: var(--muted); font-size: 17px;
+    max-width: 580px; margin-bottom: 56px; line-height: 1.7;
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    background: var(--accent-light);
+    border-top: 3px solid var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding: 80px; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .intro-strip h2 {
+    font-family: 'Playfair Display', serif; font-size: 36px;
+    font-weight: 700; line-height: 1.2; color: var(--ink);
+  }
+  .intro-strip h2 em { font-style: italic; color: var(--accent-dark); }
+  .intro-strip p {
+    color: var(--ink-soft); font-size: 16px;
+    line-height: 1.75; margin-bottom: 18px;
+  }
+  .intro-strip p:last-child { margin-bottom: 0; }
+
+  /* ── FRAMEWORK GRID ── */
+  .framework-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    border: 1px solid var(--rule); margin-bottom: 0;
+  }
+  .fw-card {
+    padding: 44px 36px; border-right: 1px solid var(--rule);
+    position: relative; overflow: hidden;
+  }
+  .fw-card:last-child { border-right: none; }
+  .fw-card::before {
+    content: attr(data-letter);
+    position: absolute; bottom: -8px; right: 16px;
+    font-family: 'Playfair Display', serif; font-size: 110px;
+    font-weight: 900; font-style: italic; color: #e5e7eb;
+    line-height: 1; pointer-events: none; transition: color 0.3s;
+  }
+  .fw-card:hover::before { color: #bfdbfe; }
+  .fw-card-tag {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px; display: block;
+  }
+  .fw-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 26px;
+    font-weight: 700; margin-bottom: 14px; color: var(--ink);
+  }
+  .fw-card p { font-size: 15px; color: var(--muted); line-height: 1.7; position: relative; z-index: 1; }
+  .fw-card-key {
+    margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--muted); line-height: 1.7; position: relative; z-index: 1;
+  }
+  .fw-card-key strong {
+    color: var(--ink); font-weight: 500; display: block;
+    margin-bottom: 4px; letter-spacing: 0.04em;
+  }
+
+  /* ── DETAIL LAYOUT ── */
+  .detail-layout {
+    display: grid; grid-template-columns: 1fr 1.15fr;
+    gap: 72px; align-items: start;
+  }
+  .detail-body h3 {
+    font-family: 'Playfair Display', serif; font-size: 21px;
+    font-weight: 700; margin-bottom: 12px; margin-top: 32px; color: var(--ink);
+  }
+  .detail-body h3:first-child { margin-top: 0; }
+  .detail-body p {
+    font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 14px;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* ── ROLE CARDS ── */
+  .role-stack { display: flex; flex-direction: column; }
+  .role-card { border: 1px solid var(--rule); border-bottom: none; }
+  .role-card:last-child { border-bottom: 1px solid var(--rule); }
+  .role-card-head {
+    padding: 15px 22px; display: flex; align-items: center;
+    justify-content: space-between; cursor: pointer; user-select: none;
+    transition: background 0.15s; background: var(--bg-tint);
+  }
+  .role-card-head:hover { background: var(--accent-light); }
+  .role-card-head.open { background: var(--accent); color: #ffffff; }
+  .role-card-head.open .role-card-title { color: #ffffff; }
+  .role-card-head.open .role-card-arrow  { color: #ffffff; }
+  .role-card-title {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .role-card-arrow { font-size: 14px; transition: transform 0.3s; }
+  .role-card-head.open .role-card-arrow { transform: rotate(180deg); }
+  .role-card-body {
+    display: none; padding: 20px 22px;
+    background: var(--bg); border-top: 1px solid var(--rule);
+  }
+  .role-card-body.open { display: block; }
+  .role-item {
+    display: grid; grid-template-columns: 64px 1fr;
+    gap: 12px; padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px; align-items: baseline;
+  }
+  .role-item:last-child { border-bottom: none; }
+  .role-item-type {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 6px; border-radius: 3px; text-align: center;
+    font-weight: 500; align-self: start; margin-top: 2px;
+  }
+  .type-auth   { background: var(--accent-light); color: var(--accent-dark); }
+  .type-resp   { background: var(--good-light);   color: var(--good); }
+  .type-ability{ background: #fef3c7;              color: #92400e; }
+  .role-item-text { color: var(--ink); line-height: 1.5; }
+
+  /* ── PROCESS FLOW ── */
+  .process-flow { margin: 40px 0; position: relative; }
+  .process-step {
+    display: grid; grid-template-columns: 44px 1fr;
+    gap: 20px; position: relative;
+  }
+  .process-step::before {
+    content: ''; position: absolute; left: 21px; top: 44px; bottom: -44px;
+    width: 2px; background: var(--rule);
+  }
+  .process-step:last-child::before { display: none; }
+  .process-num {
+    width: 44px; height: 44px; border: 2px solid var(--accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent);
+    background: var(--bg); flex-shrink: 0; position: relative; z-index: 1;
+  }
+  .process-content { padding-bottom: 44px; }
+  .process-role {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 5px;
+  }
+  .process-action { font-size: 16px; font-weight: 500; margin-bottom: 6px; color: var(--ink); }
+  .process-note { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* ── MEETINGS ── */
+  .meetings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 0; }
+  .meetings-col-head {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 10px 0; border-bottom: 2px solid; margin-bottom: 20px;
+  }
+  .meetings-col-head.bad  { border-color: var(--bad);  color: var(--bad); }
+  .meetings-col-head.good { border-color: var(--good); color: var(--good); }
+  .meeting-item {
+    padding: 18px 20px; border: 1px solid var(--rule);
+    margin-bottom: 10px; border-radius: 2px;
+  }
+  .meeting-item.bad  { border-left: 3px solid var(--bad);  background: var(--bad-light); }
+  .meeting-item.good { border-left: 3px solid var(--good); background: var(--good-light); }
+  .meeting-name {
+    font-family: 'Playfair Display', serif; font-size: 17px;
+    font-weight: 700; font-style: italic; margin-bottom: 3px; color: var(--ink);
+  }
+  .meeting-cause {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .meeting-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
+  .cost-callout {
+    background: var(--bg-tint); border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 40px 48px; display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 0; margin: 0 0 48px;
+  }
+  .cost-stat { padding: 0 32px; border-right: 1px solid var(--rule); }
+  .cost-stat:first-child { padding-left: 0; }
+  .cost-stat:last-child  { border-right: none; }
+  .cost-value {
+    font-family: 'Playfair Display', serif; font-size: 34px;
+    font-weight: 900; color: var(--accent-dark); line-height: 1; margin-bottom: 6px;
+  }
+  .cost-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); line-height: 1.4;
+  }
+
+  /* ── PETER ── */
+  .peter-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start; }
+  .peter-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.4vw, 24px);
+    font-style: italic; font-weight: 400; line-height: 1.5; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0;
+  }
+  .peter-body { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+
+  .diagnostic-card {
+    border: 1px solid var(--rule); background: var(--bg);
+  }
+  .diagnostic-card-head {
+    padding: 14px 24px; background: var(--accent-light);
+    border-bottom: 2px solid var(--accent);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-dark);
+  }
+  .diagnostic-gap {
+    padding: 20px 24px; border-bottom: 1px solid var(--rule);
+  }
+  .diagnostic-gap:last-child { border-bottom: none; }
+  .diagnostic-gap-title {
+    font-family: 'Playfair Display', serif; font-size: 17px;
+    font-weight: 700; margin-bottom: 6px; color: var(--ink);
+  }
+  .diagnostic-gap-body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* ── JOB SPECS ── */
+  .spec-tabs {
+    display: flex; border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px; gap: 0;
+  }
+  .spec-tab {
+    padding: 13px 24px; font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s; user-select: none; white-space: nowrap;
+  }
+  .spec-tab.active { color: var(--ink); border-color: var(--accent); }
+  .spec-tab:hover:not(.active) { color: var(--ink); }
+  .spec-panel { display: none; }
+  .spec-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .spec-panel-left h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px;
+    font-weight: 700; margin-bottom: 14px; color: var(--ink);
+  }
+  .spec-panel-left p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .spec-example {
+    background: var(--bg-tint); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 28px 30px; align-self: start;
+  }
+  .spec-example-head {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 16px;
+  }
+  .spec-example-item {
+    font-size: 14px; color: var(--ink-soft);
+    padding: 10px 0; border-bottom: 1px solid var(--rule); line-height: 1.5;
+  }
+  .spec-example-item:last-child { border-bottom: none; }
+  .spec-example-item::before {
+    content: '→'; color: var(--accent);
+    margin-right: 10px; font-family: 'DM Mono', monospace;
+  }
+
+  /* ── AI SECTION ── */
+  .ai-section { background: var(--bg-tint); border-top: 1px solid var(--rule); }
+
+  .ai-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ai-light); color: var(--ai);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px; margin-bottom: 20px;
+  }
+  .ai-badge::before { content: '✦'; font-size: 10px; }
+
+  .ai-intro {
+    font-size: 17px; color: var(--muted); line-height: 1.75;
+    max-width: 640px; margin-bottom: 56px;
+  }
+
+  /* Prompt block */
+  .prompt-block {
+    border: 1px solid var(--ai); background: var(--bg);
+    margin-bottom: 56px;
+  }
+  .prompt-block-head {
+    background: var(--ai-light); border-bottom: 2px solid var(--ai);
+    padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .prompt-block-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ai);
+  }
+  .prompt-copy {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--ai); border: none;
+    color: #fff; padding: 5px 12px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .prompt-copy:hover { background: #4c1d95; }
+  .prompt-copy.copied { background: var(--good); }
+  .prompt-body {
+    padding: 28px 28px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    line-height: 1.8; color: var(--ink-soft);
+    white-space: pre-wrap; word-break: break-word;
+    border-bottom: 1px solid var(--rule);
+  }
+  .prompt-body .ph {
+    color: var(--ai); font-style: italic; font-weight: 500;
+  }
+  .prompt-note {
+    padding: 14px 28px; background: var(--ai-light);
+    font-size: 13px; color: var(--ai); line-height: 1.6;
+  }
+
+  /* Examples grid */
+  .examples-intro {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px;
+  }
+  .examples-tabs {
+    display: flex; gap: 0; border-bottom: 1px solid var(--rule); margin-bottom: 32px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+  .ex-tab {
+    padding: 12px 22px; font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    color: var(--muted); border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.2s, border-color 0.2s;
+    user-select: none; white-space: nowrap;
+  }
+  .ex-tab.active { color: var(--ai); border-color: var(--ai); }
+  .ex-tab:hover:not(.active) { color: var(--ink); }
+  .ex-panel { display: none; }
+  .ex-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .ex-input, .ex-output {
+    border: 1px solid var(--rule); background: var(--bg);
+  }
+  .ex-input-head, .ex-output-head {
+    padding: 10px 20px; border-bottom: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .ex-input-head  { color: var(--muted); background: var(--bg-tint); border-bottom: 1px solid var(--rule); }
+  .ex-output-head { color: var(--ai);    background: var(--ai-light); border-bottom: 1px solid #c4b5fd; }
+  .ex-input-body {
+    padding: 18px 20px; font-size: 14px; color: var(--ink-soft);
+    line-height: 1.7; font-family: 'DM Mono', monospace;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .ex-output-body { padding: 18px 20px; }
+  .ex-out-row {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule);
+    font-size: 13px; align-items: baseline;
+  }
+  .ex-out-row:last-child { border-bottom: none; }
+  .ex-out-type {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 6px; border-radius: 3px; text-align: center;
+    font-weight: 500; align-self: start; margin-top: 2px;
+  }
+  .ex-out-text { color: var(--ink); line-height: 1.5; }
+
+  /* Principles */
+  .ai-principles {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 0; border: 1px solid var(--rule); margin-top: 56px;
+  }
+  .ai-principle {
+    padding: 32px 28px; border-right: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .ai-principle:last-child { border-right: none; }
+  .ai-principle-num {
+    font-family: 'DM Mono', monospace; font-size: 22px;
+    font-weight: 500; color: var(--accent); line-height: 1; margin-bottom: 12px;
+  }
+  .ai-principle h4 {
+    font-family: 'Playfair Display', serif; font-size: 18px;
+    font-weight: 700; margin-bottom: 10px; color: var(--ink);
+  }
+  .ai-principle p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+  /* ── CONCLUSION ── */
+  .conclusion-wrap { background: var(--bg-tint); padding: 96px 80px; border-top: 1px solid var(--rule); }
+  .conclusion-inner { max-width: 720px; margin: 0 auto; }
+  .conclusion-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px); font-weight: 900;
+    line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .conclusion-inner p { font-size: 17px; line-height: 1.8; color: var(--muted); margin-bottom: 22px; }
+  .diagnostic {
+    margin: 44px 0; border: 1px solid var(--rule); background: var(--bg);
+  }
+  .diagnostic-head {
+    padding: 14px 26px; background: var(--accent-light);
+    border-bottom: 2px solid var(--accent);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-dark);
+  }
+  .diagnostic-item {
+    padding: 16px 26px; border-bottom: 1px solid var(--rule);
+    font-size: 16px; display: flex; gap: 16px; align-items: baseline; color: var(--ink);
+  }
+  .diagnostic-item:last-child { border-bottom: none; }
+  .diagnostic-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--accent); flex-shrink: 0; width: 18px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule); padding: 36px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase;
+  }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .nav-inner { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 48px 24px 40px; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-diagram { padding: 40px 24px; }
+    .ara-diagram { max-width: 100%; }
+
+    section { padding: 56px 24px; }
+    .section-intro { font-size: 15px; }
+
+    .intro-strip { grid-template-columns: 1fr; gap: 28px; padding: 56px 24px; }
+    .intro-strip h2 { font-size: 26px; }
+
+    .framework-grid { grid-template-columns: 1fr; }
+    .fw-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 30px 22px; }
+    .fw-card:last-child { border-bottom: none; }
+    .fw-card::before { font-size: 80px; }
+
+    .detail-layout { grid-template-columns: 1fr; gap: 32px; }
+    .detail-body p { font-size: 15px; }
+
+    .cost-callout { grid-template-columns: 1fr 1fr; gap: 20px; padding: 28px 20px; }
+    .cost-stat { border-right: none; padding: 0; }
+    .cost-value { font-size: 26px; }
+    .meetings-grid { grid-template-columns: 1fr; }
+
+    .peter-layout { grid-template-columns: 1fr; gap: 32px; }
+
+    .spec-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .spec-tab { padding: 12px 14px; }
+    .spec-panel.active { grid-template-columns: 1fr; }
+
+    .ex-panel.active { grid-template-columns: 1fr; }
+    .ai-principles { grid-template-columns: 1fr; }
+    .ai-principle { border-right: none; border-bottom: 1px solid var(--rule); }
+    .ai-principle:last-child { border-bottom: none; }
+    .examples-tabs { overflow-x: auto; }
+
+    .conclusion-wrap { padding: 56px 24px; }
+    .diagnostic-item { padding: 14px 18px; font-size: 15px; }
+    footer { padding: 28px 24px; flex-direction: column; gap: 10px; text-align: center; }
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="/#framework">Framework</a></li>
+      <li><a href="/#authority">Authority</a></li>
+      <li><a href="/#responsibility">Responsibility</a></li>
+      <li><a href="/#ability">Ability</a></li>
+      <li><a href="/#meetings">Meetings</a></li>
+      <li><a href="/#jobs">Job Specs</a></li>
+      <li><a href="/#ai" style="color:var(--ai)">AI</a></li>
+      <li><a href="/about" style="color:var(--accent)">About</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/#framework"      onclick="closeNav()">Framework</a>
+    <a href="/#authority"      onclick="closeNav()">Authority</a>
+    <a href="/#responsibility" onclick="closeNav()">Responsibility</a>
+    <a href="/#ability"        onclick="closeNav()">Ability</a>
+    <a href="/#meetings"       onclick="closeNav()">Meetings</a>
+    <a href="/#jobs"           onclick="closeNav()">Job Specs</a>
+    <a href="/#ai"             onclick="closeNav()" style="color:var(--ai)">Adapting for AI</a>
+    <a href="/about"           onclick="closeNav()" style="color:var(--accent)">About</a>
+  </div>
+</nav>
+
+<!-- ABOUT HEADER -->
+<section style="padding-top: 130px;">
+  <div class="section-header reveal">
+    <span class="section-num">About</span>
+    <div class="section-rule"></div>
+  </div>
+  <h1 class="section-title reveal" style="font-size: clamp(38px, 5vw, 62px); font-weight: 900; margin-bottom: 20px;">The person behind<br>the framework</h1>
+  <p class="section-intro reveal" style="max-width: 640px;">I'm Christian Macedo. I work at the intersection of transformation, organisational design, and applied AI — and Ditching Peter is where I've written down the pattern I keep meeting.</p>
+</section>
+
+<!-- WHO -->
+<div class="intro-strip full-bleed reveal">
+  <div>
+    <h2>A practitioner, not<br>a <em>theorist.</em></h2>
+  </div>
+  <div>
+    <p>My work has taken me across many organisations — young companies outgrowing their founders, established teams tangled in process, functions where nobody could quite say who was allowed to decide what. Different industries, different sizes, the same three questions left unanswered.</p>
+    <p>I think in terms of <strong>capabilities</strong>: what a role, a team, or a system is actually accountable for, what it's permitted to do, and what it needs to do it well. ARA — Authority, Responsibility, Ability — is the human-scale version of that same discipline, stripped back to something anyone can pick up and use on a Monday morning.</p>
+    <p>This site is deliberately not a book or a course. It's a working artefact: the framework as I actually apply it, kept short enough to be useful.</p>
+  </div>
+</div>
+
+<!-- WHY MAP THIS -->
+<section id="why">
+  <div class="section-header reveal">
+    <span class="section-num">Why</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">Why I wanted to map this</h2>
+  <p class="section-intro reveal">Diagnosing the same dysfunction over and over isn't a framework — it's a habit. Mapping it turns a private instinct into something structured, portable, and testable. Four reasons drove me to write it down.</p>
+  <div class="framework-grid reveal" style="grid-template-columns: 1fr 1fr;">
+    <div class="fw-card" data-letter="1">
+      <span class="fw-card-tag">01 — The pattern</span>
+      <h3>The same root cause, everywhere</h3>
+      <p>Across every organisation I worked in, the pain points traced back to the same place: nobody knew who could decide what, who owed which deliverable, or what the role genuinely required. Naming that pattern precisely was the first step to fixing it — and to giving people a shared language for it.</p>
+    </div>
+    <div class="fw-card" data-letter="2">
+      <span class="fw-card-tag">02 — Reusability</span>
+      <h3>From one-off diagnosis to a tool</h3>
+      <p>Solving the problem in the room once helps one team once. Mapping it into a repeatable framework means the next team — or a team I'll never meet — can run the same diagnosis themselves. The value is in it being portable, not bespoke.</p>
+    </div>
+    <div class="fw-card" data-letter="3">
+      <span class="fw-card-tag">03 — Built for AI</span>
+      <h3>Roles as structured data</h3>
+      <p>Once authority, responsibility, and ability are written down as structured data rather than prose, AI can work with them — drafting job specs, auditing role overlaps, and diagnosing where a person or a prompt is failing. The framework was designed to be machine-legible, not just human-readable.</p>
+    </div>
+    <div class="fw-card" data-letter="4">
+      <span class="fw-card-tag">04 — A living practice</span>
+      <h3>How I think, written down</h3>
+      <p>This is as much a personal artefact as a public one. It's the current state of how I reason about organisational design — a document I refine as I learn, and a reference I return to rather than re-deriving the same argument each time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<div class="conclusion-wrap">
+  <div class="conclusion-inner">
+    <h2 class="reveal">Start with one role.</h2>
+    <p class="reveal">If any of this resonates, the framework itself is the best place to go next. Pick a single role — your own is fine — and try the ARA self-check at the end.</p>
+    <p class="reveal" style="margin-top: 8px;">
+      <a href="/#framework" class="hero-cta" style="align-self:flex-start;">Read the framework ↓</a>
+    </p>
+    <p class="reveal" style="margin-top:44px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--muted);">— Christian Macedo</p>
+  </div>
+</div>
+
+<footer>
+  <p>Ditching Peter — A Path to Organisational Health</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 55);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function toggleNav(btn) {
+    btn.classList.toggle('open');
+    document.getElementById('navDrawer').classList.toggle('open');
+  }
+  function closeNav() {
+    document.querySelector('.nav-burger').classList.remove('open');
+    document.getElementById('navDrawer').classList.remove('open');
+  }
+</script>
+</body>
+</html>
