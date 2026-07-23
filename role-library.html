@@ -35,26 +35,19 @@
 <div class="docs-shell">
 
   <!-- SIDEBAR -->
-  <aside class="docs-sidebar" id="docsSidebar">
-    <div class="docs-nav-title">Documentation</div>
+  <aside class="docs-sidebar">
+    <div class="docs-nav-title">Role Library</div>
     <div class="side-group">
-      <div class="side-group-label">Getting started</div>
-      <a class="side-link" href="/documentation">Introduction</a>
-      <a class="side-link" href="/documentation#may-must-can">May · Must · Can</a>
-      <a class="side-link" href="/documentation#a-role-in-full">A role, in full</a>
-      <a class="side-link" href="/documentation#why">Why a spec, not prose</a>
+      <div class="side-group-label">Roles</div>
+      <a class="side-link active" href="#library-top" onclick="selectRole(event,this,'r-sd')">Sales Director</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-cse')">Sales Executive</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-csm')">Customer Success Manager</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-ops')">Operations Analyst</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-cos')">Chief of Staff</a>
     </div>
     <div class="side-group">
-      <div class="side-group-label">Reference</div>
-      <a class="side-link active" href="/role-library">Role Library</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">The format · coming soon</div>
-      <span class="side-link soon">Authority · MAY <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Responsibility · MUST <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Ability · CAN <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Writing a role spec <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Specs with AI <span class="side-badge">soon</span></span>
+      <div class="side-group-label">About the library</div>
+      <a class="side-link" href="#connect">Where specs connect</a>
     </div>
   </aside>
 
@@ -65,14 +58,6 @@
       <p class="eyebrow">Documentation · Role Library</p>
       <h1 class="title">The role <em>library.</em></h1>
       <p class="lede">Real roles, each written as an ARA spec in the <strong>MAY / MUST / CAN</strong> format. Same structure throughout — which is what makes handoffs legible: one role's <strong>MUST … to →</strong> is another role's input.</p>
-
-      <div class="role-tabs" style="margin-top:36px;">
-        <div class="role-tab active" onclick="showRole(this,'r-sd')">Sales Director</div>
-        <div class="role-tab" onclick="showRole(this,'r-cse')">Sales Executive</div>
-        <div class="role-tab" onclick="showRole(this,'r-csm')">Customer Success Mgr</div>
-        <div class="role-tab" onclick="showRole(this,'r-ops')">Operations Analyst</div>
-        <div class="role-tab" onclick="showRole(this,'r-cos')">Chief of Staff</div>
-      </div>
 
       <!-- Sales Director -->
       <div id="r-sd" class="role-panel active">
@@ -198,10 +183,11 @@
 <script>
   function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
   function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
-  function showRole(tab,id){
-    document.querySelectorAll('.role-tab').forEach(t=>t.classList.remove('active'));
+  function selectRole(e, el, id){
+    e.preventDefault();
+    document.querySelectorAll('.docs-sidebar .side-link').forEach(l=>l.classList.remove('active'));
+    el.classList.add('active');
     document.querySelectorAll('.role-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
     document.getElementById(id).classList.add('active');
   }
 </script>

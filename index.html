@@ -791,7 +791,7 @@
   <div>
     <p>The pain points were always a consequence of misunderstanding or lack of communication. But telling people to "communicate more" or "get on the same page" wasn't enough — it never is.</p>
     <p>The problem wasn't the will to communicate. It was the absence of a shared language for what each person was supposed to decide, deliver, and be capable of. ARA provides that language.</p>
-    <p>This site distils the framework: three pillars, how they interact, how to apply them to meetings, job specs — and how to put them to work with AI.</p>
+    <p>This site distils the framework: three pillars, how they interact, how to apply them to meetings, job specs — and how to <a href="/prompting-ai" style="color:var(--accent-dark);text-decoration:none;border-bottom:1px solid var(--accent);">put them to work with AI</a>.</p>
   </div>
 </div>
 
@@ -1151,224 +1151,34 @@
   </div>
 </section>
 
-<!-- AI SECTION -->
-<section id="ai" class="ai-section" style="max-width:none; padding: 96px 80px;">
-<div style="max-width:1200px; margin:0 auto;">
+<!-- WHY A SPEC -->
+<section id="why-spec">
   <div class="section-header reveal">
-    <span class="section-num" style="color:var(--ai)">08</span>
+    <span class="section-num">08</span>
     <div class="section-rule"></div>
   </div>
-  <div class="ai-badge reveal">Adapting for AI</div>
-  <h2 class="section-title reveal">Using ARA to prompt AI effectively</h2>
-  <p class="ai-intro reveal">AI assistants are powerful — but they fail in the same three ways that employees do. They overstep when authority is unclear. They produce the wrong thing when responsibility is undefined. And they underperform when the skill you need — a specific framework, tool, or method — is never named, so they fall back on a generic one. The fix is the same: define all three before you start.</p>
-
-  <!-- PROMPT -->
-  <div class="reveal">
-    <p class="examples-intro">The ARA prompt template</p>
-    <div class="prompt-block">
-      <div class="prompt-block-head">
-        <span class="prompt-block-label">Master Prompt — copy and adapt</span>
-        <button class="prompt-copy" id="copyBtn" onclick="copyPrompt()">Copy</button>
-      </div>
-      <div class="prompt-body" id="promptText">You are acting as <span class="ph">[role title]</span> within <span class="ph">[organisation or team context]</span>.
-
-<b>Authority — decisions you can make without checking:</b>
-- <span class="ph">[specific decision + limit, e.g. "Approve copy changes that do not alter pricing or product claims"]</span>
-- <span class="ph">[specific decision + limit]</span>
-- Anything outside these limits: flag it and ask before proceeding.
-
-<b>Responsibility — what you must produce:</b>
-- <span class="ph">[deliverable + recipient, e.g. "A final draft delivered to me, ready to publish"]</span>
-- <span class="ph">[deliverable + recipient]</span>
-- Format: <span class="ph">[specify format, length, tone]</span>
-
-<b>Ability — the named skills, tools, or frameworks to use:</b>
-- <span class="ph">[named skill or framework, e.g. "Direct-response copywriting (PAS framework)"]</span>
-- <span class="ph">[named software, e.g. "Jira, Excel, or the Microsoft Word suite"]</span>
-- <span class="ph">[named methodology, e.g. "Lean Six Sigma (DMAIC) analysis"]</span>
-
-Now: <span class="ph">[the actual task — put the situational facts and context here, not under Ability]</span></div>
-      <div class="prompt-note">
-        <strong>Why this works:</strong> Authority stops the AI guessing what it should decide vs. flag. Responsibility pins the output so it doesn't wander. Ability names the actual skills, tools, and frameworks for the job — a copywriting framework, Excel, Jira, a named methodology — so the AI works to a known standard instead of inventing a generic one.
-      </div>
+  <h2 class="section-title reveal">Why a spec, not prose</h2>
+  <p class="section-intro reveal">The framework becomes a tool the moment each role is written as a structured spec — the same three statements, in the same shape, every time. That structure is what makes ARA usable at scale.</p>
+  <div class="framework-grid reveal">
+    <div class="fw-card">
+      <span class="fw-card-tag">01 — Comparable</span>
+      <h3>Diff two roles at a glance</h3>
+      <p>Every spec has the same fields, so you can compare two roles side by side, spot an authority two people both claim, or a deliverable nobody owns.</p>
+    </div>
+    <div class="fw-card">
+      <span class="fw-card-tag">02 — Machine-legible</span>
+      <h3>Data, not just words</h3>
+      <p>Authority, responsibility and ability with typed fields is structured data. An AI can audit it for gaps and overlaps, or act as the role — the same spec, read by a person or a model.</p>
+    </div>
+    <div class="fw-card">
+      <span class="fw-card-tag">03 — Connected</span>
+      <h3>Handoffs become visible</h3>
+      <p>One role's deliverable is the next role's input. Chain the recipients across specs and the delivery process falls out of the specs for free.</p>
     </div>
   </div>
-
-  <!-- EXAMPLES -->
-  <div class="reveal">
-    <p class="examples-intro">Worked examples across roles</p>
-    <div class="examples-tabs">
-      <div class="ex-tab active"   onclick="switchEx(this,'ex-marketing')">Marketing</div>
-      <div class="ex-tab"          onclick="switchEx(this,'ex-ops')">Operations</div>
-      <div class="ex-tab"          onclick="switchEx(this,'ex-hr')">HR</div>
-      <div class="ex-tab"          onclick="switchEx(this,'ex-exec')">Executive</div>
-    </div>
-
-    <!-- Marketing -->
-    <div id="ex-marketing" class="ex-panel active">
-      <div class="ex-input">
-        <div class="ex-input-head">Prompt sent to AI</div>
-        <div class="ex-input-body">You are acting as a Senior Copywriter for a B2B SaaS company selling expense management software to finance teams at companies with 50–500 employees.
-
-Authority:
-- Adjust headline and body copy freely
-- You may reorder sections for flow
-- Do not change pricing, feature names, or CTAs without flagging
-
-Responsibility:
-- Deliver a revised landing page hero section (headline + subheadline + 3 bullet points)
-- Tone: direct, no fluff, confident but not aggressive
-- Length: headline under 10 words, subheadline under 25 words
-
-Ability:
-- Direct-response copywriting using the PAS (Problem–Agitate–Solution) framework
-- Copy editing to a brand tone-of-voice guide (cutting filler like "seamless", "powerful", "robust")
-- Drafting in Google Docs
-
-Now: Rewrite the hero section (current copy below). Context: the customer's main pain is a 3-day month-end close caused by missing receipts; our differentiator is auto-reconciliation against bank feeds.</div>
-      </div>
-      <div class="ex-output">
-        <div class="ex-output-head">What the AI now knows to do</div>
-        <div class="ex-output-body">
-          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Can rewrite copy freely — but will flag if asked to change pricing or CTA</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces: hero headline + subheadline + 3 bullets, within specified length</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone and format are explicit — no guessing what "good" looks like</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">PAS-framework copywriting — a proven persuasion structure, not generic prose</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Tone-of-voice editing in Google Docs — filler cut, length limit held</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Operations -->
-    <div id="ex-ops" class="ex-panel">
-      <div class="ex-input">
-        <div class="ex-input-head">Prompt sent to AI</div>
-        <div class="ex-input-body">You are acting as an Operations Analyst for a logistics company running 12 regional depots.
-
-Authority:
-- Recommend process changes freely
-- Do not recommend changes that require capex over £50,000 — flag these instead
-- Do not recommend headcount reductions — flag these for senior review
-
-Responsibility:
-- Produce a written summary of the three highest-impact process inefficiencies in the data below
-- For each: state the problem, the likely root cause (using ARA if applicable), and one actionable fix
-- Output as a short briefing document, not a bullet list
-
-Ability:
-- Lean Six Sigma process analysis (DMAIC)
-- Root-cause analysis using the 5 Whys and fishbone (Ishikawa) diagrams
-- Data analysis in Excel; briefing written in Microsoft Word
-
-Now: Analyse the data and produce the briefing. Context: the industry benchmark is order processing under 4 hours vs our 6.2-hour average; depot managers have limited IT skills, so fixes must be low-tech.</div>
-      </div>
-      <div class="ex-output">
-        <div class="ex-output-head">What the AI now knows to do</div>
-        <div class="ex-output-body">
-          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Recommends process fixes freely — escalates anything with capex or headcount implications</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces a structured briefing — not a generic list — covering exactly 3 issues</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Each issue follows a fixed structure: problem → root cause → fix</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Lean Six Sigma (DMAIC) analysis — findings grounded against the 4-hour benchmark</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">5 Whys root-cause analysis — low-tech fixes suited to low-IT-skill managers</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HR -->
-    <div id="ex-hr" class="ex-panel">
-      <div class="ex-input">
-        <div class="ex-input-head">Prompt sent to AI</div>
-        <div class="ex-input-body">You are acting as an HR Business Partner drafting a job specification for a new role.
-
-Authority:
-- Draft the full job specification
-- You may define the ARA structure (authority, responsibility, ability) for this role
-- Do not set salary ranges — leave a placeholder; this is decided separately
-- Do not make any commitments about remote working policy — leave a placeholder
-
-Responsibility:
-- Produce a complete job specification using the ARA format:
-  1. Role overview (3–4 sentences)
-  2. Authority: decisions the role can make, with explicit limits
-  3. Responsibility: deliverables and recipients
-  4. Ability: required skills and tools
-- Avoid vague language ("excellent communicator", "team player")
-
-Ability:
-- Job-specification writing to a competency framework (CIPD Profession Map)
-- Role scoping using the ARA method
-- Drafting in Microsoft Word
-
-Now: Draft the job specification. Context: the role is a Customer Success Manager at a 60-person B2B software company, reporting to the Head of Customer Success; day-to-day tools are Salesforce, Intercom and Google Workspace; the CS team of 4 covers 200 SME-to-mid-market accounts.</div>
-      </div>
-      <div class="ex-output">
-        <div class="ex-output-head">What the AI now knows to do</div>
-        <div class="ex-output-body">
-          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Will define role authority — but leaves salary and remote policy as explicit placeholders</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces a complete ARA-structured spec in a fixed four-part format</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Vague language is explicitly banned — output will be concrete and testable</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">CIPD-aligned spec writing in Word — a concrete, ARA-structured document, not a generic template</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">ARA role scoping — authority limits calibrated to a team of 4 and 200 accounts</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Executive -->
-    <div id="ex-exec" class="ex-panel">
-      <div class="ex-input">
-        <div class="ex-input-head">Prompt sent to AI</div>
-        <div class="ex-input-body">You are acting as Chief of Staff preparing a board briefing.
-
-Authority:
-- Structure and draft the briefing freely
-- You may reframe problems and suggest priorities
-- Do not include financial projections or forward guidance — these require CFO sign-off; flag where they would normally appear
-- Do not attribute statements to named individuals without flagging
-
-Responsibility:
-- Produce a board briefing of no more than 600 words covering: (1) Q3 performance summary, (2) the two most urgent issues requiring board decision, (3) recommended next actions
-- Tone: direct, executive-level — assume board members have read the data pack
-- No preamble, no executive summary of the executive summary
-
-Ability:
-- Executive briefing writing using BLUF (Bottom Line Up Front)
-- Issue prioritisation using an impact/urgency (Eisenhower) matrix
-- Data synthesis in Excel; briefing built in PowerPoint
-
-Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with rising burn; the CEO has flagged two issues (an enterprise customer at churn risk, and a hiring-freeze debate); the board is 3 investors focused on burn, 2 founders and 1 independent.</div>
-      </div>
-      <div class="ex-output">
-        <div class="ex-output-head">What the AI now knows to do</div>
-        <div class="ex-output-body">
-          <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Drafts and reframes freely — flags where financials or named attributions would normally appear</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces exactly: Q3 summary + 2 decision items + next actions, under 600 words</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone is calibrated: executive-level, no preamble — AI won't pad or summarise the summary</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">BLUF briefing structure — the two decision issues stated up front, not buried</span></div>
-          <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Impact/urgency prioritisation — framing shaped for an investor board focused on burn</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRINCIPLES -->
-  <div class="ai-principles reveal">
-    <div class="ai-principle">
-      <div class="ai-principle-num">01</div>
-      <h4>Undefined authority produces scope creep</h4>
-      <p>An AI without authority boundaries will make decisions you didn't intend to delegate. It will rewrite the CTA, change the product name, alter the tone entirely. Every decision the AI makes that you didn't explicitly grant is a decision made without authority.</p>
-    </div>
-    <div class="ai-principle">
-      <div class="ai-principle-num">02</div>
-      <h4>Undefined responsibility produces drift</h4>
-      <p>Without a clear deliverable — format, length, recipient, purpose — the AI produces something technically responsive but practically useless. It answered the question you typed, not the question you needed answered. Responsibility pins the output.</p>
-    </div>
-    <div class="ai-principle">
-      <div class="ai-principle-num">03</div>
-      <h4>Undefined ability produces generic craft</h4>
-      <p>Ability is the named skill, tool, or framework the work demands — the PAS copywriting framework, Lean Six Sigma, Excel, Jira. Specify it and the AI works to that standard. Leave it blank and it defaults to a generic version — a first draft you have to rewrite entirely.</p>
-    </div>
-  </div>
-</div>
+  <p class="reveal" style="margin-top:36px;">
+    <a href="/documentation" class="hero-cta" style="align-self:flex-start;">See the spec format &rarr;</a>
+  </p>
 </section>
 
 <!-- CONCLUSION -->
@@ -1418,26 +1228,6 @@ Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with
     document.querySelectorAll('.spec-panel').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById(id).classList.add('active');
-  }
-
-  // Example tabs
-  function switchEx(tab, id) {
-    document.querySelectorAll('.ex-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.ex-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(id).classList.add('active');
-  }
-
-  // Copy prompt
-  function copyPrompt() {
-    const el = document.getElementById('promptText');
-    const text = el.innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById('copyBtn');
-      btn.textContent = 'Copied ✓';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-    });
   }
 
   // Mobile nav
