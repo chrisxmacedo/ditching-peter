@@ -48,6 +48,9 @@
       <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-csm')">Customer Success Manager</a>
       <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-ops')">Operations Analyst</a>
       <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-cos')">Chief of Staff</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-po')">Product Owner</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-pm')">Product Manager</a>
+      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-pd')">Product Director</a>
     </div>
     <div class="side-group">
       <div class="side-group-label">About the library</div>
@@ -92,7 +95,7 @@
           <div class="ara-block"><div class="ara-label">Authority</div>
             <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $70,000</span> · else → <span class="esc">Sales Director</span></span></div></div>
             <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 5% of value</span> · else → <span class="esc">Sales Director</span></span></div></div>
-            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Sell outside the approved product list</span><span class="line-meta">→ <span class="esc">set by Sales Director</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Sell outside the approved product list</span><span class="line-meta">→ <span class="esc">Sales Director</span></span></div></div>
           </div>
           <div class="ara-block"><div class="ara-label">Responsibility</div>
             <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Close new business</span><span class="line-meta">to → <span class="to">Sales Director</span> · against quarterly target</span></div></div>
@@ -170,6 +173,74 @@
           </div>
         </div>
       </div>
+
+      <!-- Product Owner -->
+      <div id="r-po" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Product Owner</span><span class="spec-reports">Reports to · Product Manager</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Prioritise the team backlog</span><span class="line-meta"><span class="lim">within the sprint goal</span> · else → <span class="esc">Product Manager</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Accept or reject a completed story</span><span class="line-meta"><span class="lim">against acceptance criteria</span> · else → <span class="esc">Product Manager</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Change committed release scope</span><span class="line-meta">→ <span class="esc">Product Manager</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep the backlog refined &amp; ordered</span><span class="line-meta">to → <span class="to">the delivery team</span> · before each sprint</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Write acceptance criteria per story</span><span class="line-meta">to → <span class="to">the delivery team</span> · before sprint planning</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Report sprint outcomes</span><span class="line-meta">to → <span class="to">Product Manager</span> · each sprint review</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Write user stories &amp; acceptance criteria (INVEST)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Backlog management in Jira</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Certified Scrum Product Owner (CSPO)</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Manager -->
+      <div id="r-pm" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Product Manager</span><span class="spec-reports">Reports to · Product Director</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Decide what ships next</span><span class="line-meta"><span class="lim">within the agreed roadmap</span> · else → <span class="esc">Product Director</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Reprioritise the area roadmap</span><span class="line-meta"><span class="lim">within quarterly goals</span> · else → <span class="esc">Product Director</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Commit delivery dates externally</span><span class="line-meta">→ <span class="esc">Product Director</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Change pricing</span><span class="line-meta">→ <span class="esc">Product Director</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a prioritised area roadmap</span><span class="line-meta">to → <span class="to">delivery teams &amp; stakeholders</span> · quarterly</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a validated PRD per initiative</span><span class="line-meta">to → <span class="to">the delivery team</span> · before build</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Report outcome metrics (adoption, retention)</span><span class="line-meta">to → <span class="to">Product Director</span> · monthly</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Product discovery &amp; user research (JTBD, interviews)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Roadmap &amp; PRD authoring (Productboard, Confluence)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Product analytics (SQL, Amplitude)</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Director -->
+      <div id="r-pd" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Product Director</span><span class="spec-reports">Reports to · Chief Product Officer</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Set the portfolio strategy &amp; roadmap</span><span class="line-meta"><span class="lim">within the company OKRs</span> · else → <span class="esc">CPO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Approve product investment</span><span class="line-meta"><span class="lim">up to £250,000</span> · else → <span class="esc">CPO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Shape the PM team</span><span class="line-meta"><span class="lim">within the headcount plan</span> · else → <span class="esc">CPO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Set the company OKRs</span><span class="line-meta">→ <span class="esc">CPO</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the portfolio roadmap &amp; strategy</span><span class="line-meta">to → <span class="to">the exec team</span> · quarterly</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a product performance review</span><span class="line-meta">to → <span class="to">the exec team</span> · monthly</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Maintain the product operating model</span><span class="line-meta">to → <span class="to">the PM team</span> · ongoing</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Product strategy &amp; portfolio prioritisation</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">PM team leadership &amp; coaching</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Financial modelling for product investment (Excel)</span></div></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="connect">
@@ -219,6 +290,33 @@
         <div class="chain-role chain-focus"><div class="chain-role-name">Chief of Staff</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver the board briefing <span class="to">→ the Board · 48h before</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Maintain the company OKR tracker <span class="to">→ Exec team · weekly</span></span></div></div>
         <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The board briefing</span><span class="a-in">↓ input to</span></div>
         <div class="chain-role"><div class="chain-role-name">The Board</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the briefing, and makes the decisions it calls for</span></div></div>
+      </div>
+
+      <!-- Product Owner -->
+      <div class="chain role-chain" id="rc-po">
+        <div class="chain-role"><div class="chain-role-name">Product Manager</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver a validated PRD per initiative <span class="to">→ the delivery team</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">A validated PRD + prioritised roadmap</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Product Owner</div><div class="chain-line"><span class="line-kw kw-maynot">MAY NOT</span><span>change committed scope</span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Keep the backlog refined &amp; ordered <span class="to">→ the delivery team · before each sprint</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">A refined backlog + acceptance criteria</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">The delivery team</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>ready stories, and builds them sprint by sprint</span></div></div>
+      </div>
+
+      <!-- Product Manager -->
+      <div class="chain role-chain" id="rc-pm">
+        <div class="chain-role"><div class="chain-role-name">Product Director</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver the portfolio roadmap &amp; strategy <span class="to">→ the exec team</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The portfolio roadmap</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Product Manager</div><div class="chain-line"><span class="line-kw kw-may">MAY</span><span>reprioritise <span class="to">within the roadmap</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver a validated PRD per initiative <span class="to">→ the delivery team · before build</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">A validated PRD + prioritised roadmap</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Product Owner</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the PRD, and turns it into a backlog</span></div></div>
+      </div>
+
+      <!-- Product Director -->
+      <div class="chain role-chain" id="rc-pd">
+        <div class="chain-role"><div class="chain-role-name">Chief Product Officer</div><div class="chain-line"><span class="line-kw chain-recv">SETS</span><span>the company product OKRs</span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The company OKRs</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Product Director</div><div class="chain-line"><span class="line-kw kw-maynot">MAY NOT</span><span>set the company OKRs</span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver the portfolio roadmap &amp; strategy <span class="to">→ the exec team · quarterly</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The portfolio roadmap &amp; strategy</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Product Managers</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVE</span><span>their area's remit, and plan against it</span></div></div>
       </div>
 
       <div class="why-grid">
