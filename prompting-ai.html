@@ -55,7 +55,7 @@
       <p class="eyebrow">Guide · Prompting AI</p>
       <div class="ai-badge">Adapting for AI</div>
       <h1 class="title">Prompting AI<br>with <em>ARA.</em></h1>
-      <p class="ai-intro">AI assistants are powerful — but they fail in the same three ways that employees do. They overstep when authority is unclear. They produce the wrong thing when responsibility is undefined. And they underperform when the skill you need — a specific framework, tool, or method — is never named, so they fall back on a generic one. The fix is the same: define all three before you start.</p>
+      <p class="ai-intro">AI assistants are powerful — but they fail in the same three ways that employees do. They overstep when authority is unclear. They produce the wrong thing when responsibility is undefined. And they underperform when the skill you need — a specific framework, tool, or method — is never named, so they fall back on a generic one. The fix is the same: define the <em>role</em> — its standing authority, its ongoing responsibilities, and its named abilities — not just the one-off task in front of it. Every request it then handles stays in bounds.</p>
 
       <p class="examples-intro">The ARA prompt template</p>
       <div class="prompt-block">
@@ -70,19 +70,19 @@
 - <span class="ph">[specific decision + limit]</span>
 - Anything outside these limits: flag it and ask before proceeding.
 
-<b>Responsibility — what you must produce:</b>
-- <span class="ph">[deliverable + recipient, e.g. "A final draft delivered to me, ready to publish"]</span>
-- <span class="ph">[deliverable + recipient]</span>
-- Format: <span class="ph">[specify format, length, tone]</span>
+<b>Responsibility — what you deliver on an ongoing basis:</b>
+- <span class="ph">[deliverable · to recipient · cadence or trigger, e.g. "A publish-ready draft · to the requester · on every brief"]</span>
+- <span class="ph">[deliverable · to recipient · cadence or trigger]</span>
+- Format: <span class="ph">[how each deliverable should look — length, tone, structure]</span>
 
 <b>Ability — the named skills, tools, or frameworks to use:</b>
 - <span class="ph">[named skill or framework, e.g. "Direct-response copywriting (PAS framework)"]</span>
 - <span class="ph">[named software, e.g. "Jira, Excel, or the Microsoft Word suite"]</span>
 - <span class="ph">[named methodology, e.g. "Lean Six Sigma (DMAIC) analysis"]</span>
 
-Now: <span class="ph">[the actual task — put the situational facts and context here, not under Ability]</span></div>
+This request: <span class="ph">[one instance of the responsibilities above — the specific task and its situational facts, handled to the standing spec]</span></div>
         <div class="prompt-note">
-          <strong>Why this works:</strong> Authority stops the AI guessing what it should decide vs. flag. Responsibility pins the output so it doesn't wander. Ability names the actual skills, tools, and frameworks for the job — a copywriting framework, Excel, Jira, a named methodology — so the AI works to a known standard instead of inventing a generic one.
+          <strong>Why this works:</strong> Authority stops the AI guessing what it should decide vs. flag. Responsibility — framed as an ongoing duty with a recipient and cadence, not a one-off — pins every output, not just today's. Ability names the actual skills, tools, and frameworks for the job — a copywriting framework, Excel, Jira, a named methodology — so the AI works to a known standard instead of inventing a generic one.
         </div>
       </div>
     </section>
@@ -107,8 +107,10 @@ Authority:
 - You may reorder sections for flow
 - Do not change pricing, feature names, or CTAs without flagging
 
-Responsibility:
-- Deliver a revised landing-page hero (headline + subheadline + 3 bullets) to me
+Responsibility (ongoing):
+- Deliver publish-ready page copy · to the requester · on every brief
+- Keep all copy consistent with our brand tone-of-voice guide · always
+- Flag anything that changes pricing, feature names, or CTAs · to the marketing lead · before it ships
 - Format: headline under 10 words, subheadline under 25 words; tone direct and confident, not aggressive
 
 Ability:
@@ -116,7 +118,7 @@ Ability:
 - Copy editing to a brand tone-of-voice guide (cutting filler like "seamless", "powerful", "robust")
 - Drafting in Google Docs
 
-Now: Rewrite the hero section (current copy below). Context: the customer's main pain is a 3-day month-end close caused by missing receipts; our differentiator is auto-reconciliation against bank feeds.</div>
+This brief: Rewrite the hero section (current copy below). Context: the customer's main pain is a 3-day month-end close caused by missing receipts; our differentiator is auto-reconciliation against bank feeds.</div>
         </div>
         <div class="ex-output">
           <div class="ex-output-head">What the AI now knows to do</div>
@@ -141,17 +143,17 @@ Authority:
 - Do not recommend changes that require capex over £50,000 — flag these instead
 - Do not recommend headcount reductions — flag these for senior review
 
-Responsibility:
-- Produce a written summary of the three highest-impact process inefficiencies in the data below
-- For each: state the problem, the likely root cause (using ARA if applicable), and one actionable fix
-- Output as a short briefing document, not a bullet list
+Responsibility (ongoing):
+- Deliver a process-improvement briefing · to the Ops Director · monthly
+- Flag any depot breaching the 4-hour SLA · to the Ops Director · same day
+- Format: a short briefing document; for each issue, state the problem, the likely root cause, and one actionable fix — not a bullet list
 
 Ability:
 - Lean Six Sigma process analysis (DMAIC)
 - Root-cause analysis using the 5 Whys and fishbone (Ishikawa) diagrams
 - Data analysis in Excel; briefing written in Microsoft Word
 
-Now: Analyse the data and produce the briefing. Context: the industry benchmark is order processing under 4 hours vs our 6.2-hour average; depot managers have limited IT skills, so fixes must be low-tech.</div>
+This month: Analyse the data below and produce the briefing. Context: the industry benchmark is order processing under 4 hours vs our 6.2-hour average; depot managers have limited IT skills, so fixes must be low-tech.</div>
         </div>
         <div class="ex-output">
           <div class="ex-output-head">What the AI now knows to do</div>
@@ -177,20 +179,16 @@ Authority:
 - Do not set salary ranges — leave a placeholder; this is decided separately
 - Do not make any commitments about remote working policy — leave a placeholder
 
-Responsibility:
-- Produce a complete job specification using the ARA format:
-  1. Role overview (3–4 sentences)
-  2. Authority: decisions the role can make, with explicit limits
-  3. Responsibility: deliverables and recipients
-  4. Ability: required skills and tools
-- Avoid vague language ("excellent communicator", "team player")
+Responsibility (ongoing):
+- Deliver an ARA-structured job specification · to the hiring manager · for every new vacancy
+- Format: (1) role overview in 3–4 sentences, (2) Authority with explicit limits, (3) Responsibility with deliverables and recipients, (4) Ability with named skills; no vague language ("excellent communicator", "team player")
 
 Ability:
 - Job-specification writing to a competency framework (CIPD Profession Map)
 - Role scoping using the ARA method
 - Drafting in Microsoft Word
 
-Now: Draft the job specification. Context: the role is a Customer Success Manager at a 60-person B2B software company, reporting to the Head of Customer Success; day-to-day tools are Salesforce, Intercom and Google Workspace; the CS team of 4 covers 200 SME-to-mid-market accounts.</div>
+This vacancy: Draft the job specification. Context: the role is a Customer Success Manager at a 60-person B2B software company, reporting to the Head of Customer Success; day-to-day tools are Salesforce, Intercom and Google Workspace; the CS team of 4 covers 200 SME-to-mid-market accounts.</div>
         </div>
         <div class="ex-output">
           <div class="ex-output-head">What the AI now knows to do</div>
@@ -216,16 +214,17 @@ Authority:
 - Do not include financial projections or forward guidance — these require CFO sign-off; flag where they would normally appear
 - Do not attribute statements to named individuals without flagging
 
-Responsibility:
-- Produce a board briefing to the board of no more than 600 words covering: (1) Q3 performance summary, (2) the two most urgent issues requiring board decision, (3) recommended next actions
-- Format: direct, executive-level tone; no preamble, no executive summary of the executive summary; assume board members have read the data pack
+Responsibility (ongoing):
+- Deliver a board briefing · to the board · before every board meeting
+- Maintain the exec decision log · to the exec team · weekly
+- Format: no more than 600 words covering (1) performance summary, (2) the two most urgent issues requiring a board decision, (3) recommended next actions; direct, executive-level tone, no preamble; assume the board has read the data pack
 
 Ability:
 - Executive briefing writing using BLUF (Bottom Line Up Front)
 - Issue prioritisation using an impact/urgency (Eisenhower) matrix
 - Data synthesis in Excel; briefing built in PowerPoint
 
-Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with rising burn; the CEO has flagged two issues (an enterprise customer at churn risk, and a hiring-freeze debate); the board is 3 investors focused on burn, 2 founders and 1 independent.</div>
+This meeting: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with rising burn; the CEO has flagged two issues (an enterprise customer at churn risk, and a hiring-freeze debate); the board is 3 investors focused on burn, 2 founders and 1 independent.</div>
         </div>
         <div class="ex-output">
           <div class="ex-output-head">What the AI now knows to do</div>
