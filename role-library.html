@@ -16,7 +16,8 @@
     <a href="/" class="nav-logo">Ditching Peter</a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/getting-started">Getting Started</a></li>
+      <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library" style="color:var(--accent)">Role Library</a></li>
       <li><a href="/blog">Blog</a></li>
@@ -25,12 +26,13 @@
     <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-drawer" id="navDrawer">
-    <a href="/"              onclick="closeNav()">Home</a>
-    <a href="/documentation" onclick="closeNav()">Documentation</a>
-    <a href="/prompting-ai"  onclick="closeNav()">Prompting AI</a>
-    <a href="/role-library"  onclick="closeNav()" style="color:var(--accent)">Role Library</a>
-    <a href="/blog"          onclick="closeNav()">Blog</a>
-    <a href="/about"         onclick="closeNav()">About</a>
+    <a href="/" onclick="closeNav()">Home</a>
+    <a href="/getting-started" onclick="closeNav()">Getting Started</a>
+    <a href="/format" onclick="closeNav()">Format</a>
+    <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
+    <a href="/role-library" onclick="closeNav()" style="color:var(--accent)">Role Library</a>
+    <a href="/blog" onclick="closeNav()">Blog</a>
+    <a href="/about" onclick="closeNav()">About</a>
   </div>
 </nav>
 
@@ -57,7 +59,7 @@
   <main class="docs-main">
 
     <section id="library-top">
-      <p class="eyebrow">Documentation · Role Library</p>
+      <p class="eyebrow">Role Library</p>
       <h1 class="title">The role <em>library.</em></h1>
       <p class="lede">Real roles, each written as an ARA spec in the <strong>MAY / MUST / CAN</strong> format. Same structure throughout — which is what makes handoffs legible: one role's <strong>MUST … to →</strong> is another role's input.</p>
 

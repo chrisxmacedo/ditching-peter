@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Format — Ditching Peter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/docs.css">
+<style>
+  .pillar-kw{margin-bottom:14px;}
+  .doc-copy{max-width:720px;}
+  .doc-copy p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:14px;}
+  .doc-copy p:last-child{margin-bottom:0;}
+  .doc-copy strong{color:var(--ink);font-weight:500;}
+  .doc-copy a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+  .syntax{font-family:'DM Mono',monospace;font-size:14px;background:var(--bg-tint);border:1px solid var(--rule);border-left:3px solid var(--accent);padding:16px 20px;margin:22px 0;color:var(--ink-soft);line-height:1.8;}
+  .syntax .k{color:var(--accent-dark);font-weight:500;}
+  .syntax .f{color:var(--muted);}
+  .spec-doc{margin-top:24px;max-width:720px;}
+  @media (prefers-color-scheme: dark){ .syntax{background-color:var(--bg-tint) !important;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/getting-started">Getting Started</a></li>
+      <li><a href="/format" style="color:var(--accent)">Format</a></li>
+      <li><a href="/prompting-ai">Prompting AI</a></li>
+      <li><a href="/role-library">Role Library</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/" onclick="closeNav()">Home</a>
+    <a href="/getting-started" onclick="closeNav()">Getting Started</a>
+    <a href="/format" onclick="closeNav()" style="color:var(--accent)">Format</a>
+    <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
+    <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/blog" onclick="closeNav()">Blog</a>
+    <a href="/about" onclick="closeNav()">About</a>
+  </div>
+</nav>
+
+<div class="docs-shell">
+
+  <!-- ON-THIS-PAGE SIDEBAR -->
+  <aside class="docs-sidebar">
+    <div class="docs-nav-title">Format</div>
+    <div class="side-group">
+      <div class="side-group-label">On this page</div>
+      <a class="side-link active" href="#authority">Authority · MAY</a>
+      <a class="side-link" href="#responsibility">Responsibility · MUST</a>
+      <a class="side-link" href="#ability">Ability · CAN</a>
+      <a class="side-link" href="#writing">Writing a role spec</a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="docs-main">
+
+    <section id="intro">
+      <p class="eyebrow">The ARA Role Spec · Format</p>
+      <h1 class="title">The <em>format.</em></h1>
+      <p class="lede">Three keywords, one line each. Here is exactly how to write a <strong>MAY</strong>, a <strong>MUST</strong>, and a <strong>CAN</strong> — and how to assemble them into a role spec.</p>
+    </section>
+
+    <section id="authority">
+      <div class="pillar-kw"><span class="kw kw-may">MAY</span></div>
+      <h2 class="sec">Authority</h2>
+      <div class="doc-copy">
+        <p><strong>Authority is permission</strong> — a specific decision the role can make without asking anyone. Every authority is written as a <strong>MAY</strong> line, and every MAY line is bounded: a limit, and an escalation path for anything beyond it.</p>
+      </div>
+      <div class="syntax"><span class="k">MAY</span> [decision] <span class="f">·</span> up to [limit] <span class="f">·</span> else → [escalate to]</div>
+      <div class="doc-copy">
+        <p><strong>Be specific, not broad.</strong> "Discount a sale up to 7% of contract value" is authority. "Manages the sales process" is not — if you can't put a number or a boundary on it, it isn't finished.</p>
+        <p><strong>Every limit names a real escalation.</strong> Anything past the limit routes to a role that actually holds the authority to decide it — which you can check against that role's own MAY lines.</p>
+        <p><strong>Authority is priced in risk.</strong> What a role is paid tracks the risk it carries on the company's behalf, not the depth of its knowledge. A documented authority list makes that risk legible.</p>
+      </div>
+      <div class="spec-doc">
+        <div class="spec-doc-head"><span class="spec-role">Example — Sales Director</span><span class="spec-reports">Authority</span></div>
+        <div class="ara-block">
+          <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $150,000</span> · else → <span class="esc">CEO</span></span></div></div>
+          <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 7% of value</span> · else → <span class="esc">CEO</span></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="responsibility">
+      <div class="pillar-kw"><span class="kw kw-must">MUST</span></div>
+      <h2 class="sec">Responsibility</h2>
+      <div class="doc-copy">
+        <p><strong>Responsibility is obligation</strong> — something the role must produce, and someone who receives it. Written as a <strong>MUST</strong> line with a deliverable, a recipient, and a cadence or trigger.</p>
+      </div>
+      <div class="syntax"><span class="k">MUST</span> [deliverable] <span class="f">·</span> to → [recipient] <span class="f">·</span> when [cadence]</div>
+      <div class="doc-copy">
+        <p><strong>A deliverable, not an activity.</strong> "Attends the weekly meeting" is an activity. "Delivers a pipeline report to the CEO by 17:00 every Friday" is a responsibility — you can assess it at review time.</p>
+        <p><strong>Format is not a deliverable.</strong> Tone, length, and structure describe <em>how</em> the deliverable should look — keep them as attributes of the line, never as responsibilities of their own.</p>
+        <p><strong>Name the recipient.</strong> A deliverable with no recipient is where information quietly stops flowing — with no one at fault, because no one was ever told it was theirs.</p>
+        <p><strong>Responsibilities define the process for free.</strong> Chain each MUST to the role that receives it and the delivery process falls out of the specs — one role's output is the next role's input.</p>
+      </div>
+      <div class="spec-doc">
+        <div class="spec-doc-head"><span class="spec-role">Example — Sales Executive</span><span class="spec-reports">Responsibility</span></div>
+        <div class="ara-block">
+          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Inform the PMO of new sales &amp; details</span><span class="line-meta">to → <span class="to">PMO</span> · within 24h of signing</span></div></div>
+          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Sell only from the approved product list</span><span class="line-meta">source → <span class="to">Sales Director</span> · always</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ability">
+      <div class="pillar-kw"><span class="kw kw-can">CAN</span></div>
+      <h2 class="sec">Ability</h2>
+      <div class="doc-copy">
+        <p><strong>Ability is capability</strong> — a skill the role must be able to perform. Written as a <strong>CAN</strong> line naming a specific, real skill, tool, or framework.</p>
+      </div>
+      <div class="syntax"><span class="k">CAN</span> [named skill / tool / framework]</div>
+      <div class="doc-copy">
+        <p><strong>A skill, not knowledge.</strong> Ability is what a person can do, not facts they happen to hold. "Administer Salesforce" is an ability; "understands sales" is not.</p>
+        <p><strong>Name it concretely.</strong> "Salesforce administration", "Lean Six Sigma (DMAIC)", "financial modelling in Excel" — not "good with systems". If it can't be named, it can't be taught, hired for, or assessed.</p>
+        <p><strong>Ability is the diagnostic.</strong> When someone underperforms, ARA tells you where to look: overreaching authority, an undelivered responsibility, or a missing ability. Three different problems, three different fixes.</p>
+      </div>
+      <div class="spec-doc">
+        <div class="spec-doc-head"><span class="spec-role">Example — Sales Director</span><span class="spec-reports">Ability</span></div>
+        <div class="ara-block">
+          <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Administer Salesforce (CRM)</span></div></div>
+          <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Build reports &amp; dashboards in Salesforce and Excel</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <h2 class="sec">Writing a role spec</h2>
+      <div class="doc-copy">
+        <p>A complete spec is a role's name, its reporting line, and its three blocks — MAY, MUST, CAN. Assemble it in that order and keep every line declarative.</p>
+      </div>
+      <div class="why-grid" style="margin-top:22px;">
+        <div class="why-card"><div class="n">1</div><h4>Name the role &amp; its line</h4><p>Start with the role title and who it reports to. The reporting line is where its escalations resolve.</p></div>
+        <div class="why-card"><div class="n">2</div><h4>List MAY, then MUST, then CAN</h4><p>Every permission with a limit and escalation; every deliverable with a recipient and cadence; every skill named concretely.</p></div>
+        <div class="why-card"><div class="n">3</div><h4>Check it against its neighbours</h4><p>Each escalation should meet a role that can decide it; each deliverable should be some role's input. Gaps show up between the specs.</p></div>
+      </div>
+      <div class="doc-copy" style="margin-top:26px;">
+        <p><strong>Keep it declarative.</strong> A spec states what is true of the role — it never describes how the work flows. The person in the role owns the process. See complete examples in the <a href="/role-library">role library</a>.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>Ditching Peter — Format</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
+  function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
+  // Sidebar scroll-spy
+  (function(){
+    const links = [...document.querySelectorAll('.docs-sidebar a.side-link[href^="#"]')];
+    const map = {};
+    links.forEach(l => { map[l.getAttribute('href').slice(1)] = l; });
+    const setActive = id => { if(!map[id]) return; links.forEach(l=>l.classList.remove('active')); map[id].classList.add('active'); };
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('.docs-main > section[id]').forEach(s => obs.observe(s));
+  })();
+</script>
+</body>
+</html>

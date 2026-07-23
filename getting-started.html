@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documentation — Ditching Peter</title>
+<title>Getting Started — Ditching Peter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,7 +16,8 @@
     <a href="/" class="nav-logo">Ditching Peter</a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/documentation" style="color:var(--accent)">Documentation</a></li>
+      <li><a href="/getting-started" style="color:var(--accent)">Getting Started</a></li>
+      <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
       <li><a href="/blog">Blog</a></li>
@@ -25,12 +26,13 @@
     <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-drawer" id="navDrawer">
-    <a href="/"              onclick="closeNav()">Home</a>
-    <a href="/documentation" onclick="closeNav()" style="color:var(--accent)">Documentation</a>
-    <a href="/prompting-ai"  onclick="closeNav()">Prompting AI</a>
-    <a href="/role-library"  onclick="closeNav()">Role Library</a>
-    <a href="/blog"          onclick="closeNav()">Blog</a>
-    <a href="/about"         onclick="closeNav()">About</a>
+    <a href="/" onclick="closeNav()">Home</a>
+    <a href="/getting-started" onclick="closeNav()" style="color:var(--accent)">Getting Started</a>
+    <a href="/format" onclick="closeNav()">Format</a>
+    <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
+    <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/blog" onclick="closeNav()">Blog</a>
+    <a href="/about" onclick="closeNav()">About</a>
   </div>
 </nav>
 
@@ -38,7 +40,7 @@
 
   <!-- SIDEBAR -->
   <aside class="docs-sidebar" id="docsSidebar">
-    <div class="docs-nav-title">Documentation</div>
+    <div class="docs-nav-title">Getting Started</div>
     <div class="side-group">
       <div class="side-group-label">On this page</div>
       <a class="side-link active" href="#overview">Introduction</a>
@@ -52,7 +54,7 @@
   <main class="docs-main">
 
     <section id="overview">
-      <p class="eyebrow">Documentation · The ARA Role Spec</p>
+      <p class="eyebrow">Getting Started · The ARA Role Spec</p>
       <h1 class="title">Every role,<br>defined as a <em>spec.</em></h1>
       <p class="lede">A role isn't a process — the person holding it defines the process. ARA defines the <strong>envelope</strong> they work within: what they <strong>may</strong> decide, what they <strong>must</strong> deliver, and what they <strong>can</strong> do. Three declarative statements. One structured, readable, machine-legible spec per role.</p>
     </section>

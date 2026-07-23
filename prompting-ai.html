@@ -16,7 +16,8 @@
     <a href="/" class="nav-logo">Ditching Peter</a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/getting-started">Getting Started</a></li>
+      <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai" style="color:var(--accent)">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
       <li><a href="/blog">Blog</a></li>
@@ -25,12 +26,13 @@
     <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-drawer" id="navDrawer">
-    <a href="/"              onclick="closeNav()">Home</a>
-    <a href="/documentation" onclick="closeNav()">Documentation</a>
-    <a href="/prompting-ai"  onclick="closeNav()" style="color:var(--accent)">Prompting AI</a>
-    <a href="/role-library"  onclick="closeNav()">Role Library</a>
-    <a href="/blog"          onclick="closeNav()">Blog</a>
-    <a href="/about"         onclick="closeNav()">About</a>
+    <a href="/" onclick="closeNav()">Home</a>
+    <a href="/getting-started" onclick="closeNav()">Getting Started</a>
+    <a href="/format" onclick="closeNav()">Format</a>
+    <a href="/prompting-ai" onclick="closeNav()" style="color:var(--accent)">Prompting AI</a>
+    <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/blog" onclick="closeNav()">Blog</a>
+    <a href="/about" onclick="closeNav()">About</a>
   </div>
 </nav>
 
@@ -50,7 +52,7 @@
   <main class="docs-main">
 
     <section id="top" style="max-width:1000px;">
-      <p class="eyebrow">Documentation · Guide</p>
+      <p class="eyebrow">Guide · Prompting AI</p>
       <div class="ai-badge">Adapting for AI</div>
       <h1 class="title">Prompting AI<br>with <em>ARA.</em></h1>
       <p class="ai-intro">AI assistants are powerful — but they fail in the same three ways that employees do. They overstep when authority is unclear. They produce the wrong thing when responsibility is undefined. And they underperform when the skill you need — a specific framework, tool, or method — is never named, so they fall back on a generic one. The fix is the same: define all three before you start.</p>
@@ -106,9 +108,8 @@ Authority:
 - Do not change pricing, feature names, or CTAs without flagging
 
 Responsibility:
-- Deliver a revised landing page hero section (headline + subheadline + 3 bullet points)
-- Tone: direct, no fluff, confident but not aggressive
-- Length: headline under 10 words, subheadline under 25 words
+- Deliver a revised landing-page hero (headline + subheadline + 3 bullets) to me
+- Format: headline under 10 words, subheadline under 25 words; tone direct and confident, not aggressive
 
 Ability:
 - Direct-response copywriting using the PAS (Problem–Agitate–Solution) framework
@@ -122,7 +123,7 @@ Now: Rewrite the hero section (current copy below). Context: the customer's main
           <div class="ex-output-body">
             <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Can rewrite copy freely — but will flag if asked to change pricing or CTA</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces: hero headline + subheadline + 3 bullets, within specified length</span></div>
-            <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone and format are explicit — no guessing what "good" looks like</span></div>
+            <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Format is explicit — length, tone, structure — so there's no guessing what "good" looks like</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">PAS-framework copywriting — a proven persuasion structure, not generic prose</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Tone-of-voice editing in Google Docs — filler cut, length limit held</span></div>
           </div>
@@ -216,9 +217,8 @@ Authority:
 - Do not attribute statements to named individuals without flagging
 
 Responsibility:
-- Produce a board briefing of no more than 600 words covering: (1) Q3 performance summary, (2) the two most urgent issues requiring board decision, (3) recommended next actions
-- Tone: direct, executive-level — assume board members have read the data pack
-- No preamble, no executive summary of the executive summary
+- Produce a board briefing to the board of no more than 600 words covering: (1) Q3 performance summary, (2) the two most urgent issues requiring board decision, (3) recommended next actions
+- Format: direct, executive-level tone; no preamble, no executive summary of the executive summary; assume board members have read the data pack
 
 Ability:
 - Executive briefing writing using BLUF (Bottom Line Up Front)
@@ -232,7 +232,7 @@ Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with
           <div class="ex-output-body">
             <div class="ex-out-row"><span class="ex-out-type type-auth">Auth</span><span class="ex-out-text">Drafts and reframes freely — flags where financials or named attributions would normally appear</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Produces exactly: Q3 summary + 2 decision items + next actions, under 600 words</span></div>
-            <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Tone is calibrated: executive-level, no preamble — AI won't pad or summarise the summary</span></div>
+            <div class="ex-out-row"><span class="ex-out-type type-resp">Resp</span><span class="ex-out-text">Format is calibrated: executive-level tone, no preamble — AI won't pad or summarise the summary</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">BLUF briefing structure — the two decision issues stated up front, not buried</span></div>
             <div class="ex-out-row"><span class="ex-out-type type-ability">Ability</span><span class="ex-out-text">Impact/urgency prioritisation — framing shaped for an investor board focused on burn</span></div>
           </div>
