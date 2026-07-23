@@ -258,3 +258,9 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;colo
 .chain-role.chain-focus{border:2px solid var(--accent);background:var(--accent-light);}
 .chain-role.chain-focus .chain-role-name{color:var(--accent-dark);}
 @media (prefers-color-scheme: dark){ .chain-role.chain-focus{background-color:var(--accent-light) !important;} }
+/* ── Role permalink copy button ── */
+.spec-doc-head{position:relative;}
+.copy-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--rule);border-radius:3px;padding:4px 9px;cursor:pointer;transition:color .15s,border-color .15s,background .15s;white-space:nowrap;}
+.copy-link:hover{color:var(--accent);border-color:var(--accent);}
+.copy-link.copied{color:var(--good);border-color:var(--good);}
+.spec-role-row{display:flex;align-items:center;gap:12px;}

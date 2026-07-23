@@ -362,6 +362,24 @@
     activateRole(deep||'r-sd');
     if(deep){ setTimeout(function(){ var t=document.getElementById('library-top'); if(t) t.scrollIntoView(); },60); }
   })();
+
+  // ── Copy-link affordance on each role ──
+  function copyRoleLink(btn){
+    var slug=btn.getAttribute('data-slug');
+    var url=location.origin+location.pathname+'#'+slug;
+    var done=function(){ btn.textContent='Copied ✓'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent='Copy link'; btn.classList.remove('copied'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done).catch(done); } else { done(); }
+  }
+  document.querySelectorAll('.role-panel').forEach(function(panel){
+    var slug=slugForId(panel.id); if(!slug) return;
+    var head=panel.querySelector('.spec-doc-head'); if(!head) return;
+    var roleSpan=head.querySelector('.spec-role'); if(!roleSpan||head.querySelector('.copy-link')) return;
+    var wrap=document.createElement('span'); wrap.className='spec-role-row';
+    var btn=document.createElement('button'); btn.type='button'; btn.className='copy-link'; btn.textContent='Copy link';
+    btn.setAttribute('data-slug',slug); btn.setAttribute('aria-label','Copy permalink to this role');
+    btn.addEventListener('click',function(){ copyRoleLink(btn); });
+    roleSpan.parentNode.insertBefore(wrap,roleSpan); wrap.appendChild(roleSpan); wrap.appendChild(btn);
+  });
 </script>
 </body>
 </html>
