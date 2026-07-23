@@ -264,3 +264,6 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;colo
 .copy-link:hover{color:var(--accent);border-color:var(--accent);}
 .copy-link.copied{color:var(--good);border-color:var(--good);}
 .spec-role-row{display:flex;align-items:center;gap:12px;}
+/* ── Clickable recipient cross-references ── */
+.role-xref{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor;cursor:pointer;transition:opacity .15s;}
+.role-xref:hover{opacity:.6;}
