@@ -43,14 +43,14 @@
     <div class="docs-nav-title">Role Library</div>
     <div class="side-group">
       <div class="side-group-label">Roles</div>
-      <a class="side-link active" href="#library-top" onclick="selectRole(event,this,'r-sd')">Sales Director</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-cse')">Sales Executive</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-csm')">Customer Success Manager</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-ops')">Operations Analyst</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-cos')">Chief of Staff</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-po')">Product Owner</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-pm')">Product Manager</a>
-      <a class="side-link" href="#library-top" onclick="selectRole(event,this,'r-pd')">Product Director</a>
+      <a class="side-link active" href="#sales-director">Sales Director</a>
+      <a class="side-link" href="#sales-executive">Sales Executive</a>
+      <a class="side-link" href="#customer-success-manager">Customer Success Manager</a>
+      <a class="side-link" href="#operations-analyst">Operations Analyst</a>
+      <a class="side-link" href="#chief-of-staff">Chief of Staff</a>
+      <a class="side-link" href="#product-owner">Product Owner</a>
+      <a class="side-link" href="#product-manager">Product Manager</a>
+      <a class="side-link" href="#product-director">Product Director</a>
     </div>
     <div class="side-group">
       <div class="side-group-label">About the library</div>
@@ -337,15 +337,31 @@
 <script>
   function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
   function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
-  function selectRole(e, el, id){
-    e.preventDefault();
-    document.querySelectorAll('.docs-sidebar .side-link').forEach(l=>l.classList.remove('active'));
-    el.classList.add('active');
-    document.querySelectorAll('.role-panel').forEach(p=>p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    document.querySelectorAll('.role-chain').forEach(c=>c.classList.remove('active'));
-    const chain=document.getElementById('rc-'+id.slice(2)); if(chain) chain.classList.add('active');
+  // ── Per-role permalinks (hash routing) ──
+  const ROLE_SLUGS = {
+    'sales-director':'r-sd','sales-executive':'r-cse','customer-success-manager':'r-csm',
+    'operations-analyst':'r-ops','chief-of-staff':'r-cos',
+    'product-owner':'r-po','product-manager':'r-pm','product-director':'r-pd'
+  };
+  function slugForId(id){ return Object.keys(ROLE_SLUGS).find(function(s){return ROLE_SLUGS[s]===id;}); }
+  function activateRole(id){
+    document.querySelectorAll('.role-panel').forEach(function(p){p.classList.remove('active');});
+    var panel=document.getElementById(id); if(panel) panel.classList.add('active');
+    document.querySelectorAll('.role-chain').forEach(function(c){c.classList.remove('active');});
+    var chain=document.getElementById('rc-'+id.slice(2)); if(chain) chain.classList.add('active');
+    document.querySelectorAll('.docs-sidebar .side-link').forEach(function(l){l.classList.remove('active');});
+    var link=document.querySelector('.docs-sidebar a[href="#'+slugForId(id)+'"]'); if(link) link.classList.add('active');
   }
+  function hashSlug(){ return decodeURIComponent((location.hash||'').replace('#','')); }
+  window.addEventListener('hashchange', function(){
+    var id=ROLE_SLUGS[hashSlug()];
+    if(id){ activateRole(id); var t=document.getElementById('library-top'); if(t) t.scrollIntoView(); }
+  });
+  (function(){
+    var deep=ROLE_SLUGS[hashSlug()];
+    activateRole(deep||'r-sd');
+    if(deep){ setTimeout(function(){ var t=document.getElementById('library-top'); if(t) t.scrollIntoView(); },60); }
+  })();
 </script>
 </body>
 </html>
