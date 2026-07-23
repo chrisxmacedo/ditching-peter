@@ -17,6 +17,7 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/documentation" style="color:var(--accent)">Documentation</a></li>
+      <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/about">About</a></li>
@@ -26,6 +27,7 @@
   <div class="nav-drawer" id="navDrawer">
     <a href="/"              onclick="closeNav()">Home</a>
     <a href="/documentation" onclick="closeNav()" style="color:var(--accent)">Documentation</a>
+    <a href="/prompting-ai"  onclick="closeNav()">Prompting AI</a>
     <a href="/role-library"  onclick="closeNav()">Role Library</a>
     <a href="/blog"          onclick="closeNav()">Blog</a>
     <a href="/about"         onclick="closeNav()">About</a>
@@ -38,21 +40,11 @@
   <aside class="docs-sidebar" id="docsSidebar">
     <div class="docs-nav-title">Documentation</div>
     <div class="side-group">
-      <div class="side-group-label">Getting started</div>
-      <a class="side-link" href="/documentation">Introduction</a>
-      <a class="side-link" href="/documentation#may-must-can">May · Must · Can</a>
-      <a class="side-link" href="/documentation#a-role-in-full">A role, in full</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">Guides</div>
-      <a class="side-link" href="/prompting-ai">Prompting AI</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">The format · coming soon</div>
-      <span class="side-link soon">Authority · MAY <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Responsibility · MUST <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Ability · CAN <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Writing a role spec <span class="side-badge">soon</span></span>
+      <div class="side-group-label">On this page</div>
+      <a class="side-link active" href="#overview">Introduction</a>
+      <a class="side-link" href="#may-must-can">May · Must · Can</a>
+      <a class="side-link" href="#a-role-in-full">A role, in full</a>
+      <a class="side-link" href="#failure-modes">The three failure modes</a>
     </div>
   </aside>
 
@@ -121,6 +113,16 @@
       <p style="margin-top:34px;"><a href="/role-library" class="cta">Browse the role library →</a></p>
     </section>
 
+    <section id="failure-modes">
+      <h2 class="sec">The three failure modes</h2>
+      <p class="sec-intro">Each maps to one missing pillar — the same failure whether the role is held by a person or an AI. Leave a pillar undefined and this is what you get.</p>
+      <div class="why-grid">
+        <div class="why-card"><div class="n" style="color:var(--accent)">A</div><h4>Undefined authority → scope creep</h4><p>A role with no authority boundaries makes decisions nobody meant to delegate — a person oversteps; an AI rewrites your CTA. Any decision taken that wasn't explicitly granted was made without authority.</p></div>
+        <div class="why-card"><div class="n" style="color:var(--good)">R</div><h4>Undefined responsibility → drift</h4><p>With no clear deliverable — format, recipient, cadence — the output is technically responsive but practically useless: it answered the question asked, not the one that needed answering. Responsibility pins the output.</p></div>
+        <div class="why-card"><div class="n" style="color:var(--amber)">A</div><h4>Undefined ability → generic craft</h4><p>Name the skill, tool, or framework the work demands — PAS copywriting, Lean Six Sigma, Excel, Jira — and the work meets a known standard. Leave it blank and you get a generic version you have to redo.</p></div>
+      </div>
+    </section>
+
   </main>
 </div>
 
@@ -135,14 +137,9 @@
 
   // Sidebar scroll-spy
   (function(){
-    const links = [...document.querySelectorAll('.docs-sidebar a.side-link')];
+    const links = [...document.querySelectorAll('.docs-sidebar a.side-link[href^="#"]')];
     const map = {};
-    links.forEach(l => {
-      const href = l.getAttribute('href');
-      if (href === '/documentation') map['overview'] = l;
-      else if (href && href.indexOf('/documentation#') === 0) map[href.split('#')[1]] = l;
-    });
-    if (map['overview']) map['overview'].classList.add('active');
+    links.forEach(l => { map[l.getAttribute('href').slice(1)] = l; });
     const setActive = id => { if(!map[id]) return; links.forEach(l=>l.classList.remove('active')); map[id].classList.add('active'); };
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });

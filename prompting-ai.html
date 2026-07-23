@@ -16,7 +16,8 @@
     <a href="/" class="nav-logo">Ditching Peter</a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/documentation" style="color:var(--accent)">Documentation</a></li>
+      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/prompting-ai" style="color:var(--accent)">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/about">About</a></li>
@@ -25,7 +26,8 @@
   </div>
   <div class="nav-drawer" id="navDrawer">
     <a href="/"              onclick="closeNav()">Home</a>
-    <a href="/documentation" onclick="closeNav()" style="color:var(--accent)">Documentation</a>
+    <a href="/documentation" onclick="closeNav()">Documentation</a>
+    <a href="/prompting-ai"  onclick="closeNav()" style="color:var(--accent)">Prompting AI</a>
     <a href="/role-library"  onclick="closeNav()">Role Library</a>
     <a href="/blog"          onclick="closeNav()">Blog</a>
     <a href="/about"         onclick="closeNav()">About</a>
@@ -34,25 +36,13 @@
 
 <div class="docs-shell">
 
-  <!-- DOCUMENTATION SIDEBAR -->
+  <!-- ON-THIS-PAGE SIDEBAR -->
   <aside class="docs-sidebar">
-    <div class="docs-nav-title">Documentation</div>
+    <div class="docs-nav-title">Prompting AI</div>
     <div class="side-group">
-      <div class="side-group-label">Getting started</div>
-      <a class="side-link" href="/documentation">Introduction</a>
-      <a class="side-link" href="/documentation#may-must-can">May · Must · Can</a>
-      <a class="side-link" href="/documentation#a-role-in-full">A role, in full</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">Guides</div>
-      <a class="side-link active" href="/prompting-ai">Prompting AI</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">The format · coming soon</div>
-      <span class="side-link soon">Authority · MAY <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Responsibility · MUST <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Ability · CAN <span class="side-badge">soon</span></span>
-      <span class="side-link soon">Writing a role spec <span class="side-badge">soon</span></span>
+      <div class="side-group-label">On this page</div>
+      <a class="side-link active" href="#top">The prompt template</a>
+      <a class="side-link" href="#examples">Worked examples</a>
     </div>
   </aside>
 
@@ -250,28 +240,6 @@ Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with
       </div>
     </section>
 
-    <section id="principles" style="max-width:1000px;">
-      <h2 class="sec">The three failure modes</h2>
-      <p class="sec-intro">Each maps to one missing pillar — the same failures you see in an under-defined role.</p>
-      <div class="ai-principles">
-        <div class="ai-principle">
-          <div class="ai-principle-num">01</div>
-          <h4>Undefined authority produces scope creep</h4>
-          <p>An AI without authority boundaries will make decisions you didn't intend to delegate. It will rewrite the CTA, change the product name, alter the tone entirely. Every decision the AI makes that you didn't explicitly grant is a decision made without authority.</p>
-        </div>
-        <div class="ai-principle">
-          <div class="ai-principle-num">02</div>
-          <h4>Undefined responsibility produces drift</h4>
-          <p>Without a clear deliverable — format, length, recipient, purpose — the AI produces something technically responsive but practically useless. It answered the question you typed, not the question you needed answered. Responsibility pins the output.</p>
-        </div>
-        <div class="ai-principle">
-          <div class="ai-principle-num">03</div>
-          <h4>Undefined ability produces generic craft</h4>
-          <p>Ability is the named skill, tool, or framework the work demands — the PAS copywriting framework, Lean Six Sigma, Excel, Jira. Specify it and the AI works to that standard. Leave it blank and it defaults to a generic version — a first draft you have to rewrite entirely.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 </div>
 
@@ -297,6 +265,17 @@ Now: Draft the briefing. Context: Series B SaaS, ARR £4.2m, 40% YoY growth with
       setTimeout(()=>{btn.textContent='Copy'; btn.classList.remove('copied');},2000);
     });
   }
+  // Sidebar scroll-spy
+  (function(){
+    const links = [...document.querySelectorAll('.docs-sidebar a.side-link[href^="#"]')];
+    const map = {};
+    links.forEach(l => { map[l.getAttribute('href').slice(1)] = l; });
+    const setActive = id => { if(!map[id]) return; links.forEach(l=>l.classList.remove('active')); map[id].classList.add('active'); };
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('.docs-main > section[id]').forEach(s => obs.observe(s));
+  })();
 </script>
 </body>
 </html>
