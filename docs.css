@@ -149,3 +149,31 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;colo
   .line-meta{white-space:normal;}
   footer{padding:28px 22px;flex-direction:column;gap:10px;text-align:center;}
 }
+
+/* ── DOCS SHELL (sidebar layout) ── */
+.docs-shell{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:252px 1fr;padding-top:58px;}
+.docs-sidebar{border-right:1px solid var(--rule);padding:36px 22px 60px;position:sticky;top:58px;align-self:start;max-height:calc(100vh - 58px);overflow-y:auto;}
+.docs-nav-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:22px;padding-left:10px;}
+.side-group{margin-bottom:24px;}
+.side-group-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-left:10px;}
+.side-link{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;color:var(--ink-soft);text-decoration:none;padding:6px 10px;border-left:2px solid transparent;line-height:1.35;transition:color .15s,background .15s;}
+.side-link:hover{color:var(--accent);background:var(--bg-tint);}
+.side-link.active{color:var(--accent);border-left-color:var(--accent);font-weight:500;background:var(--accent-light);}
+.side-link.soon{color:#9ca3af;pointer-events:none;}
+.side-badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:1px 5px;white-space:nowrap;}
+.docs-main{min-width:0;}
+.docs-main > section{max-width:860px;margin:0;padding:52px 52px;}
+.docs-main > section:first-child{padding-top:56px;}
+
+@media (prefers-color-scheme: dark){
+  .docs-sidebar{background-color:#fff !important;}
+  .side-link{color:var(--ink-soft) !important;}
+  .side-link.active{color:var(--accent) !important;background-color:var(--accent-light) !important;}
+  .side-link.soon{color:#9ca3af !important;}
+}
+
+@media(max-width:900px){
+  .docs-shell{grid-template-columns:1fr;}
+  .docs-sidebar{position:static;max-height:none;border-right:none;border-bottom:1px solid var(--rule);padding:20px 22px;}
+  .docs-main > section,.docs-main > section:first-child{padding:40px 22px;}
+}

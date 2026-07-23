@@ -32,139 +32,163 @@
   </div>
 </nav>
 
-<!-- HEADER -->
-<section style="padding-top:130px;">
-  <p class="eyebrow"><a href="/documentation" style="color:var(--accent);text-decoration:none;">Documentation</a> · Role Library</p>
-  <h1 class="title">The role <em>library.</em></h1>
-  <p class="lede">Real roles, each written as an ARA spec in the <strong>MAY / MUST / CAN</strong> format. Same structure throughout — which is what makes handoffs legible: one role's <strong>MUST … to →</strong> is another role's input.</p>
-</section>
+<div class="docs-shell">
 
-<!-- LIBRARY -->
-<section>
-  <div class="role-tabs">
-    <div class="role-tab active" onclick="showRole(this,'r-sd')">Sales Director</div>
-    <div class="role-tab" onclick="showRole(this,'r-cse')">Sales Executive</div>
-    <div class="role-tab" onclick="showRole(this,'r-csm')">Customer Success Mgr</div>
-    <div class="role-tab" onclick="showRole(this,'r-ops')">Operations Analyst</div>
-    <div class="role-tab" onclick="showRole(this,'r-cos')">Chief of Staff</div>
-  </div>
-
-  <!-- Sales Director -->
-  <div id="r-sd" class="role-panel active">
-    <div class="spec-doc">
-      <div class="spec-doc-head"><span class="spec-role">Sales Director</span><span class="spec-reports">Reports to · CEO</span></div>
-      <div class="ara-block"><div class="ara-label">Authority</div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $150,000</span> · else → <span class="esc">CEO</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 7% of value</span> · else → <span class="esc">CEO</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Commit the quarterly sales budget</span><span class="line-meta"><span class="lim">up to $50,000 / qtr</span> · else → <span class="esc">CEO</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Spend the discretionary fund</span><span class="line-meta"><span class="lim">up to $10,000 / yr</span> · else → <span class="esc">CEO</span></span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Responsibility</div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep the approved product list current</span><span class="line-meta">to → <span class="to">Sales Executives</span> · when it changes</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the pipeline report</span><span class="line-meta">to → <span class="to">CEO</span> · weekly, Fri 17:00</span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Ability</div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Administer Salesforce (CRM)</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Build reports &amp; dashboards in Salesforce and Excel</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Manage lead &amp; contract data in Salesforce</span></div></div>
-      </div>
+  <!-- SIDEBAR -->
+  <aside class="docs-sidebar" id="docsSidebar">
+    <div class="docs-nav-title">Documentation</div>
+    <div class="side-group">
+      <div class="side-group-label">Getting started</div>
+      <a class="side-link" href="/documentation">Introduction</a>
+      <a class="side-link" href="/documentation#may-must-can">May · Must · Can</a>
+      <a class="side-link" href="/documentation#a-role-in-full">A role, in full</a>
+      <a class="side-link" href="/documentation#why">Why a spec, not prose</a>
     </div>
-  </div>
-
-  <!-- Sales Executive -->
-  <div id="r-cse" class="role-panel">
-    <div class="spec-doc">
-      <div class="spec-doc-head"><span class="spec-role">Sales Executive</span><span class="spec-reports">Reports to · Sales Director</span></div>
-      <div class="ara-block"><div class="ara-label">Authority</div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $70,000</span> · else → <span class="esc">Sales Director</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 5% of value</span> · else → <span class="esc">Sales Director</span></span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Responsibility</div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Inform the PMO of new sales &amp; details</span><span class="line-meta">to → <span class="to">PMO</span> · within 24h of signing</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Sell only from the approved product list</span><span class="line-meta">source → <span class="to">Sales Director</span> · always</span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Ability</div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Salesforce CRM administration &amp; lead management</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Sales reporting &amp; dashboards in Salesforce and Excel</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Proposal &amp; pitch decks in PowerPoint</span></div></div>
-      </div>
+    <div class="side-group">
+      <div class="side-group-label">Reference</div>
+      <a class="side-link active" href="/role-library">Role Library</a>
     </div>
-  </div>
-
-  <!-- CSM -->
-  <div id="r-csm" class="role-panel">
-    <div class="spec-doc">
-      <div class="spec-doc-head"><span class="spec-role">Customer Success Manager</span><span class="spec-reports">Reports to · Head of Customer Success</span></div>
-      <div class="ara-block"><div class="ara-label">Authority</div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Issue account credits</span><span class="line-meta"><span class="lim">up to $2,000</span> · else → <span class="esc">Head of CS</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Approve renewals at list price</span><span class="line-meta"><span class="lim">up to $50k ARR</span> · else → <span class="esc">Head of CS</span></span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Responsibility</div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a health-score report per account</span><span class="line-meta">to → <span class="to">Head of CS</span> · monthly</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Escalate at-risk accounts</span><span class="line-meta">to → <span class="to">Head of CS</span> · within 48h of a red signal</span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Ability</div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Salesforce &amp; Intercom administration</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Churn-risk analysis in Excel</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">QBR decks in PowerPoint / Google Slides</span></div></div>
-      </div>
+    <div class="side-group">
+      <div class="side-group-label">The format · coming soon</div>
+      <span class="side-link soon">Authority · MAY <span class="side-badge">soon</span></span>
+      <span class="side-link soon">Responsibility · MUST <span class="side-badge">soon</span></span>
+      <span class="side-link soon">Ability · CAN <span class="side-badge">soon</span></span>
+      <span class="side-link soon">Writing a role spec <span class="side-badge">soon</span></span>
+      <span class="side-link soon">Specs with AI <span class="side-badge">soon</span></span>
     </div>
-  </div>
+  </aside>
 
-  <!-- Ops -->
-  <div id="r-ops" class="role-panel">
-    <div class="spec-doc">
-      <div class="spec-doc-head"><span class="spec-role">Operations Analyst</span><span class="spec-reports">Reports to · Operations Director</span></div>
-      <div class="ara-block"><div class="ara-label">Authority</div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Recommend process changes</span><span class="line-meta"><span class="lim">no capex over £50,000</span> · else → <span class="esc">senior review</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Reallocate a shift within a depot</span><span class="line-meta"><span class="lim">no headcount change</span> · else → <span class="esc">Ops Director</span></span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Responsibility</div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a depot performance briefing</span><span class="line-meta">to → <span class="to">Ops Director</span> · monthly</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Flag any depot breaching the 4-hour SLA</span><span class="line-meta">to → <span class="to">Ops Director</span> · same day</span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Ability</div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Lean Six Sigma (DMAIC) process analysis</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Root-cause analysis (5 Whys, Ishikawa)</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Data analysis in Excel; briefings in Microsoft Word</span></div></div>
-      </div>
-    </div>
-  </div>
+  <!-- CONTENT -->
+  <main class="docs-main">
 
-  <!-- Chief of Staff -->
-  <div id="r-cos" class="role-panel">
-    <div class="spec-doc">
-      <div class="spec-doc-head"><span class="spec-role">Chief of Staff</span><span class="spec-reports">Reports to · CEO</span></div>
-      <div class="ara-block"><div class="ara-label">Authority</div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Set the board-meeting agenda</span><span class="line-meta"><span class="lim">CEO may override</span></span></div></div>
-        <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Reprioritise the exec team's OKRs</span><span class="line-meta"><span class="lim">no financial guidance</span> · else → <span class="esc">CFO sign-off</span></span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Responsibility</div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the board briefing</span><span class="line-meta">to → <span class="to">the Board</span> · 48h before each meeting</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Maintain the company OKR tracker</span><span class="line-meta">to → <span class="to">Exec team</span> · weekly</span></div></div>
-      </div>
-      <div class="ara-block"><div class="ara-label">Ability</div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Executive briefing writing (BLUF)</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Prioritisation with an impact/urgency matrix</span></div></div>
-        <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Data synthesis in Excel; decks in PowerPoint</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section id="library-top">
+      <p class="eyebrow">Documentation · Role Library</p>
+      <h1 class="title">The role <em>library.</em></h1>
+      <p class="lede">Real roles, each written as an ARA spec in the <strong>MAY / MUST / CAN</strong> format. Same structure throughout — which is what makes handoffs legible: one role's <strong>MUST … to →</strong> is another role's input.</p>
 
-<!-- HANDOFFS -->
-<section class="why" style="max-width:none;">
-<div style="max-width:1120px;margin:0 auto;">
-  <div class="section-head"><span class="section-num">↔</span><div class="section-rule"></div></div>
-  <h2 class="sec">Where the specs connect</h2>
-  <p class="sec-intro">Because every role uses the same shape, the org's wiring shows up between the specs — not in a separate process document.</p>
-  <div class="why-grid">
-    <div class="why-card"><div class="n">→</div><h4>Escalation paths line up</h4><p>The Sales Executive's <span style="color:var(--amber)">else → Sales Director</span> meets the Sales Director's own authority. Every escalation names a real recipient with the authority to catch it.</p></div>
-    <div class="why-card"><div class="n">→</div><h4>Deliverables become inputs</h4><p>The Sales Director <span style="color:var(--good)">MUST</span> keep the approved product list current — which is exactly what the Sales Executive <span style="color:var(--good)">MUST</span> sell from. One role's output is another's constraint.</p></div>
-    <div class="why-card"><div class="n">→</div><h4>Gaps become obvious</h4><p>If a deliverable has no recipient, or an escalation points to a role that can't decide it, the mismatch is visible on the page — before it becomes a meeting.</p></div>
-  </div>
+      <div class="role-tabs" style="margin-top:36px;">
+        <div class="role-tab active" onclick="showRole(this,'r-sd')">Sales Director</div>
+        <div class="role-tab" onclick="showRole(this,'r-cse')">Sales Executive</div>
+        <div class="role-tab" onclick="showRole(this,'r-csm')">Customer Success Mgr</div>
+        <div class="role-tab" onclick="showRole(this,'r-ops')">Operations Analyst</div>
+        <div class="role-tab" onclick="showRole(this,'r-cos')">Chief of Staff</div>
+      </div>
+
+      <!-- Sales Director -->
+      <div id="r-sd" class="role-panel active">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Sales Director</span><span class="spec-reports">Reports to · CEO</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $150,000</span> · else → <span class="esc">CEO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 7% of value</span> · else → <span class="esc">CEO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Commit the quarterly sales budget</span><span class="line-meta"><span class="lim">up to $50,000 / qtr</span> · else → <span class="esc">CEO</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Spend the discretionary fund</span><span class="line-meta"><span class="lim">up to $10,000 / yr</span> · else → <span class="esc">CEO</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep the approved product list current</span><span class="line-meta">to → <span class="to">Sales Executives</span> · when it changes</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the pipeline report</span><span class="line-meta">to → <span class="to">CEO</span> · weekly, Fri 17:00</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Administer Salesforce (CRM)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Build reports &amp; dashboards in Salesforce and Excel</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Manage lead &amp; contract data in Salesforce</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sales Executive -->
+      <div id="r-cse" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Sales Executive</span><span class="spec-reports">Reports to · Sales Director</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $70,000</span> · else → <span class="esc">Sales Director</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 5% of value</span> · else → <span class="esc">Sales Director</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Inform the PMO of new sales &amp; details</span><span class="line-meta">to → <span class="to">PMO</span> · within 24h of signing</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Sell only from the approved product list</span><span class="line-meta">source → <span class="to">Sales Director</span> · always</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Salesforce CRM administration &amp; lead management</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Sales reporting &amp; dashboards in Salesforce and Excel</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Proposal &amp; pitch decks in PowerPoint</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSM -->
+      <div id="r-csm" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Customer Success Manager</span><span class="spec-reports">Reports to · Head of Customer Success</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Issue account credits</span><span class="line-meta"><span class="lim">up to $2,000</span> · else → <span class="esc">Head of CS</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Approve renewals at list price</span><span class="line-meta"><span class="lim">up to $50k ARR</span> · else → <span class="esc">Head of CS</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a health-score report per account</span><span class="line-meta">to → <span class="to">Head of CS</span> · monthly</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Escalate at-risk accounts</span><span class="line-meta">to → <span class="to">Head of CS</span> · within 48h of a red signal</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Salesforce &amp; Intercom administration</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Churn-risk analysis in Excel</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">QBR decks in PowerPoint / Google Slides</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ops -->
+      <div id="r-ops" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Operations Analyst</span><span class="spec-reports">Reports to · Operations Director</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Recommend process changes</span><span class="line-meta"><span class="lim">no capex over £50,000</span> · else → <span class="esc">senior review</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Reallocate a shift within a depot</span><span class="line-meta"><span class="lim">no headcount change</span> · else → <span class="esc">Ops Director</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver a depot performance briefing</span><span class="line-meta">to → <span class="to">Ops Director</span> · monthly</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Flag any depot breaching the 4-hour SLA</span><span class="line-meta">to → <span class="to">Ops Director</span> · same day</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Lean Six Sigma (DMAIC) process analysis</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Root-cause analysis (5 Whys, Ishikawa)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Data analysis in Excel; briefings in Microsoft Word</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chief of Staff -->
+      <div id="r-cos" class="role-panel">
+        <div class="spec-doc">
+          <div class="spec-doc-head"><span class="spec-role">Chief of Staff</span><span class="spec-reports">Reports to · CEO</span></div>
+          <div class="ara-block"><div class="ara-label">Authority</div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Set the board-meeting agenda</span><span class="line-meta"><span class="lim">CEO may override</span></span></div></div>
+            <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Reprioritise the exec team's OKRs</span><span class="line-meta"><span class="lim">no financial guidance</span> · else → <span class="esc">CFO sign-off</span></span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the board briefing</span><span class="line-meta">to → <span class="to">the Board</span> · 48h before each meeting</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Maintain the company OKR tracker</span><span class="line-meta">to → <span class="to">Exec team</span> · weekly</span></div></div>
+          </div>
+          <div class="ara-block"><div class="ara-label">Ability</div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Executive briefing writing (BLUF)</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Prioritisation with an impact/urgency matrix</span></div></div>
+            <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Data synthesis in Excel; decks in PowerPoint</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <h2 class="sec">Where the specs connect</h2>
+      <p class="sec-intro">Because every role uses the same shape, the org's wiring shows up between the specs — not in a separate process document.</p>
+      <div class="why-grid">
+        <div class="why-card"><div class="n">→</div><h4>Escalation paths line up</h4><p>The Sales Executive's <span style="color:var(--amber)">else → Sales Director</span> meets the Sales Director's own authority. Every escalation names a real recipient with the authority to catch it.</p></div>
+        <div class="why-card"><div class="n">→</div><h4>Deliverables become inputs</h4><p>The Sales Director <span style="color:var(--good)">MUST</span> keep the approved product list current — which is exactly what the Sales Executive <span style="color:var(--good)">MUST</span> sell from. One role's output is another's constraint.</p></div>
+        <div class="why-card"><div class="n">→</div><h4>Gaps become obvious</h4><p>If a deliverable has no recipient, or an escalation points to a role that can't decide it, the mismatch is visible on the page — before it becomes a meeting.</p></div>
+      </div>
+    </section>
+
+  </main>
 </div>
-</section>
 
 <footer>
   <p>Ditching Peter — Role Library</p>
