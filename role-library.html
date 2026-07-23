@@ -95,6 +95,7 @@
             <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Sell outside the approved product list</span><span class="line-meta">→ <span class="esc">set by Sales Director</span></span></div></div>
           </div>
           <div class="ara-block"><div class="ara-label">Responsibility</div>
+            <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Close new business</span><span class="line-meta">to → <span class="to">Sales Director</span> · against quarterly target</span></div></div>
             <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Inform the PMO of new sales &amp; details</span><span class="line-meta">to → <span class="to">PMO</span> · within 24h of signing</span></div></div>
             <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep deal status current in Salesforce</span><span class="line-meta">to → <span class="to">the shared pipeline</span> · on every change</span></div></div>
           </div>
@@ -173,7 +174,34 @@
 
     <section id="connect">
       <h2 class="sec">Where the specs connect</h2>
-      <p class="sec-intro">Because every role uses the same shape, the org's wiring shows up between the specs — not in a separate process document.</p>
+      <p class="sec-intro">Because every role uses the same shape, the org's wiring shows up between the specs — not in a separate process document. Follow one artifact: the output of a role's <span style="color:var(--good)">MUST … to →</span> is the input to the next role.</p>
+
+      <div class="chain">
+        <div class="chain-role">
+          <div class="chain-role-name">Sales Director</div>
+          <div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Keep the approved product list current <span class="to">→ Sales Executives · when it changes</span></span></div>
+        </div>
+        <div class="chain-flow">
+          <span class="a-out">its output ↓</span>
+          <span class="chain-artifact">The approved product list</span>
+          <span class="a-in">↓ becomes the input that bounds</span>
+        </div>
+        <div class="chain-role">
+          <div class="chain-role-name">Sales Executive</div>
+          <div class="chain-line"><span class="line-kw kw-maynot">MAY NOT</span><span>sell outside it — the list bounds every deal</span></div>
+          <div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Inform the PMO of each new sale <span class="to">→ PMO · within 24h</span></span></div>
+        </div>
+        <div class="chain-flow">
+          <span class="a-out">its output ↓</span>
+          <span class="chain-artifact">A signed deal + client details</span>
+          <span class="a-in">↓ becomes the input that triggers</span>
+        </div>
+        <div class="chain-role">
+          <div class="chain-role-name">Programme Director · PMO</div>
+          <div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the deal, and initiates delivery of the new project</span></div>
+        </div>
+      </div>
+
       <div class="why-grid">
         <div class="why-card"><div class="n">→</div><h4>Escalation paths line up</h4><p>The Sales Executive's <span style="color:var(--amber)">else → Sales Director</span> meets the Sales Director's own authority. Every escalation names a real recipient with the authority to catch it.</p></div>
         <div class="why-card"><div class="n">→</div><h4>Deliverables become inputs</h4><p>The Sales Director <span style="color:var(--good)">MUST</span> keep the approved product list current — which is exactly what the Sales Executive <span style="color:var(--good)">MUST</span> sell from. One role's output is another's constraint.</p></div>

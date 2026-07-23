@@ -237,3 +237,19 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;colo
   .ai-principle{border-right:none;border-bottom:1px solid var(--rule);}
   .ai-principle:last-child{border-bottom:none;}
 }
+
+/* ── HANDOFF CHAIN (output → input) ── */
+.chain{max-width:660px;margin:0 0 44px;}
+.chain-role{border:1px solid var(--rule);background:var(--bg);padding:16px 22px;}
+.chain-role-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.chain-line{font-size:14px;color:var(--ink-soft);line-height:1.5;padding:4px 0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;}
+.chain-line .line-kw{flex-shrink:0;}
+.chain-line .to{color:var(--good);font-family:'DM Mono',monospace;font-size:12px;}
+.chain-flow{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 0;}
+.chain-flow .a-out,.chain-flow .a-in{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.chain-artifact{background:var(--accent-light);border:1px solid #bfdbfe;color:var(--accent-dark);font-family:'DM Mono',monospace;font-size:12.5px;font-weight:500;padding:9px 18px;border-radius:2px;text-align:center;}
+.chain-recv{background:var(--bg-tint);color:var(--muted);}
+@media (prefers-color-scheme: dark){
+  .chain-role{background-color:#fff !important;}
+  .chain-artifact{background-color:var(--accent-light) !important;}
+}
