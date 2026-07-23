@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Ditching Peter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/docs.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/documentation" style="color:var(--accent)">Documentation</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/"              onclick="closeNav()">Home</a>
+    <a href="/documentation" onclick="closeNav()" style="color:var(--accent)">Documentation</a>
+    <a href="/blog"          onclick="closeNav()">Blog</a>
+    <a href="/about"         onclick="closeNav()">About</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section style="padding-top:130px;">
+  <p class="eyebrow">Documentation · The ARA Role Spec</p>
+  <h1 class="title">Every role,<br>defined as a <em>spec.</em></h1>
+  <p class="lede">A role isn't a process — the person holding it defines the process. ARA defines the <strong>envelope</strong> they work within: what they <strong>may</strong> decide, what they <strong>must</strong> deliver, and what they <strong>can</strong> do. Three declarative statements. One structured, readable, machine-legible spec per role.</p>
+</section>
+
+<!-- PRIMER -->
+<section>
+  <div class="section-head"><span class="section-num">01</span><div class="section-rule"></div></div>
+  <h2 class="sec">May · Must · Can</h2>
+  <p class="sec-intro">One keyword per pillar. Each carries its own fields — the structure is identical for every role, so specs are comparable, diff-able, and auditable.</p>
+  <div class="primer">
+    <div class="primer-col">
+      <span class="kw kw-may">MAY</span>
+      <h3>Authority</h3>
+      <div class="maps">Permission · a decision</div>
+      <p>What the role is empowered to decide without asking. Bounded — every permission carries a limit and an escalation path.</p>
+      <div class="fields">MAY <span>[decision]</span><br>&nbsp;&nbsp;up&nbsp;to <span>[limit]</span><br>&nbsp;&nbsp;else <span>[escalate to]</span></div>
+    </div>
+    <div class="primer-col">
+      <span class="kw kw-must">MUST</span>
+      <h3>Responsibility</h3>
+      <div class="maps">Obligation · a deliverable</div>
+      <p>What the role must produce, and for whom. A deliverable and a recipient — not an activity.</p>
+      <div class="fields">MUST <span>[deliverable]</span><br>&nbsp;&nbsp;to <span>[recipient]</span><br>&nbsp;&nbsp;when <span>[cadence]</span></div>
+    </div>
+    <div class="primer-col">
+      <span class="kw kw-can">CAN</span>
+      <h3>Ability</h3>
+      <div class="maps">Capability · a skill</div>
+      <p>The named skills, tools, and frameworks the role must hold to do the above. Concrete, not aspirational.</p>
+      <div class="fields">CAN <span>[named skill /</span><br>&nbsp;&nbsp;<span>tool / framework]</span></div>
+    </div>
+  </div>
+  <div class="callout"><strong>Declarative, not procedural.</strong> This says nothing about <em>how</em> the work flows — no steps, no sequence. It states what is true of the role. The person in it owns the process from there.</div>
+</section>
+
+<!-- FEATURED SPEC -->
+<section>
+  <div class="section-head"><span class="section-num">02</span><div class="section-rule"></div></div>
+  <h2 class="sec">A role, in full</h2>
+  <p class="sec-intro">One complete spec makes the shape obvious — read it top to bottom and you know exactly what this role may decide, must deliver, and can do.</p>
+
+  <div class="spec-doc">
+    <div class="spec-doc-head"><span class="spec-role">Sales Director</span><span class="spec-reports">Reports to · CEO</span></div>
+    <div class="ara-block">
+      <div class="ara-label">Authority</div>
+      <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $150,000</span> · else → <span class="esc">CEO</span></span></div></div>
+      <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 7% of value</span> · else → <span class="esc">CEO</span></span></div></div>
+      <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Commit the quarterly sales budget</span><span class="line-meta"><span class="lim">up to $50,000 / qtr</span> · else → <span class="esc">CEO</span></span></div></div>
+      <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Spend the discretionary fund</span><span class="line-meta"><span class="lim">up to $10,000 / yr</span> · else → <span class="esc">CEO</span></span></div></div>
+    </div>
+    <div class="ara-block">
+      <div class="ara-label">Responsibility</div>
+      <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep the approved product list current</span><span class="line-meta">to → <span class="to">Sales Executives</span> · when it changes</span></div></div>
+      <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Deliver the pipeline report</span><span class="line-meta">to → <span class="to">CEO</span> · weekly, Fri 17:00</span></div></div>
+    </div>
+    <div class="ara-block">
+      <div class="ara-label">Ability</div>
+      <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Administer Salesforce (CRM)</span></div></div>
+      <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Build reports &amp; dashboards in Salesforce and Excel</span></div></div>
+      <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Manage lead &amp; contract data in Salesforce</span></div></div>
+    </div>
+  </div>
+
+  <p style="margin-top:34px;">
+    <a href="/role-library" class="cta">Browse the role library →</a>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why" style="max-width:none;">
+<div style="max-width:1120px;margin:0 auto;">
+  <div class="section-head"><span class="section-num">03</span><div class="section-rule"></div></div>
+  <h2 class="sec">Why a spec, not prose</h2>
+  <p class="sec-intro">The same three statements, in the same shape, for every role — that structure is what makes ARA usable at scale.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="n">01</div><h4>Comparable</h4><p>Every spec has the same fields, so you can diff two roles, spot an authority two people both claim, or a deliverable nobody owns.</p></div>
+    <div class="why-card"><div class="n">02</div><h4>Machine-legible</h4><p>MAY / MUST / CAN with typed fields is data. An AI can audit it for gaps and overlaps, or act as the role — the same spec, read by a person or a model.</p></div>
+    <div class="why-card"><div class="n">03</div><h4>Handoffs are visible</h4><p>One role's <span style="color:var(--good)">MUST … to →</span> is the next role's input. Chain the recipients and the delivery process falls out of the specs for free.</p></div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Ditching Peter — Documentation</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
+  function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
+</script>
+</body>
+</html>

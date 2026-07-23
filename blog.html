@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Ditching Peter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/docs.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/blog" style="color:var(--accent)">Blog</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/"              onclick="closeNav()">Home</a>
+    <a href="/documentation" onclick="closeNav()">Documentation</a>
+    <a href="/blog"          onclick="closeNav()" style="color:var(--accent)">Blog</a>
+    <a href="/about"         onclick="closeNav()">About</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section style="padding-top:130px;">
+  <p class="eyebrow">Blog</p>
+  <h1 class="title">Notes on roles,<br>and <em>organisational health.</em></h1>
+  <p class="lede">Short essays and field notes on ARA in practice — authority that actually devolves, responsibilities that hold at review time, and using structured role specs with AI.</p>
+</section>
+
+<!-- POSTS / EMPTY STATE -->
+<section>
+  <div class="empty">
+    <div class="tag">First post coming soon</div>
+    <h3>The writing starts here.</h3>
+    <p>No posts yet. The first pieces are being drafted — check back shortly, or read the <a href="/documentation" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);">documentation</a> in the meantime.</p>
+  </div>
+
+  <div class="upcoming">
+    <div class="upcoming-label">On the drafting table</div>
+    <div class="upcoming-item"><span class="dot">01</span><span class="t">Why "communicate more" never works — and what to write down instead</span></div>
+    <div class="upcoming-item"><span class="dot">02</span><span class="t">Authority is priced in risk, not knowledge</span></div>
+    <div class="upcoming-item"><span class="dot">03</span><span class="t">Every recurring meeting is a missing spec</span></div>
+    <div class="upcoming-item"><span class="dot">04</span><span class="t">Prompting an AI with MAY / MUST / CAN</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>Ditching Peter — Blog</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
+  function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
+</script>
+</body>
+</html>
