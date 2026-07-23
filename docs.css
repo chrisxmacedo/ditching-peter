@@ -253,3 +253,8 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;colo
   .chain-role{background-color:#fff !important;}
   .chain-artifact{background-color:var(--accent-light) !important;}
 }
+.role-chain{display:none;}
+.role-chain.active{display:block;}
+.chain-role.chain-focus{border:2px solid var(--accent);background:var(--accent-light);}
+.chain-role.chain-focus .chain-role-name{color:var(--accent-dark);}
+@media (prefers-color-scheme: dark){ .chain-role.chain-focus{background-color:var(--accent-light) !important;} }

@@ -176,30 +176,49 @@
       <h2 class="sec">Where the specs connect</h2>
       <p class="sec-intro">Because every role uses the same shape, the org's wiring shows up between the specs — not in a separate process document. Follow one artifact: the output of a role's <span style="color:var(--good)">MUST … to →</span> is the input to the next role.</p>
 
-      <div class="chain">
-        <div class="chain-role">
-          <div class="chain-role-name">Sales Director</div>
-          <div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Keep the approved product list current <span class="to">→ Sales Executives · when it changes</span></span></div>
-        </div>
-        <div class="chain-flow">
-          <span class="a-out">its output ↓</span>
-          <span class="chain-artifact">The approved product list</span>
-          <span class="a-in">↓ becomes the input that bounds</span>
-        </div>
-        <div class="chain-role">
-          <div class="chain-role-name">Sales Executive</div>
-          <div class="chain-line"><span class="line-kw kw-maynot">MAY NOT</span><span>sell outside it — the list bounds every deal</span></div>
-          <div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Inform the PMO of each new sale <span class="to">→ PMO · within 24h</span></span></div>
-        </div>
-        <div class="chain-flow">
-          <span class="a-out">its output ↓</span>
-          <span class="chain-artifact">A signed deal + client details</span>
-          <span class="a-in">↓ becomes the input that triggers</span>
-        </div>
-        <div class="chain-role">
-          <div class="chain-role-name">Programme Director · PMO</div>
-          <div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the deal, and initiates delivery of the new project</span></div>
-        </div>
+      <!-- Sales Director -->
+      <div class="chain role-chain active" id="rc-sd">
+        <div class="chain-role"><div class="chain-role-name">CEO</div><div class="chain-line"><span class="line-kw chain-recv">SETS</span><span>the quarterly targets &amp; sales budget</span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">Targets &amp; budget</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Sales Director</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Keep the approved product list current <span class="to">→ Sales Executives</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver the pipeline report <span class="to">→ CEO</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The approved product list</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Sales Executives</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVE</span><span>the list — every deal they sign is bound by it</span></div></div>
+      </div>
+
+      <!-- Sales Executive -->
+      <div class="chain role-chain" id="rc-cse">
+        <div class="chain-role"><div class="chain-role-name">Sales Director</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Keep the approved product list current <span class="to">→ Sales Executives</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The approved product list</span><span class="a-in">↓ bounds</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Sales Executive</div><div class="chain-line"><span class="line-kw kw-maynot">MAY NOT</span><span>sell outside it</span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Inform the PMO of each new sale <span class="to">→ PMO · within 24h</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">A signed deal + client details</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Programme Director · PMO</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the deal, and initiates delivery of the new project</span></div></div>
+      </div>
+
+      <!-- Customer Success Manager -->
+      <div class="chain role-chain" id="rc-csm">
+        <div class="chain-role"><div class="chain-role-name">Programme Director · PMO</div><div class="chain-line"><span class="line-kw chain-recv">HANDS OVER</span><span>a delivered, onboarded account</span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">A live, onboarded account</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Customer Success Manager</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver a health-score report per account <span class="to">→ Head of CS · monthly</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Escalate at-risk accounts <span class="to">→ Head of CS</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">Health-score report + at-risk flags</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Head of Customer Success</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>account health, and decides where to intervene</span></div></div>
+      </div>
+
+      <!-- Operations Analyst -->
+      <div class="chain role-chain" id="rc-ops">
+        <div class="chain-role"><div class="chain-role-name">The depots</div><div class="chain-line"><span class="line-kw chain-recv">EMIT</span><span>daily throughput &amp; SLA data</span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">Depot performance data</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Operations Analyst</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver a depot performance briefing <span class="to">→ Ops Director · monthly</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Flag any depot breaching the 4-hour SLA <span class="to">→ Ops Director · same day</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">Performance briefing + SLA flags</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">Operations Director</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the briefing, and decides which fixes to fund</span></div></div>
+      </div>
+
+      <!-- Chief of Staff -->
+      <div class="chain role-chain" id="rc-cos">
+        <div class="chain-role"><div class="chain-role-name">The exec team</div><div class="chain-line"><span class="line-kw chain-recv">SUPPLY</span><span>updates &amp; the quarterly data pack</span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">Updates + the data pack</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role chain-focus"><div class="chain-role-name">Chief of Staff</div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Deliver the board briefing <span class="to">→ the Board · 48h before</span></span></div><div class="chain-line"><span class="line-kw kw-must">MUST</span><span>Maintain the company OKR tracker <span class="to">→ Exec team · weekly</span></span></div></div>
+        <div class="chain-flow"><span class="a-out">output ↓</span><span class="chain-artifact">The board briefing</span><span class="a-in">↓ input to</span></div>
+        <div class="chain-role"><div class="chain-role-name">The Board</div><div class="chain-line"><span class="line-kw chain-recv">RECEIVES</span><span>the briefing, and makes the decisions it calls for</span></div></div>
       </div>
 
       <div class="why-grid">
@@ -226,6 +245,8 @@
     el.classList.add('active');
     document.querySelectorAll('.role-panel').forEach(p=>p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.role-chain').forEach(c=>c.classList.remove('active'));
+    const chain=document.getElementById('rc-'+id.slice(2)); if(chain) chain.classList.add('active');
   }
 </script>
 </body>
