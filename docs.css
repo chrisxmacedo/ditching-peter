@@ -133,6 +133,9 @@ h2.sec{font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,38px);font-
 .post-meta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .post-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.2;}
 .post-card p{font-size:15px;color:var(--muted);line-height:1.6;}
+.post-card .post-meta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.post-card .post-more{display:inline-block;margin-top:14px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--accent);}
+.post-card:hover .post-more{text-decoration:underline;}
 .empty{border:1px dashed var(--rule);background:var(--bg-tint);padding:40px 24px;text-align:center;}
 .empty .tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
 .empty h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;}
