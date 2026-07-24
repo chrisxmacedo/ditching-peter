@@ -595,6 +595,49 @@
     var slug=ROLE_NAMES[raw.toLowerCase().replace(/^the\s+/,'')];
     if(slug){ var a=document.createElement('a'); a.href='#'+slug; a.className='role-xref'; a.textContent=raw; span.textContent=''; span.appendChild(a); }
   });
+
+  // ── Link named tools / frameworks / methods to authoritative sources ──
+  var SRC_LINKS = {
+    'Microsoft Word':'https://www.microsoft.com/microsoft-365/word',
+    'Google Slides':'https://workspace.google.com/products/slides/',
+    'Lean Six Sigma':'https://asq.org/quality-resources/six-sigma',
+    'Power BI':'https://www.microsoft.com/power-platform/products/power-bi',
+    'Productboard':'https://www.productboard.com/',
+    'Confluence':'https://www.atlassian.com/software/confluence',
+    'TypeScript':'https://www.typescriptlang.org/',
+    'Playwright':'https://playwright.dev/',
+    'PowerPoint':'https://www.microsoft.com/microsoft-365/powerpoint',
+    'Salesforce':'https://www.salesforce.com/',
+    'Amplitude':'https://amplitude.com/',
+    'Intercom':'https://www.intercom.com/',
+    'Ishikawa':'https://asq.org/quality-resources/fishbone',
+    '5 Whys':'https://asq.org/quality-resources/five-whys',
+    'INVEST':'https://www.agilealliance.org/glossary/invest/',
+    'Python':'https://www.python.org/',
+    'pytest':'https://docs.pytest.org/',
+    'Excel':'https://www.microsoft.com/microsoft-365/excel',
+    'Agile':'https://www.agilealliance.org/agile101/',
+    'SAFe':'https://scaledagileframework.com/',
+    'Jira':'https://www.atlassian.com/software/jira',
+    'ruff':'https://docs.astral.sh/ruff/'
+  };
+  (function(){
+    var terms = Object.keys(SRC_LINKS).sort(function(a,b){return b.length-a.length;});
+    var esc = function(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');};
+    var re = new RegExp('\\b(' + terms.map(esc).join('|') + ')\\b','g');
+    document.querySelectorAll('.ara-block').forEach(function(block){
+      var label = block.querySelector('.ara-label');
+      if(!label || label.textContent.trim() !== 'Ability') return;
+      block.querySelectorAll('.line-clause').forEach(function(cl){
+        if(cl.querySelector('a')) return; // skip clauses already linked (certificates)
+        var html = cl.innerHTML;
+        var out = html.replace(re, function(m, term){
+          return '<a class="cert-link" href="'+SRC_LINKS[term]+'" target="_blank" rel="noopener noreferrer">'+term+'</a>';
+        });
+        if(out !== html) cl.innerHTML = out;
+      });
+    });
+  })();
 </script>
 </body>
 </html>
