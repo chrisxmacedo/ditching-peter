@@ -85,14 +85,14 @@
       <div class="syntax"><span class="k">MAY</span> [decision] <span class="f">·</span> up to [limit] <span class="f">·</span> else → [escalate to]<br><span class="kn">MAY NOT</span> [prohibited action] <span class="f">·</span> → [who owns the decision]</div>
       <div class="doc-copy">
         <p><strong>Be specific, not broad.</strong> "Discount a sale up to 7% of contract value" is authority. "Manages the sales process" is not — if you can't put a number or a boundary on it, it isn't finished.</p>
-        <p><strong>Every limit names a real escalation.</strong> Anything past the limit routes to a role that actually holds the authority to decide it — which you can check against that role's own MAY lines.</p>
+        <p><strong>Every limit names a real escalation.</strong> Anything past the limit routes to a role that actually holds the authority to decide it — which you can check against that role's own MAY lines. Money limits are examples — set yours.</p>
         <p><strong>Hard boundaries are MAY NOT.</strong> Some limits aren't a number but a flat prohibition — write those as a <strong>MAY NOT</strong> line that routes the decision to whoever owns it. And a constraint on what the role may do is <em>authority</em>, not responsibility: "sell only from the approved list" is a MAY NOT, not a MUST.</p>
         <p><strong>Authority is priced in risk.</strong> What a role is paid tracks the risk it carries on the company's behalf, not the depth of its knowledge. A documented authority list makes that risk legible.</p>
       </div>
       <div class="spec-doc">
         <div class="spec-doc-head"><span class="spec-role">Example — Sales Executive</span><span class="spec-reports">Authority</span></div>
         <div class="ara-block">
-          <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Sign contracts</span><span class="line-meta"><span class="lim">up to $70,000</span> · else → <span class="esc">Sales Director</span></span></div></div>
+          <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Agree deals at list price</span><span class="line-meta"><span class="lim">up to £25,000</span> · example — set yours · else → <span class="esc">Sales Director</span></span></div></div>
           <div class="spec-line"><span class="line-kw kw-may">MAY</span><div class="line-body"><span class="line-clause">Discount a sale</span><span class="line-meta"><span class="lim">up to 5% of value</span> · else → <span class="esc">Sales Director</span></span></div></div>
           <div class="spec-line"><span class="line-kw kw-maynot">MAY NOT</span><div class="line-body"><span class="line-clause">Sell outside the approved product list</span><span class="line-meta">→ <span class="esc">Sales Director</span></span></div></div>
         </div>
@@ -117,8 +117,8 @@
         <div class="spec-doc-head"><span class="spec-role">Example — Sales Executive</span><span class="spec-reports">Responsibility</span></div>
         <div class="ara-block">
           <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Close new business</span><span class="line-meta">to → <span class="to">Sales Director</span> · against quarterly target</span></div></div>
-          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Inform the PMO of new sales &amp; details</span><span class="line-meta">to → <span class="to">PMO</span> · within 24h of signing</span></div></div>
-          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep deal status current in Salesforce</span><span class="line-meta">to → <span class="to">the shared pipeline</span> · on every change</span></div></div>
+          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Hand over signed deals</span><span class="line-meta">to → <span class="to">Project Manager</span> · within 24h of signing</span></div></div>
+          <div class="spec-line"><span class="line-kw kw-must">MUST</span><div class="line-body"><span class="line-clause">Keep own deal status current in the CRM</span><span class="line-meta">to → <span class="to">the shared pipeline</span> · on every change</span></div></div>
         </div>
       </div>
     </section>
@@ -131,15 +131,15 @@
       </div>
       <div class="syntax"><span class="k">CAN</span> [named skill / tool / framework]</div>
       <div class="doc-copy">
-        <p><strong>A skill, not knowledge.</strong> Ability is what a person can do, not facts they happen to hold. "Administer Salesforce" is an ability; "understands sales" is not.</p>
-        <p><strong>Name it concretely.</strong> "Salesforce administration", "Lean Six Sigma (DMAIC)", "financial modelling in Excel" — not "good with systems". If it can't be named, it can't be taught, hired for, or assessed.</p>
+        <p><strong>A skill, not knowledge.</strong> Ability is what a person can do, not facts they happen to hold. "Manage a pipeline in Salesforce" is an ability; "understands sales" is not.</p>
+        <p><strong>Name it concretely.</strong> "Pipeline management in Salesforce", "Lean Six Sigma (DMAIC)", "financial modelling in Excel" — not "good with systems". If it can't be named, it can't be taught, hired for, or assessed.</p>
         <p><strong>Certifications count.</strong> A required credential is a concrete, checkable way to name an ability — "PMP", "AWS Certified Solutions Architect", "CIPD Level 5", "Lean Six Sigma Black Belt". The certificate names the skill and evidences it in a single line.</p>
         <p><strong>Ability is the diagnostic.</strong> When someone underperforms, ARA tells you where to look: overreaching authority, an undelivered responsibility, or a missing ability. Three different problems, three different fixes.</p>
       </div>
       <div class="spec-doc">
         <div class="spec-doc-head"><span class="spec-role">Example — Sales Executive</span><span class="spec-reports">Ability</span></div>
         <div class="ara-block">
-          <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Salesforce CRM administration &amp; lead management</span></div></div>
+          <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Manage own pipeline and activity in the CRM</span></div></div>
           <div class="spec-line"><span class="line-kw kw-can">CAN</span><div class="line-body"><span class="line-clause">Sales reporting &amp; dashboards in Salesforce and Excel</span></div></div>
         </div>
       </div>
