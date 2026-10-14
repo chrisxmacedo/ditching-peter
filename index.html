@@ -35,7 +35,7 @@
     .fw-card, .framework-grid,
     .role-card, .role-card-body,
     .intro-strip,
-    .cost-callout,
+    .cost-callout, .price-card, .price-grid,
     .meeting-item, .meeting-item.bad, .meeting-item.good,
     .diagnostic-card, .diagnostic-gap,
     .spec-example,
@@ -60,6 +60,10 @@
     .ara-item:nth-child(2) .ara-word,
     .ara-item:nth-child(2) .ara-def { color: #ffffff !important; }
     .ara-item:nth-child(2) .ara-letter { color: rgba(255,255,255,0.25) !important; }
+    .price-name { color: #1d4ed8 !important; }
+    .price-now { color: #0d0d0d !important; }
+    .hero-cta { color: #fff !important; }
+    .hero-cta-ghost { color: #1d4ed8 !important; background: transparent !important; border-color: #1d4ed8 !important; }
 
     .rule, [class*="rule"] { border-color: #e5e7eb !important; }
     * { border-color: #e5e7eb; }
@@ -204,6 +208,12 @@
     transition: background 0.2s; align-self: flex-start;
   }
   .hero-cta:hover { background: var(--accent-dark); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-cta-ghost {
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .hero-cta-ghost:hover { background: var(--accent-light); }
   .hero-diagram {
     display: flex; align-items: center; justify-content: center;
     background: var(--bg-tint); padding: 80px 60px;
@@ -446,6 +456,27 @@
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--muted); line-height: 1.4;
   }
+
+  .price-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--rule); background: var(--bg); margin-bottom: 8px;
+  }
+  .price-card { padding: 36px 28px; background: var(--bg); border-right: 1px solid var(--rule); }
+  .price-card:last-child { border-right: none; }
+  .price-name {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .price-now {
+    font-family: 'Playfair Display', serif; font-size: 48px;
+    font-weight: 900; color: var(--ink); line-height: 1;
+  }
+  .price-was {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    color: var(--muted); margin: 10px 0 16px; line-height: 1.45;
+  }
+  .price-card p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 22px; }
 
   /* ── PETER ── */
   .peter-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start; }
@@ -711,6 +742,10 @@
     .detail-body p { font-size: 15px; }
 
     .cost-callout { grid-template-columns: 1fr 1fr; gap: 20px; padding: 28px 20px; }
+    .price-grid { grid-template-columns: 1fr; }
+    .price-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 22px; }
+    .price-card:last-child { border-bottom: none; }
+    .price-now { font-size: 40px; }
     .cost-stat { border-right: none; padding: 0; }
     .cost-value { font-size: 26px; }
     .meetings-grid { grid-template-columns: 1fr; }
@@ -768,7 +803,10 @@
     <p class="hero-eyebrow">A Framework for Organisational Health</p>
     <h1 class="hero-title">Ditch<em>ing</em><br>Peter</h1>
     <p class="hero-subtitle">Most workplace dysfunction comes down to three things: nobody knows who can decide what, nobody knows who is supposed to deliver what, and nobody knows what skills the job actually requires.</p>
-    <a href="#framework" class="hero-cta">Read the framework ↓</a>
+    <div class="hero-actions">
+      <a href="#framework" class="hero-cta">Read the framework ↓</a>
+      <a href="#library" class="hero-cta hero-cta-ghost">Get the full library</a>
+    </div>
   </div>
   <div class="hero-diagram">
     <div class="ara-diagram">
@@ -1189,6 +1227,40 @@
   <p class="reveal" style="margin-top:36px;">
     <a href="/format" class="hero-cta" style="align-self:flex-start;">See the spec format &rarr;</a>
   </p>
+</section>
+
+<!-- LIBRARY -->
+<section id="library">
+  <div class="section-header reveal">
+    <span class="section-num">09</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">Get the full library</h2>
+  <p class="section-intro reveal">Nine roles are free to read: Sales Director, Sales Executive, Customer Success Manager, Product Manager, Project Manager, Engineering Manager, Software Engineer, HR Business Partner, and Marketing Manager. The full library is all 27 roles, 7 team structures with reporting and escalation charts, editable DOCX/MD files, a 77-page PDF, and JSON + AGENTS.md agent versions. One-off purchase. Future updates included. Prices rise as the library grows.</p>
+  <div class="price-grid reveal">
+    <div class="price-card">
+      <div class="price-name">Individual</div>
+      <div class="price-now">£19</div>
+      <div class="price-was">Launch price until 28 Oct 2026.<br>Then £29.</div>
+      <p>One person. The full library, as described above.</p>
+      <a class="hero-cta" href="https://payhip.com/b/RGbfI" target="_blank" rel="noopener noreferrer">Buy individual</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Team</div>
+      <div class="price-now">£69</div>
+      <div class="price-was">Launch price until 28 Oct 2026.<br>Then £99. Up to 25 people.</div>
+      <p>One purchase for a team of up to 25. Same library, same future updates.</p>
+      <a class="hero-cta" href="https://payhip.com/b/6LkoT" target="_blank" rel="noopener noreferrer">Buy for a team</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Commercial licence</div>
+      <div class="price-now">£179</div>
+      <div class="price-was">Launch price until 28 Oct 2026.<br>Then £249.</div>
+      <p>For use with clients, or inside a product you sell. Includes the machine-readable agent versions.</p>
+      <a class="hero-cta" href="https://payhip.com/b/Qd1Ko" target="_blank" rel="noopener noreferrer">Buy commercial</a>
+    </div>
+  </div>
+  <p class="reveal" style="margin-top:28px;"><a href="/role-library" style="color:var(--accent);">Read the free sample →</a></p>
 </section>
 
 <!-- CONCLUSION -->
