@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the twenty-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the thirty roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -826,6 +826,48 @@
       "title": "Data Analyst",
       "line": "Turns approved data into analysis and dashboards decision-makers can use. Reports to the Finance Director.",
       "url": "https://ditchingpeter.com/role-library#listed-data-analyst",
+      "in_pack": true
+    },
+    {
+      "id": "content-designer",
+      "title": "Content Designer",
+      "line": "Designs publish-ready content for user journeys. Reports to the Product Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-content-designer",
+      "in_pack": true
+    },
+    {
+      "id": "service-designer",
+      "title": "Service Designer",
+      "line": "Designs end-to-end service journeys across digital and offline. Reports to the Product Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-service-designer",
+      "in_pack": true
+    },
+    {
+      "id": "technical-architect",
+      "title": "Technical Architect",
+      "line": "Sets technical design patterns for services. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-technical-architect",
+      "in_pack": true
+    },
+    {
+      "id": "security-architect",
+      "title": "Security Architect",
+      "line": "Designs secure solutions and advises on security risk. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-security-architect",
+      "in_pack": true
+    },
+    {
+      "id": "procurement-manager",
+      "title": "Procurement Manager",
+      "line": "Sources suppliers and awards contracts within delegated limits. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-procurement-manager",
+      "in_pack": true
+    },
+    {
+      "id": "talent-acquisition-manager",
+      "title": "Talent Acquisition Manager",
+      "line": "Attracts and assesses candidates for approved vacancies. Reports to the HR Business Partner.",
+      "url": "https://ditchingpeter.com/role-library#listed-talent-acquisition-manager",
       "in_pack": true
     }
   ]
