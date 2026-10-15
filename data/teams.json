@@ -468,6 +468,19 @@
               "line": "Runs delivery for a team of projects. Reports to the Head of Delivery."
             },
             {
+              "id": "scrum-master",
+              "title": "Scrum Master",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-delivery",
+              "escalatesTo": [
+                "head-of-delivery"
+              ],
+              "line": "Runs the Scrum events and clears what blocks the team. Reports to the Head of Delivery.",
+              "note": "Also Agile Delivery Lead or Team Coach"
+            },
+            {
               "id": "project-manager",
               "title": "Project Manager",
               "sectorTitle": null,
@@ -640,6 +653,20 @@
               "note": "Also IT Service Desk Manager or Head of Service Desk"
             },
             {
+              "id": "it-service-manager",
+              "title": "IT Service Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [
+                "head-of-engineering",
+                "technical-architect"
+              ],
+              "line": "Agrees IT service levels and runs service change and improvement. Reports to the Head of Engineering.",
+              "note": "Or the Head of IT. Also IT Manager or IT Operations Manager"
+            },
+            {
               "id": "service-desk-analyst",
               "title": "Service Desk Analyst",
               "sectorTitle": null,
@@ -780,6 +807,20 @@
               "escalatesTo": [],
               "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
               "note": "Also Health and Safety Adviser"
+            },
+            {
+              "id": "quality-manager",
+              "title": "Quality Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [
+                "operations-director",
+                "procurement-manager"
+              ],
+              "line": "Runs the quality management system, audits and corrective actions. Reports to the Operations Director.",
+              "note": "Also Quality Assurance Manager or Head of Quality"
             },
             {
               "id": "facilities-manager",
@@ -935,6 +976,19 @@
               "note": "Also Accounts Clerk or Accounts Payable Clerk"
             },
             {
+              "id": "tax-manager",
+              "title": "Tax Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "finance-director",
+              "escalatesTo": [
+                "finance-director"
+              ],
+              "line": "Files company tax returns, schedules tax payments and deals with HMRC. Reports to the Finance Director.",
+              "note": "Or a Head of Tax in a larger group. Also Corporate Tax Manager or Tax Adviser"
+            },
+            {
               "id": "unit-head",
               "title": "The unit head",
               "sectorTitle": null,
@@ -1007,6 +1061,19 @@
               "escalatesTo": [],
               "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
               "note": "Also L&D Consultant or L&D Manager. Where a Head of People exists, reports to them"
+            },
+            {
+              "id": "reward-manager",
+              "title": "Reward Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "hr-business-partner",
+              "escalatesTo": [
+                "hr-business-partner"
+              ],
+              "line": "Sets pay within the structure, runs the pay review and owns benefits. Reports to the HR Business Partner.",
+              "note": "Where a Head of People exists, to them. Also Reward and Benefits Manager"
             },
             {
               "id": "marketing-manager",
