@@ -614,6 +614,26 @@
               "note": "Or the CISO where one exists"
             },
             {
+              "id": "service-desk-manager",
+              "title": "Service Desk Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "service-desk-analyst",
+              "title": "Service Desk Analyst",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "service-desk-manager",
+              "escalatesTo": [],
+              "line": "Resolves IT requests and incidents at the first line. Reports to the Service Desk Manager.",
+              "note": "Also IT Support Analyst or IT Service Analyst"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -717,6 +737,17 @@
               "escalatesTo": [],
               "line": "Sources suppliers and awards contracts within delegated limits. Reports to the Operations Director.",
               "note": "Or the Finance Director where procurement sits under finance"
+            },
+            {
+              "id": "health-and-safety-manager",
+              "title": "Health and Safety Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
+              "note": "Also Health and Safety Adviser"
             }
           ]
         },
@@ -759,6 +790,49 @@
                 "financial-controller"
               ],
               "line": "Works the numbers with one part of the business. Reports to the Finance Director."
+            },
+            {
+              "id": "head-of-engineering",
+              "title": "Head of Engineering",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Leads the engineering organisation. Reports to the CEO."
+            },
+            {
+              "id": "data-engineer",
+              "title": "Data Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds and maintains the data pipelines that analysts and data scientists rely on. Reports to the Head of Engineering.",
+              "note": "Or the Head of Data where one exists"
+            },
+            {
+              "id": "data-scientist",
+              "title": "Data Scientist",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
+              "note": "Or the Head of Data where one exists"
+            },
+            {
+              "id": "payroll-manager",
+              "title": "Payroll Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "financial-controller",
+              "escalatesTo": [],
+              "line": "Runs an accurate, on-time payroll and reports it to HMRC. Reports to the Financial Controller.",
+              "note": "Or the Head of People where payroll sits in HR"
             },
             {
               "id": "unit-head",
@@ -822,6 +896,17 @@
               "escalatesTo": [],
               "line": "Attracts and assesses candidates for approved vacancies. Reports to the HR Business Partner.",
               "note": "Also Resourcing Manager. Where a Head of People exists, reports to them"
+            },
+            {
+              "id": "learning-and-development-business-partner",
+              "title": "Learning and Development Business Partner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "hr-business-partner",
+              "escalatesTo": [],
+              "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
+              "note": "Also L&D Consultant or L&D Manager. Where a Head of People exists, reports to them"
             },
             {
               "id": "marketing-manager",
