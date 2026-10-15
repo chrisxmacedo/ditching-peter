@@ -396,6 +396,26 @@
               "line": "Designs how the product looks and behaves. Reports to the Product Director."
             },
             {
+              "id": "content-designer",
+              "title": "Content Designer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "product-director",
+              "escalatesTo": [],
+              "line": "Designs publish-ready content for user journeys. Reports to the Product Director."
+            },
+            {
+              "id": "service-designer",
+              "title": "Service Designer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "product-director",
+              "escalatesTo": [],
+              "line": "Designs end-to-end service journeys across digital and offline. Reports to the Product Director."
+            },
+            {
               "id": "head-of-delivery",
               "title": "Head of Delivery",
               "sectorTitle": null,
@@ -573,6 +593,27 @@
               "note": "Also Test Automation Engineer"
             },
             {
+              "id": "technical-architect",
+              "title": "Technical Architect",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Sets technical design patterns for services. Reports to the Head of Engineering."
+            },
+            {
+              "id": "security-architect",
+              "title": "Security Architect",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Designs secure solutions and advises on security risk. Reports to the Head of Engineering.",
+              "note": "Or the CISO where one exists"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -665,6 +706,17 @@
                 "depot-manager"
               ],
               "line": "Reads how the operation is performing. Reports to the Operations Director."
+            },
+            {
+              "id": "procurement-manager",
+              "title": "Procurement Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Sources suppliers and awards contracts within delegated limits. Reports to the Operations Director.",
+              "note": "Or the Finance Director where procurement sits under finance"
             }
           ]
         },
@@ -759,6 +811,17 @@
                 "finance-director"
               ],
               "line": "Advises on people process and reports headcount, turnover, and absence. Reports to the CEO."
+            },
+            {
+              "id": "talent-acquisition-manager",
+              "title": "Talent Acquisition Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "hr-business-partner",
+              "escalatesTo": [],
+              "line": "Attracts and assesses candidates for approved vacancies. Reports to the HR Business Partner.",
+              "note": "Also Resourcing Manager. Where a Head of People exists, reports to them"
             },
             {
               "id": "marketing-manager",
