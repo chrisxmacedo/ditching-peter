@@ -13,7 +13,7 @@
           "id": "sales-and-customer",
           "title": "Sales and customer",
           "sample": true,
-          "gap": "Roles and recipients named in the specs but not in this pack: CEO, Head of Customer Success, assigned accounts, the customer, the shared pipeline.",
+          "gap": "Roles and recipients named in the specs but not in this pack: CEO, assigned accounts, the customer, the shared pipeline.",
           "roles": [
             {
               "id": "ceo",
@@ -79,9 +79,10 @@
               "title": "Head of Customer Success",
               "sectorTitle": null,
               "overrides": {},
-              "kind": "context",
+              "kind": "paid",
               "reportsTo": null,
-              "escalatesTo": []
+              "escalatesTo": [],
+              "line": "Owns retention, customer health and the customer success and support team. Reports to the CEO."
             },
             {
               "id": "customer-success-manager",
