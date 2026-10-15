@@ -651,6 +651,21 @@
               "note": "Also IT Support Analyst or IT Service Analyst"
             },
             {
+              "id": "infrastructure-engineer",
+              "title": "Infrastructure Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [
+                "technical-architect",
+                "security-architect",
+                "head-of-engineering"
+              ],
+              "line": "Builds and runs the network, servers and cloud services. Reports to the Head of Engineering.",
+              "note": "Also Cloud Engineer, Network Engineer or Network Administrator"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -779,6 +794,20 @@
               ],
               "line": "Keeps buildings, assets and contracted services safe and within budget. Reports to the Operations Director.",
               "note": "Also Estates Manager, Support Services Manager or FM Contract Manager"
+            },
+            {
+              "id": "warehouse-manager",
+              "title": "Warehouse Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-manager",
+              "escalatesTo": [
+                "operations-manager",
+                "health-and-safety-manager"
+              ],
+              "line": "Runs stock, storage and dispatch safely at a warehouse. Reports to the Operations Manager.",
+              "note": "Or the Depot Manager on a shared site. Also Distribution Centre Manager"
             }
           ]
         },
@@ -893,6 +922,19 @@
               "note": "Also Debt Collection Agent"
             },
             {
+              "id": "bookkeeper",
+              "title": "Bookkeeper",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "financial-controller",
+              "escalatesTo": [
+                "financial-controller"
+              ],
+              "line": "Keeps the ledgers, reconciles the bank and prepares VAT returns. Reports to the Financial Controller.",
+              "note": "Also Accounts Clerk or Accounts Payable Clerk"
+            },
+            {
               "id": "unit-head",
               "title": "The unit head",
               "sectorTitle": null,
@@ -980,6 +1022,19 @@
               "line": "Spends the approved marketing budget and delivers qualified leads. Reports to the CEO."
             },
             {
+              "id": "digital-marketing-manager",
+              "title": "Digital Marketing Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [
+                "marketing-manager"
+              ],
+              "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
+              "note": "Also Digital Marketer, SEO Manager or Social Media Manager"
+            },
+            {
               "id": "general-counsel",
               "title": "General Counsel",
               "sectorTitle": null,
@@ -1022,6 +1077,33 @@
               ],
               "line": "Gives independent assurance on risk, governance and controls to the Audit Committee. Reports to the Audit Committee.",
               "note": "Functionally to the Audit Committee; administratively to the CEO or Finance Director. Also Internal Audit Manager"
+            },
+            {
+              "id": "risk-manager",
+              "title": "Risk Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "finance-director",
+              "escalatesTo": [
+                "finance-director"
+              ],
+              "line": "Keeps the risk register and reports the top risks to the board. Reports to the Finance Director.",
+              "note": "Or the Chief Risk Officer where one exists. Also Enterprise Risk Manager"
+            },
+            {
+              "id": "company-secretary",
+              "title": "Company Secretary",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "legal-counsel"
+              ],
+              "line": "Runs board papers and minutes and keeps Companies House filings current. Reports to the CEO.",
+              "note": "And to the Chair on board matters. Also Chartered Secretary or Governance Officer"
             },
             {
               "id": "cfo",
