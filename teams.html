@@ -77,8 +77,8 @@
   <script>
     (function(){
       var folds=document.querySelectorAll('.side-fold');
-      var mq=window.matchMedia('(min-width: 900px)');
-      function sync(){ if(mq.matches) folds.forEach(function(d){ d.open=true; }); }
+      var mq=window.matchMedia('(min-width: 1100px)');
+      function sync(){ folds.forEach(function(d){ d.open = mq.matches; }); }
       sync();
       if(mq.addEventListener) mq.addEventListener('change', sync);
     })();

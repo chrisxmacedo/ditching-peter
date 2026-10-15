@@ -129,12 +129,26 @@
 
   <aside class="docs-sidebar" id="docsSidebar">
     <div class="docs-nav-title">Full library</div>
-    <div class="side-group">
-      <div class="side-group-label">On this page</div>
-      <a class="side-link active" href="#pack">What's in the pack</a>
-      <a class="side-link" href="#licences">Licences</a>
-    </div>
+    <details class="side-fold">
+      <summary>On this page</summary>
+      <div class="side-fold-body">
+        <div class="side-group">
+          <div class="side-group-label">On this page</div>
+          <a class="side-link active" href="#pack">What's in the pack</a>
+          <a class="side-link" href="#licences">Licences</a>
+        </div>
+      </div>
+    </details>
   </aside>
+  <script>
+    (function(){
+      var folds=document.querySelectorAll('.side-fold');
+      var mq=window.matchMedia('(min-width: 1100px)');
+      function sync(){ folds.forEach(function(d){ d.open = mq.matches; }); }
+      sync();
+      if(mq.addEventListener) mq.addEventListener('change', sync);
+    })();
+  </script>
 
   <main class="docs-main">
 
