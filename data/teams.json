@@ -1,7 +1,7 @@
 {
   "schema": {
     "shape": "sectors[].teams[].roles[]",
-    "role": "id is the stable core id across sectors. sectorTitle, when set, is the label for this sector. overrides is reserved for a later sector to replace reportsTo or escalatesTo for that role. General leaves both empty.",
+    "role": "id is the stable core id across sectors. sectorTitle, when set, is the label for this sector. overrides is reserved for a later sector to replace reportsTo or escalatesTo for that role. General and Financial services leave both empty.",
     "public": "A team with sample true includes its escalation table and handoff table. Every other team is titles and lines only: reportsTo and escalatesTo. No decision text, limits, or deliverables for those teams."
   },
   "sectors": [
@@ -1150,6 +1150,289 @@
               "reportsTo": null,
               "escalatesTo": [],
               "line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "financial-services",
+      "title": "Financial services",
+      "teams": [
+        {
+          "id": "financial-crime",
+          "title": "Financial crime",
+          "sample": false,
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "nca",
+              "title": "NCA",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "money-laundering-reporting-officer",
+              "title": "Money Laundering Reporting Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "nca"
+              ],
+              "line": "Receives internal suspicion reports and decides what goes to the NCA. The focal point for anti-money laundering. Reports to the CEO."
+            },
+            {
+              "id": "financial-crime-investigator",
+              "title": "Financial Crime Investigator",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "money-laundering-reporting-officer",
+              "escalatesTo": [
+                "money-laundering-reporting-officer"
+              ],
+              "line": "Investigates transaction monitoring alerts and passes evidenced suspicions to the MLRO. Reports to the Money Laundering Reporting Officer."
+            },
+            {
+              "id": "kyc-analyst",
+              "title": "KYC Analyst",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "money-laundering-reporting-officer",
+              "escalatesTo": [
+                "money-laundering-reporting-officer"
+              ],
+              "line": "Identifies and verifies customers and their owners before onboarding, and keeps due diligence current. Reports to the Money Laundering Reporting Officer."
+            }
+          ]
+        },
+        {
+          "id": "risk-and-compliance",
+          "title": "Risk and compliance (three lines of defence)",
+          "sample": false,
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "the-governing-body",
+              "title": "Governing body",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "the-business-line-owner",
+              "title": "Business line owner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "audit-committee",
+              "title": "Audit Committee",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "the-process-owner",
+              "title": "Process owner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "chief-risk-officer",
+              "title": "Chief Risk Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "the-governing-body",
+                "the-business-line-owner"
+              ],
+              "line": "Runs the independent risk function and reports the firm's risk profile against appetite. Reports to the CEO."
+            },
+            {
+              "id": "compliance-officer",
+              "title": "Compliance Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "the-business-line-owner"
+              ],
+              "line": "Runs the independent compliance function, its monitoring programme and reporting to the board. Reports to the CEO."
+            },
+            {
+              "id": "cass-oversight-officer",
+              "title": "CASS Oversight Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "compliance-officer",
+              "escalatesTo": [
+                "compliance-officer",
+                "ceo"
+              ],
+              "line": "Oversees how client money and assets are protected, and reports on it to the board. Reports to the Compliance Officer."
+            },
+            {
+              "id": "internal-auditor",
+              "title": "Internal Auditor",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "audit-committee",
+              "escalatesTo": [
+                "audit-committee",
+                "the-process-owner"
+              ],
+              "line": "Gives independent assurance on risk, governance and controls (third line). Reports to the Audit Committee."
+            }
+          ]
+        },
+        {
+          "id": "customer-operations-and-complaints",
+          "title": "Customer operations and complaints",
+          "sample": false,
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "money-laundering-reporting-officer",
+              "title": "Money Laundering Reporting Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "head-of-customer-success",
+              "title": "Head of Customer Success",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "customer-operations-manager",
+              "title": "Customer Operations Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo"
+              ],
+              "line": "Runs customer operations and complaints, and fixes the root causes behind them. Reports to the CEO."
+            },
+            {
+              "id": "complaints-handler",
+              "title": "Complaints Handler",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "customer-operations-manager",
+              "escalatesTo": [
+                "customer-operations-manager",
+                "money-laundering-reporting-officer"
+              ],
+              "line": "Investigates and answers customer complaints within the regulatory time limits. Reports to the Customer Operations Manager."
+            },
+            {
+              "id": "support-agent",
+              "title": "Support Agent",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-customer-success",
+              "escalatesTo": [
+                "head-of-customer-success"
+              ],
+              "line": "Answers customer questions and resolves day-to-day issues. Reports to the Head of Customer Success."
+            }
+          ]
+        },
+        {
+          "id": "advice",
+          "title": "Advice",
+          "sample": false,
+          "roles": [
+            {
+              "id": "head-of-advice",
+              "title": "Head of Advice",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "financial-adviser",
+              "title": "Financial Adviser",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-advice",
+              "escalatesTo": [
+                "head-of-advice"
+              ],
+              "line": "Gives personal financial advice once the client's suitability information is complete. Reports to the Head of Advice."
+            },
+            {
+              "id": "paraplanner",
+              "title": "Paraplanner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "financial-adviser",
+              "escalatesTo": [
+                "financial-adviser"
+              ],
+              "line": "Researches and drafts suitability reports for the adviser to sign off. Reports to the Financial Adviser."
             }
           ]
         }

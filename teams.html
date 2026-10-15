@@ -57,7 +57,7 @@
     <details class="side-fold">
       <summary>Teams</summary>
       <div class="side-fold-body">
-        <div class="side-group">
+        <div class="side-group" id="team-nav">
           <a class="side-link" href="#sales-and-customer">Sales and customer</a>
           <a class="side-link" href="#product">Product</a>
           <a class="side-link" href="#delivery">Delivery</a>
@@ -91,10 +91,10 @@
       <p class="lede">A solid line is who the role reports to. A dashed line is where a decision goes when it is past the role's limit. Both are read from the specs. Nothing is added. Sales and customer is the free sample: its escalation and handoff tables are on this page. The other charts are titles and lines.</p>
       <div class="sector-bar">
         <label for="sector">Sector</label>
-        <select id="sector" disabled aria-describedby="sector-note">
+        <select id="sector" aria-describedby="sector-note">
           <option value="general">General</option>
         </select>
-        <span class="sector-note" id="sector-note">Only General is published.</span>
+        <span class="sector-note" id="sector-note">The charts follow the sector you choose.</span>
       </div>
     </section>
     <div id="team-charts"></div>

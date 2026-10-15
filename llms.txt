@@ -4,11 +4,11 @@
 
 Authority is the decisions a role may make, each with a limit and where the decision goes when the limit is passed. Responsibility is a deliverable, a recipient, and a cadence. Ability is a named skill, tool, or method the person in the role must be able to perform. Specs use three keywords: MAY, MUST, and CAN. Money limits in the published specs are examples — set your own.
 
-Nine roles are free to read, with the full spec. Forty-eight further roles are sold in the full library. This site lists those forty-eight by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the forty-eight catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
+Nine roles are free to read, with the full spec. Fifty-eight further roles are sold in the full library. This site lists those fifty-eight by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the fifty-eight catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
 
-Team charts are on [the teams page](https://ditchingpeter.com/teams). Sales and customer is the free sample: its chart, escalation table, and handoff table are public. The other teams show titles and reporting and escalation lines only. Do not treat those charts as the specs, and do not invent escalation or handoff tables for them. Chart data, shaped as sector then team then role, is [teams.json](https://ditchingpeter.com/data/teams.json). Only the General sector is published.
+Team charts are on [the teams page](https://ditchingpeter.com/teams). Sales and customer is the free sample: its chart, escalation table, and handoff table are public. The other teams show titles and reporting and escalation lines only. Do not treat those charts as the specs, and do not invent escalation or handoff tables for them. Chart data, shaped as sector then team then role, is [teams.json](https://ditchingpeter.com/data/teams.json). General and Financial services are published. Financial services charts are titles and lines only.
 
-The full pack is all 57 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 173-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. Two licences: Individual, and Team for up to 25 people.
+The full pack is all 67 roles (57 general + 10 financial services), 11 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 173-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. Two licences: Individual, and Team for up to 25 people.
 
 ## Pages
 
@@ -37,9 +37,9 @@ The full pack is all 57 roles, 7 team structures with reporting and escalation c
 
 ## Full library
 
-- [The full library](https://ditchingpeter.com/full-library): All 57 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown, a 173-page PDF, and JSON and AGENTS.md agent versions. One-off purchase. Future updates included. Two licences — Individual, and Team (up to 25 people). Launch prices until 28 Oct 2026.
+- [The full library](https://ditchingpeter.com/full-library): All 67 roles (57 general + 10 financial services), 11 team structures with reporting and escalation charts, editable DOCX and Markdown, a 173-page PDF, and JSON and AGENTS.md agent versions. One-off purchase. Future updates included. Two licences — Individual, and Team (up to 25 people). Launch prices until 28 Oct 2026.
 
 ## Machine-readable
 
-- [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 57 roles. The nine free roles include full ARA specs. The forty-eight paid roles are title, one line, and in_pack true, with no spec content.
-- [teams.json](https://ditchingpeter.com/data/teams.json): Chart data for a later sector variant. Each role has a stable id, an optional sector title, and an overrides object. Sales and customer includes its escalation and handoff tables. Other teams do not.
+- [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 67 roles. The nine free roles include full ARA specs. The fifty-eight paid roles are title, one line, and in_pack true, with no spec content.
+- [teams.json](https://ditchingpeter.com/data/teams.json): Chart data for General and Financial services. Each role has a stable id, an optional sector title, and an overrides object. Sales and customer includes its escalation and handoff tables. Other teams do not.

@@ -547,9 +547,49 @@
     var charts = document.getElementById('team-charts');
     var connect = document.getElementById('team-connect');
     var select = document.getElementById('sector');
+    var nav = document.getElementById('team-nav');
+    var generalNav = nav ? nav.innerHTML : '';
     function sectorById(id) {
       for (var i = 0; i < data.sectors.length; i++) if (data.sectors[i].id === id) return data.sectors[i];
       return data.sectors[0];
+    }
+    function sectorForLocation() {
+      var params = new URLSearchParams(location.search);
+      var fromQuery = params.get('sector');
+      if (fromQuery) return sectorById(fromQuery);
+      var hash = (location.hash || '').replace(/^#/, '');
+      if (!hash) return data.sectors[0];
+      for (var i = 0; i < data.sectors.length; i++) {
+        var teams = data.sectors[i].teams;
+        for (var j = 0; j < teams.length; j++) if (teams[j].id === hash) return data.sectors[i];
+      }
+      return data.sectors[0];
+    }
+    function syncNav(sector) {
+      if (!nav) return;
+      if (sector.id === 'general') { nav.innerHTML = generalNav; return; }
+      nav.innerHTML = '';
+      sector.teams.forEach(function (team) {
+        var link = document.createElement('a');
+        link.className = 'side-link';
+        link.href = '#' + team.id;
+        link.textContent = team.title;
+        nav.appendChild(link);
+      });
+    }
+    function show(sector, writeUrl) {
+      if (select) select.value = sector.id;
+      mountTeams(charts, sector);
+      syncNav(sector);
+      if (!writeUrl || !history.replaceState) return;
+      var url = new URL(location.href);
+      if (sector.id === 'general') url.searchParams.delete('sector');
+      else url.searchParams.set('sector', sector.id);
+      var hash = (url.hash || '').replace(/^#/, '');
+      var keep = false;
+      sector.teams.forEach(function (team) { if (team.id === hash) keep = true; });
+      if (!keep) url.hash = '';
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
     if (charts) {
       if (select) {
@@ -561,9 +601,9 @@
           select.appendChild(option);
         });
         select.disabled = data.sectors.length < 2;
-        select.addEventListener('change', function () { mountTeams(charts, sectorById(select.value)); });
+        select.addEventListener('change', function () { show(sectorById(select.value), true); });
       }
-      mountTeams(charts, sectorById(select ? select.value : data.sectors[0].id));
+      show(sectorForLocation(), false);
     }
     if (connect) mountConnect(connect, data);
   }
