@@ -1,0 +1,42 @@
+# Ditching Peter
+
+> ARA (Authority, Responsibility, Ability) is a framework for organisational health. It names, for every role, who can decide what, what must be delivered and to whom, and which skills the role requires.
+
+Authority is the decisions a role may make, each with a limit and where the decision goes when the limit is passed. Responsibility is a deliverable, a recipient, and a cadence. Ability is a named skill, tool, or method the person in the role must be able to perform. Specs use three keywords: MAY, MUST, and CAN. Money limits in the published specs are examples — set your own.
+
+Nine roles are free to read, with the full spec. Eighteen further roles are sold in the full library. This site lists those eighteen by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the eighteen catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
+
+The full pack is all 27 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 77-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. The commercial licence is the one for use with clients or inside a product you sell.
+
+## Pages
+
+- [Home](https://ditchingpeter.com/): The ARA framework — Authority, Responsibility, and Ability
+- [Getting started](https://ditchingpeter.com/getting-started): How a role becomes a MAY / MUST / CAN spec
+- [Format](https://ditchingpeter.com/format): How to write each line of an ARA spec
+- [Prompting AI](https://ditchingpeter.com/prompting-ai): Give a model a role's authority, responsibility, and ability
+- [Role library](https://ditchingpeter.com/role-library): Nine free role specs, and titles for the rest of the library
+- [Blog](https://ditchingpeter.com/blog): Notes on roles and organisational health
+- [We took a real Chief of Staff spec and found the bug](https://ditchingpeter.com/blog/chief-of-staff-teardown): A job description sorted into ARA, with authority missing
+- [About](https://ditchingpeter.com/about): Christian Macedo, and why the framework exists
+
+## Free roles
+
+- [Sales Director](https://ditchingpeter.com/role-library#sales-director): Owns sales authority, quotas, the forecast, and the approved product list. Reports to the CEO.
+- [Sales Executive](https://ditchingpeter.com/role-library#sales-executive): Agrees deals within set limits and hands signed deals to the Project Manager. Reports to the Sales Director.
+- [Customer Success Manager](https://ditchingpeter.com/role-library#customer-success-manager): Runs onboarding, account health scores, and at-risk escalation. Reports to the Head of Customer Success.
+- [Product Manager](https://ditchingpeter.com/role-library#product-manager): Decides what ships next inside the agreed roadmap and writes the PRD. Reports to the Product Director.
+- [Project Manager](https://ditchingpeter.com/role-library#project-manager): Runs a project inside the agreed scope, dates, and budget. Reports to the Head of Delivery.
+- [Engineering Manager](https://ditchingpeter.com/role-library#engineering-manager): Sets the team's engineering standards and delivers working, tested increments. Reports to the Head of Engineering.
+- [Software Engineer](https://ditchingpeter.com/role-library#software-engineer): Delivers tested, reviewed code for the agreed design. Reports to the Engineering Manager.
+- [HR Business Partner](https://ditchingpeter.com/role-library#hr-business-partner): Advises on people process and reports headcount, turnover, and absence. Reports to the CEO.
+- [Marketing Manager](https://ditchingpeter.com/role-library#marketing-manager): Spends the approved marketing budget and delivers qualified leads. Reports to the CEO.
+
+## Full library
+
+- [Individual licence](https://payhip.com/b/RGbfI): £29 for one person. Launch price £19 until 28 Oct 2026.
+- [Team licence, up to 25 people](https://payhip.com/b/6LkoT): £99. Launch price £69 until 28 Oct 2026.
+- [Commercial licence](https://payhip.com/b/Qd1Ko): £249, for use with clients or inside a product you sell. Launch price £179 until 28 Oct 2026. The full pack includes JSON and AGENTS.md versions for agent builders.
+
+## Machine-readable
+
+- [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 27 roles. The nine free roles include full ARA specs. The eighteen paid roles are title, one line, and in_pack true, with no spec content.
