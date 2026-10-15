@@ -15,6 +15,7 @@ The full pack is all 27 roles, 7 team structures with reporting and escalation c
 - [Format](https://ditchingpeter.com/format): How to write each line of an ARA spec
 - [Prompting AI](https://ditchingpeter.com/prompting-ai): Give a model a role's authority, responsibility, and ability
 - [Role library](https://ditchingpeter.com/role-library): Nine free role specs, and titles for the rest of the library
+- [Full library](https://ditchingpeter.com/full-library): What's in the pack, and the three licences
 - [Blog](https://ditchingpeter.com/blog): Notes on roles and organisational health
 - [We took a real Chief of Staff spec and found the bug](https://ditchingpeter.com/blog/chief-of-staff-teardown): A job description sorted into ARA, with authority missing
 - [About](https://ditchingpeter.com/about): Christian Macedo, and why the framework exists
@@ -33,9 +34,7 @@ The full pack is all 27 roles, 7 team structures with reporting and escalation c
 
 ## Full library
 
-- [Individual licence](https://payhip.com/b/RGbfI): £29 for one person. Launch price £19 until 28 Oct 2026.
-- [Team licence, up to 25 people](https://payhip.com/b/6LkoT): £99. Launch price £69 until 28 Oct 2026.
-- [Commercial licence](https://payhip.com/b/Qd1Ko): £249, for use with clients or inside a product you sell. Launch price £179 until 28 Oct 2026. The full pack includes JSON and AGENTS.md versions for agent builders.
+- [The full library](https://ditchingpeter.com/full-library): All 27 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown, a 77-page PDF, and JSON and AGENTS.md agent versions. One-off purchase. Future updates included. Three licences — Individual, Team (up to 25 people), and Commercial. Launch prices until 28 Oct 2026.
 
 ## Machine-readable
 
