@@ -19,7 +19,9 @@
   h1.title,h2.sec,.spec-role,.primer-col h3,.why-card h4,
   .line-clause,.post-card h3,.locked-title,.price-now{color:var(--ink) !important;}
   .lede,.sec-intro,.primer-col p,.why-card p,.post-card p,.locked-item p,.price-card p,.role-buy p{color:var(--muted) !important;}
-  .price-name,.role-buy-kicker,.library-offer-links a{color:var(--accent) !important;}
+  .price-name,.role-buy-kicker,.library-offer-links a,.quiet-cta a,.lede a{color:var(--accent) !important;}
+  .quiet-cta a{border-bottom-color:var(--accent) !important;}
+  a.locked-title:hover{color:var(--accent) !important;}
   .cta{color:#fff !important;}
   .cta.cta-secondary{color:var(--accent) !important;background:#fff !important;border-color:var(--accent) !important;}
   .docs-sidebar{background-color:#fff !important;}
@@ -64,6 +66,7 @@ h1.title{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,60px);fon
 h1.title em{font-style:italic;color:var(--accent);}
 .lede{font-size:18px;color:var(--muted);max-width:660px;line-height:1.6;}
 .lede strong{color:var(--ink);font-weight:500;}
+.lede a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
 .section-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
 .section-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;}
 .section-rule{flex:1;height:1px;background:var(--rule);}
@@ -155,6 +158,11 @@ h2.sec{font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,38px);font-
 .price-now{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--ink);line-height:1;}
 .price-was{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin:8px 0 14px;line-height:1.45;}
 .price-card p{font-size:15px;color:var(--muted);margin-bottom:18px;line-height:1.55;}
+.quiet-cta{margin-top:28px;}
+.quiet-cta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+.quiet-cta a:hover{color:var(--accent-dark);}
+a.locked-title{color:var(--ink);text-decoration:none;}
+a.locked-title:hover{color:var(--accent);}
 
 /* ── BLOG ── */
 .post-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);}
