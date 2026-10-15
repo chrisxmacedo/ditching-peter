@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Teams — Ditching Peter</title>
+<meta name="description" content="How the ARA roles report and escalate, team by team. Sales and customer is the free sample, with its escalation and handoff tables. The other teams show titles and lines.">
+<link rel="canonical" href="https://ditchingpeter.com/teams">
+<link rel="describedby" href="https://ditchingpeter.com/llms.txt">
+<meta property="og:title" content="Teams — Ditching Peter">
+<meta property="og:description" content="Reporting lines and escalation paths for the ARA role library. Sales and customer is published in full.">
+<meta property="og:url" content="https://ditchingpeter.com/teams">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ditching Peter">
+<meta property="og:locale" content="en_GB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/docs.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Ditching Peter</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/getting-started">Getting Started</a></li>
+      <li><a href="/format">Format</a></li>
+      <li><a href="/prompting-ai">Prompting AI</a></li>
+      <li><a href="/role-library">Role Library</a></li>
+      <li><a href="/teams" style="color:var(--accent)">Teams</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleNav(this)" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/" onclick="closeNav()">Home</a>
+    <a href="/getting-started" onclick="closeNav()">Getting Started</a>
+    <a href="/format" onclick="closeNav()">Format</a>
+    <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
+    <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/teams" onclick="closeNav()" style="color:var(--accent)">Teams</a>
+    <a href="/blog" onclick="closeNav()">Blog</a>
+    <a href="/about" onclick="closeNav()">About</a>
+  </div>
+</nav>
+
+<div class="docs-shell">
+
+  <aside class="docs-sidebar">
+    <div class="docs-nav-title">Teams</div>
+    <details class="side-fold">
+      <summary>Teams</summary>
+      <div class="side-fold-body">
+        <div class="side-group">
+          <a class="side-link" href="#sales-and-customer">Sales and customer</a>
+          <a class="side-link" href="#product">Product</a>
+          <a class="side-link" href="#delivery">Delivery</a>
+          <a class="side-link" href="#engineering">Engineering</a>
+          <a class="side-link" href="#operations-and-depot">Operations and depot</a>
+          <a class="side-link" href="#finance">Finance</a>
+          <a class="side-link" href="#executive-office">Executive, people, legal</a>
+        </div>
+      </div>
+    </details>
+    <div class="side-group">
+      <div class="side-group-label">Library</div>
+      <a class="side-link" href="/role-library">Role library</a>
+      <a class="side-link" href="/full-library">Get the full library</a>
+    </div>
+  </aside>
+  <script>
+    (function(){
+      var folds=document.querySelectorAll('.side-fold');
+      var mq=window.matchMedia('(min-width: 900px)');
+      function sync(){ if(mq.matches) folds.forEach(function(d){ d.open=true; }); }
+      sync();
+      if(mq.addEventListener) mq.addEventListener('change', sync);
+    })();
+  </script>
+
+  <main class="docs-main">
+    <section id="teams-top">
+      <p class="eyebrow">Teams</p>
+      <h1 class="title">How the teams <em>fit.</em></h1>
+      <p class="lede">A solid line is who the role reports to. A dashed line is where a decision goes when it is past the role's limit. Both are read from the specs. Nothing is added. Sales and customer is the free sample: its escalation and handoff tables are on this page. The other charts are titles and lines.</p>
+      <div class="sector-bar">
+        <label for="sector">Sector</label>
+        <select id="sector" disabled aria-describedby="sector-note">
+          <option value="general">General</option>
+        </select>
+        <span class="sector-note" id="sector-note">Only General is published.</span>
+      </div>
+    </section>
+    <div id="team-charts"></div>
+    <noscript><p class="sec-intro">Team charts need JavaScript. The roles are listed in the <a href="/role-library">role library</a>.</p></noscript>
+  </main>
+</div>
+
+<footer>
+  <p>Ditching Peter — Teams</p>
+  <p>Christian Macedo</p>
+</footer>
+
+<script>
+  function toggleNav(btn){btn.classList.toggle('open');document.getElementById('navDrawer').classList.toggle('open');}
+  function closeNav(){document.querySelector('.nav-burger').classList.remove('open');document.getElementById('navDrawer').classList.remove('open');}
+</script>
+<script src="/teams.js"></script>
+</body>
+</html>

@@ -1,0 +1,920 @@
+{
+  "schema": {
+    "shape": "sectors[].teams[].roles[]",
+    "role": "id is the stable core id across sectors. sectorTitle, when set, is the label for this sector. overrides is reserved for a later sector to replace reportsTo or escalatesTo for that role. General leaves both empty.",
+    "public": "A team with sample true includes its escalation table and handoff table. Every other team is titles and lines only: reportsTo and escalatesTo. No decision text, limits, or deliverables for those teams."
+  },
+  "sectors": [
+    {
+      "id": "general",
+      "title": "General",
+      "teams": [
+        {
+          "id": "sales-and-customer",
+          "title": "Sales and customer",
+          "sample": true,
+          "gap": "Roles and recipients named in the specs but not in this pack: CEO, Head of Customer Success, assigned accounts, the customer, the shared pipeline.",
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "sales-director",
+              "title": "Sales Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo"
+              ],
+              "line": "Owns sales authority, quotas, the forecast, and the approved product list. Reports to the CEO."
+            },
+            {
+              "id": "sales-development-rep",
+              "title": "Sales Development Rep",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "sales-director",
+              "escalatesTo": [
+                "sales-executive"
+              ],
+              "line": "Finds and qualifies new conversations for the sales team. Reports to the Sales Director."
+            },
+            {
+              "id": "sales-executive",
+              "title": "Sales Executive",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "sales-director",
+              "escalatesTo": [
+                "sales-director"
+              ],
+              "line": "Agrees deals within set limits and hands signed deals to the Project Manager. Reports to the Sales Director.",
+              "note": "Also Account Executive, Business Development Manager"
+            },
+            {
+              "id": "account-manager",
+              "title": "Account Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "sales-director",
+              "escalatesTo": [
+                "sales-director",
+                "customer-success-manager"
+              ],
+              "line": "Looks after named customers after the sale. Reports to the Sales Director."
+            },
+            {
+              "id": "head-of-customer-success",
+              "title": "Head of Customer Success",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "customer-success-manager",
+              "title": "Customer Success Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "head-of-customer-success",
+              "escalatesTo": [
+                "head-of-customer-success"
+              ],
+              "line": "Runs onboarding, account health scores, and at-risk escalation. Reports to the Head of Customer Success."
+            },
+            {
+              "id": "support-agent",
+              "title": "Support Agent",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-customer-success",
+              "escalatesTo": [
+                "head-of-customer-success"
+              ],
+              "line": "Handles customer support tickets. Reports to the Head of Customer Success."
+            }
+          ],
+          "escalationTable": [
+            {
+              "role": "Sales Director",
+              "decision": "MAY Sign contracts",
+              "limit": "up to £150,000",
+              "to": "CEO"
+            },
+            {
+              "role": "Sales Director",
+              "decision": "MAY Discount a sale",
+              "limit": "up to 7% of value",
+              "to": "CEO"
+            },
+            {
+              "role": "Sales Director",
+              "decision": "MAY Commit the quarterly sales budget",
+              "limit": "up to £50,000 / qtr",
+              "to": "CEO"
+            },
+            {
+              "role": "Sales Director",
+              "decision": "MAY Spend the discretionary fund",
+              "limit": "up to £10,000 / yr",
+              "to": "CEO"
+            },
+            {
+              "role": "Sales Director",
+              "decision": "MAY Hire into the sales team",
+              "limit": "within the headcount plan",
+              "to": "CEO"
+            },
+            {
+              "role": "Sales Development Rep",
+              "decision": "MAY NOT Quote a price or a discount",
+              "limit": "—",
+              "to": "Sales Executive"
+            },
+            {
+              "role": "Sales Executive",
+              "decision": "MAY Agree deals at list price",
+              "limit": "up to £25,000",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Sales Executive",
+              "decision": "MAY Discount a sale",
+              "limit": "up to 5% of value",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Sales Executive",
+              "decision": "MAY NOT Sell outside the approved product list",
+              "limit": "—",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Account Manager",
+              "decision": "MAY Agree an upsell on a named account at list price",
+              "limit": "up to £25,000",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Account Manager",
+              "decision": "MAY Discount an upsell",
+              "limit": "up to 5% of value",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Account Manager",
+              "decision": "MAY NOT Approve a renewal at list price",
+              "limit": "—",
+              "to": "Customer Success Manager"
+            },
+            {
+              "role": "Account Manager",
+              "decision": "MAY NOT Sign a contract or change contract terms",
+              "limit": "—",
+              "to": "Sales Director"
+            },
+            {
+              "role": "Customer Success Manager",
+              "decision": "MAY Issue account credits",
+              "limit": "up to £2,000",
+              "to": "Head of Customer Success"
+            },
+            {
+              "role": "Customer Success Manager",
+              "decision": "MAY Approve renewals at list price",
+              "limit": "up to £50,000 ARR",
+              "to": "Head of Customer Success"
+            },
+            {
+              "role": "Support Agent",
+              "decision": "MAY Issue a refund or a credit",
+              "limit": "up to £50",
+              "to": "Head of Customer Success"
+            },
+            {
+              "role": "Support Agent",
+              "decision": "MAY NOT Change account ownership or billing details",
+              "limit": "—",
+              "to": "Head of Customer Success"
+            }
+          ],
+          "handoffs": [
+            {
+              "from": "Sales Director",
+              "deliverable": "Keep the approved product list current",
+              "to": "Sales Executives",
+              "when": "when it changes"
+            },
+            {
+              "from": "Sales Director",
+              "deliverable": "Set and allocate quarterly quotas",
+              "to": "Sales Executives",
+              "when": "each quarter"
+            },
+            {
+              "from": "Sales Director",
+              "deliverable": "Deliver the quarterly sales forecast",
+              "to": "CEO",
+              "when": "quarterly"
+            },
+            {
+              "from": "Sales Director",
+              "deliverable": "Deliver the pipeline report",
+              "to": "CEO",
+              "when": "weekly, Fri 17:00"
+            },
+            {
+              "from": "Sales Development Rep",
+              "deliverable": "Hand over a qualified meeting, with notes",
+              "to": "Sales Executive",
+              "when": "within 24h of booking"
+            },
+            {
+              "from": "Sales Development Rep",
+              "deliverable": "Log activity in the CRM",
+              "to": "Sales Director",
+              "when": "daily"
+            },
+            {
+              "from": "Sales Development Rep",
+              "deliverable": "Report meetings booked against target",
+              "to": "Sales Director",
+              "when": "weekly"
+            },
+            {
+              "from": "Sales Executive",
+              "deliverable": "Close new business",
+              "to": "Sales Director",
+              "when": "against quarterly target"
+            },
+            {
+              "from": "Sales Executive",
+              "deliverable": "Hand over signed deals",
+              "to": "Project Manager",
+              "when": "within 24h of signing"
+            },
+            {
+              "from": "Sales Executive",
+              "deliverable": "Keep own deal status current in the CRM",
+              "to": "the shared pipeline",
+              "when": "on every change"
+            },
+            {
+              "from": "Account Manager",
+              "deliverable": "Deliver an account plan for each named account",
+              "to": "Sales Director",
+              "when": "annually, reviewed quarterly"
+            },
+            {
+              "from": "Account Manager",
+              "deliverable": "Forecast upsells in the CRM",
+              "to": "Sales Director",
+              "when": "weekly"
+            },
+            {
+              "from": "Customer Success Manager",
+              "deliverable": "Run onboarding and quarterly business reviews",
+              "to": "assigned accounts",
+              "when": "onboarding, then each quarter"
+            },
+            {
+              "from": "Customer Success Manager",
+              "deliverable": "Deliver a health-score report per account",
+              "to": "Head of Customer Success",
+              "when": "monthly"
+            },
+            {
+              "from": "Customer Success Manager",
+              "deliverable": "Escalate at-risk accounts",
+              "to": "Head of Customer Success",
+              "when": "within 48h of a red signal"
+            },
+            {
+              "from": "Customer Success Manager",
+              "deliverable": "Hand expansion opportunities over",
+              "to": "Account Manager",
+              "when": "as they arise"
+            },
+            {
+              "from": "Support Agent",
+              "deliverable": "Respond to tickets within the service-level agreement",
+              "to": "the customer",
+              "when": "per the SLA"
+            },
+            {
+              "from": "Support Agent",
+              "deliverable": "Escalate a suspected bug, with steps to reproduce",
+              "to": "Software Engineers",
+              "when": "same day, via the bug queue"
+            },
+            {
+              "from": "Support Agent",
+              "deliverable": "Report recurring issues",
+              "to": "Head of Customer Success",
+              "when": "weekly"
+            }
+          ]
+        },
+        {
+          "id": "product",
+          "title": "Product",
+          "sample": false,
+          "roles": [
+            {
+              "id": "chief-product-officer",
+              "title": "Chief Product Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "product-director",
+              "title": "Product Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "chief-product-officer",
+              "escalatesTo": [
+                "chief-product-officer"
+              ],
+              "line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer."
+            },
+            {
+              "id": "product-manager",
+              "title": "Product Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "product-director",
+              "escalatesTo": [
+                "product-director",
+                "head-of-delivery"
+              ],
+              "line": "Decides what ships next inside the agreed roadmap and writes the PRD. Reports to the Product Director."
+            },
+            {
+              "id": "product-owner",
+              "title": "Product Owner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "product-manager",
+              "escalatesTo": [
+                "product-manager"
+              ],
+              "line": "Turns a product plan into work a delivery team can pick up. Reports to the Product Manager.",
+              "note": "In a smaller firm, this is the Product Manager"
+            },
+            {
+              "id": "product-designer",
+              "title": "Product Designer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "product-director",
+              "escalatesTo": [
+                "product-director",
+                "product-manager"
+              ],
+              "line": "Designs how the product looks and behaves. Reports to the Product Director."
+            },
+            {
+              "id": "head-of-delivery",
+              "title": "Head of Delivery",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Owns delivery across projects. Reports to the COO."
+            }
+          ]
+        },
+        {
+          "id": "delivery",
+          "title": "Delivery",
+          "sample": false,
+          "roles": [
+            {
+              "id": "coo",
+              "title": "COO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "head-of-delivery",
+              "title": "Head of Delivery",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "coo",
+              "escalatesTo": [
+                "coo",
+                "executive-sponsor",
+                "product-director"
+              ],
+              "line": "Owns delivery across projects. Reports to the COO."
+            },
+            {
+              "id": "delivery-manager",
+              "title": "Delivery Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-delivery",
+              "escalatesTo": [
+                "product-manager"
+              ],
+              "line": "Runs delivery for a team of projects. Reports to the Head of Delivery."
+            },
+            {
+              "id": "project-manager",
+              "title": "Project Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "head-of-delivery",
+              "escalatesTo": [
+                "head-of-delivery",
+                "executive-sponsor"
+              ],
+              "line": "Runs a project inside the agreed scope, dates, and budget. Reports to the Head of Delivery."
+            },
+            {
+              "id": "executive-sponsor",
+              "title": "The executive sponsor",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "product-director",
+              "title": "Product Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer."
+            },
+            {
+              "id": "product-manager",
+              "title": "Product Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Decides what ships next inside the agreed roadmap and writes the PRD. Reports to the Product Director."
+            }
+          ]
+        },
+        {
+          "id": "engineering",
+          "title": "Engineering",
+          "sample": false,
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "head-of-engineering",
+              "title": "Head of Engineering",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "finance-director",
+                "head-of-delivery",
+                "product-director"
+              ],
+              "line": "Leads the engineering organisation. Reports to the CEO."
+            },
+            {
+              "id": "engineering-manager",
+              "title": "Engineering Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [
+                "head-of-engineering",
+                "head-of-delivery",
+                "product-director"
+              ],
+              "line": "Sets the team's engineering standards and delivers working, tested increments. Reports to the Head of Engineering."
+            },
+            {
+              "id": "tech-lead",
+              "title": "Tech Lead",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "engineering-manager",
+              "escalatesTo": [
+                "head-of-engineering",
+                "product-manager"
+              ],
+              "line": "Sets the technical approach for a team. Reports to the Engineering Manager."
+            },
+            {
+              "id": "software-engineer",
+              "title": "Software Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "engineering-manager",
+              "escalatesTo": [
+                "engineering-manager"
+              ],
+              "line": "Delivers tested, reviewed code for the agreed design. Reports to the Engineering Manager."
+            },
+            {
+              "id": "qa-engineer",
+              "title": "QA Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "engineering-manager",
+              "escalatesTo": [
+                "engineering-manager"
+              ],
+              "line": "Checks that a build behaves as it should. Reports to the Engineering Manager.",
+              "note": "Also Test Automation Engineer"
+            },
+            {
+              "id": "finance-director",
+              "title": "Finance Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "head-of-delivery",
+              "title": "Head of Delivery",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Owns delivery across projects. Reports to the COO."
+            },
+            {
+              "id": "product-director",
+              "title": "Product Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer."
+            },
+            {
+              "id": "product-manager",
+              "title": "Product Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Decides what ships next inside the agreed roadmap and writes the PRD. Reports to the Product Director."
+            }
+          ]
+        },
+        {
+          "id": "operations-and-depot",
+          "title": "Operations and depot",
+          "sample": false,
+          "roles": [
+            {
+              "id": "operations-director",
+              "title": "Operations Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "operations-manager",
+              "title": "Operations Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [
+                "operations-director",
+                "depot-manager"
+              ],
+              "line": "Runs the operation across sites. Reports to the Operations Director.",
+              "note": "Across depots; one site is the Depot Manager"
+            },
+            {
+              "id": "depot-manager",
+              "title": "Depot Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [
+                "operations-director"
+              ],
+              "line": "Runs one site. Reports to the Operations Director.",
+              "note": "Also Site Manager"
+            },
+            {
+              "id": "operations-analyst",
+              "title": "Operations Analyst",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [
+                "depot-manager"
+              ],
+              "line": "Reads how the operation is performing. Reports to the Operations Director."
+            }
+          ]
+        },
+        {
+          "id": "finance",
+          "title": "Finance",
+          "sample": false,
+          "roles": [
+            {
+              "id": "finance-director",
+              "title": "Finance Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "financial-controller",
+              "title": "Financial Controller",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "finance-director",
+              "escalatesTo": [
+                "finance-director",
+                "unit-head"
+              ],
+              "line": "Keeps the accounts and the month-end close. Reports to the Finance Director."
+            },
+            {
+              "id": "finance-business-partner",
+              "title": "Finance Business Partner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "finance-director",
+              "escalatesTo": [
+                "unit-head",
+                "financial-controller"
+              ],
+              "line": "Works the numbers with one part of the business. Reports to the Finance Director."
+            },
+            {
+              "id": "unit-head",
+              "title": "The unit head",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            }
+          ]
+        },
+        {
+          "id": "executive-office",
+          "title": "Executive office, people, legal and marketing",
+          "note": "Where a Head of People exists, the HR Business Partner reports to them.",
+          "sample": false,
+          "roles": [
+            {
+              "id": "ceo",
+              "title": "CEO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "chief-of-staff",
+              "title": "Chief of Staff",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "cfo"
+              ],
+              "line": "Prepares the board and keeps the executive team's priorities in one place. Reports to the CEO."
+            },
+            {
+              "id": "hr-business-partner",
+              "title": "HR Business Partner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "employees-line-manager",
+                "finance-director"
+              ],
+              "line": "Advises on people process and reports headcount, turnover, and absence. Reports to the CEO."
+            },
+            {
+              "id": "marketing-manager",
+              "title": "Marketing Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "free",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo",
+                "product-director"
+              ],
+              "line": "Spends the approved marketing budget and delivers qualified leads. Reports to the CEO."
+            },
+            {
+              "id": "general-counsel",
+              "title": "General Counsel",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "legal-counsel",
+              "title": "Legal Counsel",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "general-counsel",
+              "escalatesTo": [
+                "general-counsel",
+                "business-owner"
+              ],
+              "line": "Reviews contracts before anyone signs. Reports to the General Counsel."
+            },
+            {
+              "id": "cfo",
+              "title": "CFO",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "employees-line-manager",
+              "title": "The employee's line manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "finance-director",
+              "title": "Finance Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "business-owner",
+              "title": "The business owner",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "product-director",
+              "title": "Product Director",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": null,
+              "escalatesTo": [],
+              "line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "crossTeam": [
+    {
+      "fromId": "sales-executive",
+      "fromTitle": "Sales Executive",
+      "fromTeam": "Sales and customer",
+      "deliverable": "Hand over signed deals",
+      "toId": "project-manager",
+      "toTitle": "Project Manager",
+      "toTeam": "Delivery",
+      "when": "within 24h of signing"
+    },
+    {
+      "fromId": "support-agent",
+      "fromTitle": "Support Agent",
+      "fromTeam": "Sales and customer",
+      "deliverable": "Escalate a suspected bug, with steps to reproduce",
+      "toId": "software-engineer",
+      "toTitle": "Software Engineer",
+      "toTeam": "Engineering",
+      "when": "same day, via the bug queue"
+    },
+    {
+      "fromId": "product-designer",
+      "fromTitle": "Product Designer",
+      "fromTeam": "Product",
+      "deliverable": "Deliver tested designs ready to build",
+      "toId": "software-engineer",
+      "toTitle": "Software Engineer",
+      "toTeam": "Engineering",
+      "when": "before the work enters a sprint"
+    },
+    {
+      "fromId": "project-manager",
+      "fromTitle": "Project Manager",
+      "fromTeam": "Delivery",
+      "deliverable": "Hand over the completed project, with sign-off",
+      "toId": "customer-success-manager",
+      "toTitle": "Customer Success Manager",
+      "toTeam": "Sales and customer",
+      "when": "at project close"
+    },
+    {
+      "fromId": "engineering-manager",
+      "fromTitle": "Engineering Manager",
+      "fromTeam": "Engineering",
+      "deliverable": "Ensure the team delivers working, tested increments",
+      "toId": "product-owner",
+      "toTitle": "Product Owner",
+      "toTeam": "Product",
+      "when": "each sprint"
+    },
+    {
+      "fromId": "tech-lead",
+      "fromTitle": "Tech Lead",
+      "fromTeam": "Engineering",
+      "deliverable": "Provide estimates and technical risks for planned work",
+      "toId": "product-manager",
+      "toTitle": "Product Manager",
+      "toTeam": "Product",
+      "when": "each planning cycle"
+    },
+    {
+      "fromId": "marketing-manager",
+      "fromTitle": "Marketing Manager",
+      "fromTeam": "Executive office, people, legal and marketing",
+      "deliverable": "Deliver qualified leads",
+      "toId": "sales-development-rep",
+      "toTitle": "Sales Development Rep",
+      "toTeam": "Sales and customer",
+      "when": "weekly"
+    }
+  ]
+}
