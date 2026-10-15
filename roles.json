@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the fifty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the sixty-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -675,6 +675,13 @@
       "in_pack": true
     },
     {
+      "id": "bid-manager",
+      "title": "Bid Manager",
+      "line": "Runs bids and tenders from bid/no-bid to a compliant submission. Reports to the Sales Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-bid-manager",
+      "in_pack": true
+    },
+    {
       "id": "head-of-customer-success",
       "title": "Head of Customer Success",
       "line": "Owns retention, customer health and the customer success and support team. Reports to the CEO.",
@@ -763,6 +770,13 @@
       "title": "Delivery Manager",
       "line": "Runs delivery for a team of projects. Reports to the Head of Delivery.",
       "url": "https://ditchingpeter.com/role-library#listed-delivery-manager",
+      "in_pack": true
+    },
+    {
+      "id": "scrum-master",
+      "title": "Scrum Master",
+      "line": "Runs the Scrum events and clears what blocks the team. Reports to the Head of Delivery.",
+      "url": "https://ditchingpeter.com/role-library#listed-scrum-master",
       "in_pack": true
     },
     {
@@ -948,6 +962,13 @@
       "in_pack": true
     },
     {
+      "id": "tax-manager",
+      "title": "Tax Manager",
+      "line": "Files company tax returns, schedules tax payments and deals with HMRC. Reports to the Finance Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-tax-manager",
+      "in_pack": true
+    },
+    {
       "id": "service-desk-analyst",
       "title": "Service Desk Analyst",
       "line": "Resolves IT requests and incidents at the first line. Reports to the Service Desk Manager.",
@@ -962,10 +983,24 @@
       "in_pack": true
     },
     {
+      "id": "it-service-manager",
+      "title": "IT Service Manager",
+      "line": "Agrees IT service levels and runs service change and improvement. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-it-service-manager",
+      "in_pack": true
+    },
+    {
       "id": "health-and-safety-manager",
       "title": "Health and Safety Manager",
       "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
       "url": "https://ditchingpeter.com/role-library#listed-health-and-safety-manager",
+      "in_pack": true
+    },
+    {
+      "id": "quality-manager",
+      "title": "Quality Manager",
+      "line": "Runs the quality management system, audits and corrective actions. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-quality-manager",
       "in_pack": true
     },
     {
@@ -987,6 +1022,13 @@
       "title": "Learning and Development Business Partner",
       "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
       "url": "https://ditchingpeter.com/role-library#listed-learning-and-development-business-partner",
+      "in_pack": true
+    },
+    {
+      "id": "reward-manager",
+      "title": "Reward Manager",
+      "line": "Sets pay within the structure, runs the pay review and owns benefits. Reports to the HR Business Partner.",
+      "url": "https://ditchingpeter.com/role-library#listed-reward-manager",
       "in_pack": true
     },
     {
