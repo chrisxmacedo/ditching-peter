@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the forty-two roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the forty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -794,6 +794,13 @@
       "in_pack": true
     },
     {
+      "id": "infrastructure-engineer",
+      "title": "Infrastructure Engineer",
+      "line": "Builds and runs the network, servers and cloud services. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-infrastructure-engineer",
+      "in_pack": true
+    },
+    {
       "id": "legal-counsel",
       "title": "Legal Counsel",
       "line": "Reviews contracts before anyone signs. Reports to the General Counsel.",
@@ -812,6 +819,20 @@
       "title": "Internal Auditor",
       "line": "Gives independent assurance on risk, governance and controls to the Audit Committee. Reports to the Audit Committee.",
       "url": "https://ditchingpeter.com/role-library#listed-internal-auditor",
+      "in_pack": true
+    },
+    {
+      "id": "risk-manager",
+      "title": "Risk Manager",
+      "line": "Keeps the risk register and reports the top risks to the board. Reports to the Finance Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-risk-manager",
+      "in_pack": true
+    },
+    {
+      "id": "company-secretary",
+      "title": "Company Secretary",
+      "line": "Runs board papers and minutes and keeps Companies House filings current. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-company-secretary",
       "in_pack": true
     },
     {
@@ -920,6 +941,13 @@
       "in_pack": true
     },
     {
+      "id": "bookkeeper",
+      "title": "Bookkeeper",
+      "line": "Keeps the ledgers, reconciles the bank and prepares VAT returns. Reports to the Financial Controller.",
+      "url": "https://ditchingpeter.com/role-library#listed-bookkeeper",
+      "in_pack": true
+    },
+    {
       "id": "service-desk-analyst",
       "title": "Service Desk Analyst",
       "line": "Resolves IT requests and incidents at the first line. Reports to the Service Desk Manager.",
@@ -948,10 +976,24 @@
       "in_pack": true
     },
     {
+      "id": "warehouse-manager",
+      "title": "Warehouse Manager",
+      "line": "Runs stock, storage and dispatch safely at a warehouse. Reports to the Operations Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-warehouse-manager",
+      "in_pack": true
+    },
+    {
       "id": "learning-and-development-business-partner",
       "title": "Learning and Development Business Partner",
       "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
       "url": "https://ditchingpeter.com/role-library#listed-learning-and-development-business-partner",
+      "in_pack": true
+    },
+    {
+      "id": "digital-marketing-manager",
+      "title": "Digital Marketing Manager",
+      "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-digital-marketing-manager",
       "in_pack": true
     }
   ]
