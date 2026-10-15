@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the thirty-six roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the forty-two roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -808,6 +808,13 @@
       "in_pack": true
     },
     {
+      "id": "internal-auditor",
+      "title": "Internal Auditor",
+      "line": "Gives independent assurance on risk, governance and controls to the Audit Committee. Reports to the Audit Committee.",
+      "url": "https://ditchingpeter.com/role-library#listed-internal-auditor",
+      "in_pack": true
+    },
+    {
       "id": "finance-business-partner",
       "title": "Finance Business Partner",
       "line": "Works the numbers with one part of the business. Reports to the Finance Director.",
@@ -857,6 +864,13 @@
       "in_pack": true
     },
     {
+      "id": "cyber-security-analyst",
+      "title": "Cyber Security Analyst",
+      "line": "Monitors threats, investigates incidents and keeps the security risk register. Reports to the Security Architect.",
+      "url": "https://ditchingpeter.com/role-library#listed-cyber-security-analyst",
+      "in_pack": true
+    },
+    {
       "id": "procurement-manager",
       "title": "Procurement Manager",
       "line": "Sources suppliers and awards contracts within delegated limits. Reports to the Operations Director.",
@@ -892,6 +906,20 @@
       "in_pack": true
     },
     {
+      "id": "management-accountant",
+      "title": "Management Accountant",
+      "line": "Delivers management accounts, forecasts and variance analysis. Reports to the Financial Controller.",
+      "url": "https://ditchingpeter.com/role-library#listed-management-accountant",
+      "in_pack": true
+    },
+    {
+      "id": "credit-controller",
+      "title": "Credit Controller",
+      "line": "Sets credit limits within policy and recovers overdue balances. Reports to the Financial Controller.",
+      "url": "https://ditchingpeter.com/role-library#listed-credit-controller",
+      "in_pack": true
+    },
+    {
       "id": "service-desk-analyst",
       "title": "Service Desk Analyst",
       "line": "Resolves IT requests and incidents at the first line. Reports to the Service Desk Manager.",
@@ -899,10 +927,24 @@
       "in_pack": true
     },
     {
+      "id": "service-desk-manager",
+      "title": "Service Desk Manager",
+      "line": "Runs the service desk against SLAs and prepares it for new services. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-service-desk-manager",
+      "in_pack": true
+    },
+    {
       "id": "health-and-safety-manager",
       "title": "Health and Safety Manager",
       "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
       "url": "https://ditchingpeter.com/role-library#listed-health-and-safety-manager",
+      "in_pack": true
+    },
+    {
+      "id": "facilities-manager",
+      "title": "Facilities Manager",
+      "line": "Keeps buildings, assets and contracted services safe and within budget. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-facilities-manager",
       "in_pack": true
     },
     {
