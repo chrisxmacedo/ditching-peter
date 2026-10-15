@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the eighteen roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the twenty-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -675,6 +675,13 @@
       "in_pack": true
     },
     {
+      "id": "head-of-customer-success",
+      "title": "Head of Customer Success",
+      "line": "Owns retention, customer health and the customer success and support team. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-head-of-customer-success",
+      "in_pack": true
+    },
+    {
       "id": "support-agent",
       "title": "Support Agent",
       "line": "Handles customer support tickets. Reports to the Head of Customer Success.",
@@ -731,6 +738,20 @@
       "in_pack": true
     },
     {
+      "id": "business-analyst",
+      "title": "Business Analyst",
+      "line": "Clarifies problems into requirements and acceptance criteria the team can build. Reports to the Product Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-business-analyst",
+      "in_pack": true
+    },
+    {
+      "id": "user-researcher",
+      "title": "User Researcher",
+      "line": "Plans and runs research so product decisions rest on real user evidence. Reports to the Product Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-user-researcher",
+      "in_pack": true
+    },
+    {
       "id": "head-of-delivery",
       "title": "Head of Delivery",
       "line": "Owns delivery across projects. Reports to the COO.",
@@ -766,10 +787,24 @@
       "in_pack": true
     },
     {
+      "id": "site-reliability-engineer",
+      "title": "Site Reliability Engineer",
+      "line": "Keeps production reliable through pipelines, incident response and error budgets. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-site-reliability-engineer",
+      "in_pack": true
+    },
+    {
       "id": "legal-counsel",
       "title": "Legal Counsel",
       "line": "Reviews contracts before anyone signs. Reports to the General Counsel.",
       "url": "https://ditchingpeter.com/role-library#listed-legal-counsel",
+      "in_pack": true
+    },
+    {
+      "id": "data-protection-officer",
+      "title": "Data Protection Officer",
+      "line": "Advises on UK GDPR, monitors compliance and is the contact point for the ICO. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-data-protection-officer",
       "in_pack": true
     },
     {
@@ -784,6 +819,13 @@
       "title": "Financial Controller",
       "line": "Keeps the accounts and the month-end close. Reports to the Finance Director.",
       "url": "https://ditchingpeter.com/role-library#listed-financial-controller",
+      "in_pack": true
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "line": "Turns approved data into analysis and dashboards decision-makers can use. Reports to the Finance Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-data-analyst",
       "in_pack": true
     }
   ]

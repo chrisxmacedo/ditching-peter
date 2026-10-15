@@ -4,9 +4,9 @@
 
 Authority is the decisions a role may make, each with a limit and where the decision goes when the limit is passed. Responsibility is a deliverable, a recipient, and a cadence. Ability is a named skill, tool, or method the person in the role must be able to perform. Specs use three keywords: MAY, MUST, and CAN. Money limits in the published specs are examples — set your own.
 
-Nine roles are free to read, with the full spec. Eighteen further roles are sold in the full library. This site lists those eighteen by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the eighteen catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
+Nine roles are free to read, with the full spec. Twenty-four further roles are sold in the full library. This site lists those twenty-four by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the twenty-four catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
 
-The full pack is all 27 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 77-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. Two licences: Individual, and Team for up to 25 people.
+The full pack is all 33 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 92-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. Two licences: Individual, and Team for up to 25 people.
 
 ## Pages
 
@@ -34,8 +34,8 @@ The full pack is all 27 roles, 7 team structures with reporting and escalation c
 
 ## Full library
 
-- [The full library](https://ditchingpeter.com/full-library): All 27 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown, a 77-page PDF, and JSON and AGENTS.md agent versions. One-off purchase. Future updates included. Two licences — Individual, and Team (up to 25 people). Launch prices until 28 Oct 2026.
+- [The full library](https://ditchingpeter.com/full-library): All 33 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown, a 92-page PDF, and JSON and AGENTS.md agent versions. One-off purchase. Future updates included. Two licences — Individual, and Team (up to 25 people). Launch prices until 28 Oct 2026.
 
 ## Machine-readable
 
-- [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 27 roles. The nine free roles include full ARA specs. The eighteen paid roles are title, one line, and in_pack true, with no spec content.
+- [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 33 roles. The nine free roles include full ARA specs. The twenty-four paid roles are title, one line, and in_pack true, with no spec content.
