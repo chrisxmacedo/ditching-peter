@@ -314,6 +314,12 @@
     color: var(--muted); font-size: 17px;
     max-width: 580px; margin-bottom: 56px; line-height: 1.7;
   }
+  .org-scroll {
+    overflow-x: auto; max-width: 100%;
+    border: 1px solid var(--rule); background: #fff;
+    -webkit-overflow-scrolling: touch;
+  }
+  .org-scroll svg { display: block; }
 
   /* ── INTRO STRIP ── */
   .intro-strip {
@@ -822,6 +828,7 @@
       <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
+      <li><a href="/teams">Teams</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -835,6 +842,7 @@
     <a href="/format" onclick="closeNav()">Format</a>
     <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
     <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/teams" onclick="closeNav()">Teams</a>
     <a href="/blog" onclick="closeNav()">Blog</a>
     <a href="/about" onclick="closeNav()">About</a>
   </div>
@@ -1272,9 +1280,22 @@
   </p>
 </section>
 
-<section id="library">
+<section id="teams">
   <div class="section-header reveal">
     <span class="section-num">09</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title reveal">How the teams connect</h2>
+  <p class="section-intro reveal">Seven handoffs cross the teams. Each is a deliverable one role owes another. A free role opens its spec. The others open the team chart.</p>
+  <div id="team-connect" class="reveal"></div>
+  <p class="reveal" style="margin-top:28px;">
+    <a href="/teams" class="hero-cta" style="align-self:flex-start;">See the team charts →</a>
+  </p>
+</section>
+
+<section id="library">
+  <div class="section-header reveal">
+    <span class="section-num">10</span>
     <div class="section-rule"></div>
   </div>
   <h2 class="section-title reveal">The role library</h2>
@@ -1340,5 +1361,6 @@
     document.getElementById('navDrawer').classList.remove('open');
   }
 </script>
+<script src="/teams.js"></script>
 </body>
 </html>
