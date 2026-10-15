@@ -27,7 +27,7 @@
   .doc-copy p:last-child{margin-bottom:0;}
   .doc-copy strong{color:var(--ink);font-weight:500;}
   .doc-copy a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
-  .syntax{font-family:'DM Mono',monospace;font-size:14px;background:var(--bg-tint);border:1px solid var(--rule);border-left:3px solid var(--accent);padding:16px 20px;margin:22px 0;color:var(--ink-soft);line-height:1.8;}
+  .syntax{font-family:'DM Mono',monospace;font-size:16px;background:var(--bg-tint);border:1px solid var(--rule);border-left:3px solid var(--accent);padding:16px 20px;margin:22px 0;color:var(--ink-soft);line-height:1.7;overflow-x:auto;}
   .syntax .k{color:var(--accent-dark);font-weight:500;}
   .syntax .kn{color:var(--bad);font-weight:500;}
   .syntax .f{color:var(--muted);}
@@ -46,6 +46,7 @@
       <li><a href="/format" style="color:var(--accent)">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
+      <li><a href="/teams">Teams</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -57,6 +58,7 @@
     <a href="/format" onclick="closeNav()" style="color:var(--accent)">Format</a>
     <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
     <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/teams" onclick="closeNav()">Teams</a>
     <a href="/blog" onclick="closeNav()">Blog</a>
     <a href="/about" onclick="closeNav()">About</a>
   </div>
@@ -67,14 +69,28 @@
   <!-- ON-THIS-PAGE SIDEBAR -->
   <aside class="docs-sidebar">
     <div class="docs-nav-title">Format</div>
-    <div class="side-group">
-      <div class="side-group-label">On this page</div>
-      <a class="side-link active" href="#authority">Authority · MAY</a>
-      <a class="side-link" href="#responsibility">Responsibility · MUST</a>
-      <a class="side-link" href="#ability">Ability · CAN</a>
-      <a class="side-link" href="#writing">Writing a role spec</a>
-    </div>
+    <details class="side-fold">
+      <summary>On this page</summary>
+      <div class="side-fold-body">
+        <div class="side-group">
+          <div class="side-group-label">On this page</div>
+          <a class="side-link active" href="#authority">Authority · MAY</a>
+          <a class="side-link" href="#responsibility">Responsibility · MUST</a>
+          <a class="side-link" href="#ability">Ability · CAN</a>
+          <a class="side-link" href="#writing">Writing a role spec</a>
+        </div>
+      </div>
+    </details>
   </aside>
+  <script>
+    (function(){
+      var folds=document.querySelectorAll('.side-fold');
+      var mq=window.matchMedia('(min-width: 1100px)');
+      function sync(){ folds.forEach(function(d){ d.open = mq.matches; }); }
+      sync();
+      if(mq.addEventListener) mq.addEventListener('change', sync);
+    })();
+  </script>
 
   <!-- CONTENT -->
   <main class="docs-main">

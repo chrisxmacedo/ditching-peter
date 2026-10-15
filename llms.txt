@@ -6,6 +6,8 @@ Authority is the decisions a role may make, each with a limit and where the deci
 
 Nine roles are free to read, with the full spec. Twenty-four further roles are sold in the full library. This site lists those twenty-four by title and one line only. Their specs are not published here. The machine-readable catalogue, including the nine free specs and the twenty-four catalogue lines, is [roles.json](https://ditchingpeter.com/roles.json).
 
+Team charts are on [the teams page](https://ditchingpeter.com/teams). Sales and customer is the free sample: its chart, escalation table, and handoff table are public. The other teams show titles and reporting and escalation lines only. Do not treat those charts as the specs, and do not invent escalation or handoff tables for them. Chart data, shaped as sector then team then role, is [teams.json](https://ditchingpeter.com/data/teams.json). Only the General sector is published.
+
 The full pack is all 33 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, and a 92-page PDF. One-off purchase. Future updates included. Prices rise as the library grows. The full pack includes JSON and AGENTS.md versions for agent builders. Two licences: Individual, and Team for up to 25 people.
 
 ## Pages
@@ -15,6 +17,7 @@ The full pack is all 33 roles, 7 team structures with reporting and escalation c
 - [Format](https://ditchingpeter.com/format): How to write each line of an ARA spec
 - [Prompting AI](https://ditchingpeter.com/prompting-ai): Give a model a role's authority, responsibility, and ability
 - [Role library](https://ditchingpeter.com/role-library): Nine free role specs, and titles for the rest of the library
+- [Teams](https://ditchingpeter.com/teams): How the roles report and escalate. Sales and customer includes its tables. The other teams are titles and lines.
 - [Full library](https://ditchingpeter.com/full-library): What's in the pack, and the two licences
 - [Blog](https://ditchingpeter.com/blog): Notes on roles and organisational health
 - [We took a real Chief of Staff spec and found the bug](https://ditchingpeter.com/blog/chief-of-staff-teardown): A job description sorted into ARA, with authority missing
@@ -39,3 +42,4 @@ The full pack is all 33 roles, 7 team structures with reporting and escalation c
 ## Machine-readable
 
 - [roles.json](https://ditchingpeter.com/roles.json): Catalogue of all 33 roles. The nine free roles include full ARA specs. The twenty-four paid roles are title, one line, and in_pack true, with no spec content.
+- [teams.json](https://ditchingpeter.com/data/teams.json): Chart data for a later sector variant. Each role has a stable id, an optional sector title, and an overrides object. Sales and customer includes its escalation and handoff tables. Other teams do not.

@@ -143,6 +143,7 @@
       <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library" style="color:var(--accent)">Role Library</a></li>
+      <li><a href="/teams">Teams</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -154,6 +155,7 @@
     <a href="/format" onclick="closeNav()">Format</a>
     <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
     <a href="/role-library" onclick="closeNav()" style="color:var(--accent)">Role Library</a>
+    <a href="/teams" onclick="closeNav()">Teams</a>
     <a href="/blog" onclick="closeNav()">Blog</a>
     <a href="/about" onclick="closeNav()">About</a>
   </div>
@@ -164,51 +166,81 @@
   <!-- SIDEBAR -->
   <aside class="docs-sidebar">
     <div class="docs-nav-title">Role Library</div>
-    <div class="side-group">
-      <div class="side-group-label">Free sample</div>
-      <a class="side-link active" href="#sales-director">Sales Director</a>
-      <a class="side-link" href="#sales-executive">Sales Executive</a>
-      <a class="side-link" href="#customer-success-manager">Customer Success Manager</a>
-      <a class="side-link" href="#product-manager">Product Manager</a>
-      <a class="side-link" href="#project-manager">Project Manager</a>
-      <a class="side-link" href="#engineering-manager">Engineering Manager</a>
-      <a class="side-link" href="#software-engineer">Software Engineer</a>
-      <a class="side-link" href="#hr-business-partner">HR Business Partner</a>
-      <a class="side-link" href="#marketing-manager">Marketing Manager</a>
-    </div>
-    <div class="side-group">
-      <div class="side-group-label">In the full library</div>
-      <a class="side-link" href="#listed-sales-development-rep">Sales Development Rep</a>
-      <a class="side-link" href="#listed-account-manager">Account Manager</a>
-      <a class="side-link" href="#listed-head-of-customer-success">Head of Customer Success</a>
-      <a class="side-link" href="#listed-support-agent">Support Agent</a>
-      <a class="side-link" href="#listed-operations-analyst">Operations Analyst</a>
-      <a class="side-link" href="#listed-depot-manager">Depot Manager</a>
-      <a class="side-link" href="#listed-operations-manager">Operations Manager</a>
-      <a class="side-link" href="#listed-chief-of-staff">Chief of Staff</a>
-      <a class="side-link" href="#listed-product-owner">Product Owner</a>
-      <a class="side-link" href="#listed-product-designer">Product Designer</a>
-      <a class="side-link" href="#listed-product-director">Product Director</a>
-      <a class="side-link" href="#listed-business-analyst">Business Analyst</a>
-      <a class="side-link" href="#listed-user-researcher">User Researcher</a>
-      <a class="side-link" href="#listed-head-of-delivery">Head of Delivery</a>
-      <a class="side-link" href="#listed-delivery-manager">Delivery Manager</a>
-      <a class="side-link" href="#listed-head-of-engineering">Head of Engineering</a>
-      <a class="side-link" href="#listed-tech-lead">Tech Lead</a>
-      <a class="side-link" href="#listed-qa-engineer">QA Engineer</a>
-      <a class="side-link" href="#listed-site-reliability-engineer">Site Reliability Engineer</a>
-      <a class="side-link" href="#listed-legal-counsel">Legal Counsel</a>
-      <a class="side-link" href="#listed-data-protection-officer">Data Protection Officer</a>
-      <a class="side-link" href="#listed-finance-business-partner">Finance Business Partner</a>
-      <a class="side-link" href="#listed-financial-controller">Financial Controller</a>
-      <a class="side-link" href="#listed-data-analyst">Data Analyst</a>
-    </div>
+    <details class="side-fold">
+      <summary>Roles by team</summary>
+      <div class="side-fold-body">
+        <div class="side-group">
+          <div class="side-group-label">Sales and customer</div>
+          <a class="side-link active" href="#sales-director">Sales Director</a>
+          <a class="side-link" href="#listed-sales-development-rep">Sales Development Rep <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#sales-executive">Sales Executive</a>
+          <a class="side-link" href="#listed-account-manager">Account Manager <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-head-of-customer-success">Head of Customer Success <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#customer-success-manager">Customer Success Manager</a>
+          <a class="side-link" href="#listed-support-agent">Support Agent <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Product</div>
+          <a class="side-link" href="#listed-product-director">Product Director <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#product-manager">Product Manager</a>
+          <a class="side-link" href="#listed-product-owner">Product Owner <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-product-designer">Product Designer <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-business-analyst">Business Analyst <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-user-researcher">User Researcher <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Delivery</div>
+          <a class="side-link" href="#listed-head-of-delivery">Head of Delivery <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-delivery-manager">Delivery Manager <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#project-manager">Project Manager</a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Engineering</div>
+          <a class="side-link" href="#listed-head-of-engineering">Head of Engineering <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#engineering-manager">Engineering Manager</a>
+          <a class="side-link" href="#listed-tech-lead">Tech Lead <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#software-engineer">Software Engineer</a>
+          <a class="side-link" href="#listed-qa-engineer">QA Engineer <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-site-reliability-engineer">Site Reliability Engineer <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Operations and depot</div>
+          <a class="side-link" href="#listed-operations-manager">Operations Manager <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-depot-manager">Depot Manager <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-operations-analyst">Operations Analyst <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Finance</div>
+          <a class="side-link" href="#listed-financial-controller">Financial Controller <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-finance-business-partner">Finance Business Partner <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-data-analyst">Data Analyst <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+        </div>
+        <div class="side-group">
+          <div class="side-group-label">Executive office, people, legal and marketing</div>
+          <a class="side-link" href="#listed-chief-of-staff">Chief of Staff <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#hr-business-partner">HR Business Partner</a>
+          <a class="side-link" href="#listed-legal-counsel">Legal Counsel <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#listed-data-protection-officer">Data Protection Officer <svg class="lock-icon" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span></a>
+          <a class="side-link" href="#marketing-manager">Marketing Manager</a>
+        </div>
+      </div>
+    </details>
     <div class="side-group">
       <div class="side-group-label">About the library</div>
       <a class="side-link" href="/full-library">Get the full library</a>
+      <a class="side-link" href="/teams">Team charts</a>
       <a class="side-link" href="#connect">Where specs connect</a>
     </div>
   </aside>
+  <script>
+    (function(){
+      var folds=document.querySelectorAll('.side-fold');
+      var mq=window.matchMedia('(min-width: 1100px)');
+      function sync(){ folds.forEach(function(d){ d.open = mq.matches; }); }
+      sync();
+      if(mq.addEventListener) mq.addEventListener('change', sync);
+    })();
+  </script>
 
   <!-- CONTENT -->
   <main class="docs-main">

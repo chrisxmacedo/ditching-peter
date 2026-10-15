@@ -25,7 +25,8 @@
 <style>
   .article{max-width:720px;margin:0 auto;padding:0 22px;}
   .article-head{padding:104px 0 0;}
-  .article-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;}
+  .article-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;}
+  .article-eyebrow a{display:inline-flex;align-items:center;min-height:44px;}
   .article-head h1{font-family:'Playfair Display',serif;font-size:clamp(34px,7vw,52px);font-weight:900;line-height:1.02;letter-spacing:-.02em;color:var(--ink);}
   .article-deck{font-size:20px;line-height:1.5;color:var(--muted);margin-top:20px;}
   .byline{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:26px;padding-top:22px;border-top:1px solid var(--rule);}
@@ -39,7 +40,7 @@
   .real-spec .rs-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
   .real-spec ul{list-style:none;margin:0 0 16px;padding:0;}
   .real-spec ul:last-child{margin-bottom:0;}
-  .real-spec li{font-size:15px;line-height:1.55;color:var(--ink-soft);padding:5px 0 5px 16px;position:relative;}
+  .real-spec li{font-size:16px;line-height:1.55;color:var(--ink-soft);padding:5px 0 5px 16px;position:relative;}
   .real-spec li::before{content:'–';position:absolute;left:0;color:var(--muted);}
   .real-spec .grp{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:4px 0 6px;font-weight:500;}
   .pull{font-family:'Playfair Display',serif;font-style:italic;font-size:23px;line-height:1.4;color:var(--ink);border-left:3px solid var(--accent);padding-left:22px;margin:34px 0;}
@@ -58,6 +59,7 @@
       <li><a href="/format">Format</a></li>
       <li><a href="/prompting-ai">Prompting AI</a></li>
       <li><a href="/role-library">Role Library</a></li>
+      <li><a href="/teams">Teams</a></li>
       <li><a href="/blog" style="color:var(--accent)">Blog</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -69,6 +71,7 @@
     <a href="/format" onclick="closeNav()">Format</a>
     <a href="/prompting-ai" onclick="closeNav()">Prompting AI</a>
     <a href="/role-library" onclick="closeNav()">Role Library</a>
+    <a href="/teams" onclick="closeNav()">Teams</a>
     <a href="/blog" onclick="closeNav()" style="color:var(--accent)">Blog</a>
     <a href="/about" onclick="closeNav()">About</a>
   </div>

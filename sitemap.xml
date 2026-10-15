@@ -31,6 +31,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://ditchingpeter.com/teams</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ditchingpeter.com/full-library</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -62,6 +68,12 @@
   </url>
   <url>
     <loc>https://ditchingpeter.com/roles.json</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ditchingpeter.com/data/teams.json</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
