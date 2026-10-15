@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the thirty roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the thirty-six roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -868,6 +868,48 @@
       "title": "Talent Acquisition Manager",
       "line": "Attracts and assesses candidates for approved vacancies. Reports to the HR Business Partner.",
       "url": "https://ditchingpeter.com/role-library#listed-talent-acquisition-manager",
+      "in_pack": true
+    },
+    {
+      "id": "data-engineer",
+      "title": "Data Engineer",
+      "line": "Builds and maintains the data pipelines that analysts and data scientists rely on. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-data-engineer",
+      "in_pack": true
+    },
+    {
+      "id": "data-scientist",
+      "title": "Data Scientist",
+      "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-data-scientist",
+      "in_pack": true
+    },
+    {
+      "id": "payroll-manager",
+      "title": "Payroll Manager",
+      "line": "Runs an accurate, on-time payroll and reports it to HMRC. Reports to the Financial Controller.",
+      "url": "https://ditchingpeter.com/role-library#listed-payroll-manager",
+      "in_pack": true
+    },
+    {
+      "id": "service-desk-analyst",
+      "title": "Service Desk Analyst",
+      "line": "Resolves IT requests and incidents at the first line. Reports to the Service Desk Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-service-desk-analyst",
+      "in_pack": true
+    },
+    {
+      "id": "health-and-safety-manager",
+      "title": "Health and Safety Manager",
+      "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-health-and-safety-manager",
+      "in_pack": true
+    },
+    {
+      "id": "learning-and-development-business-partner",
+      "title": "Learning and Development Business Partner",
+      "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
+      "url": "https://ditchingpeter.com/role-library#listed-learning-and-development-business-partner",
       "in_pack": true
     }
   ]
