@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the forty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the fifty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -994,6 +994,76 @@
       "title": "Digital Marketing Manager",
       "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-digital-marketing-manager",
+      "in_pack": true
+    },
+    {
+      "id": "money-laundering-reporting-officer",
+      "title": "Money Laundering Reporting Officer",
+      "line": "Receives internal suspicion reports and decides what goes to the NCA. The focal point for anti-money laundering. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-money-laundering-reporting-officer",
+      "in_pack": true
+    },
+    {
+      "id": "financial-crime-investigator",
+      "title": "Financial Crime Investigator",
+      "line": "Investigates transaction monitoring alerts and passes evidenced suspicions to the MLRO. Reports to the Money Laundering Reporting Officer.",
+      "url": "https://ditchingpeter.com/role-library#listed-financial-crime-investigator",
+      "in_pack": true
+    },
+    {
+      "id": "kyc-analyst",
+      "title": "KYC Analyst",
+      "line": "Identifies and verifies customers and their owners before onboarding, and keeps due diligence current. Reports to the Money Laundering Reporting Officer.",
+      "url": "https://ditchingpeter.com/role-library#listed-kyc-analyst",
+      "in_pack": true
+    },
+    {
+      "id": "chief-risk-officer",
+      "title": "Chief Risk Officer",
+      "line": "Runs the independent risk function and reports the firm's risk profile against appetite. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-chief-risk-officer",
+      "in_pack": true
+    },
+    {
+      "id": "compliance-officer",
+      "title": "Compliance Officer",
+      "line": "Runs the independent compliance function, its monitoring programme and reporting to the board. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-compliance-officer",
+      "in_pack": true
+    },
+    {
+      "id": "cass-oversight-officer",
+      "title": "CASS Oversight Officer",
+      "line": "Oversees how client money and assets are protected, and reports on it to the board. Reports to the Compliance Officer.",
+      "url": "https://ditchingpeter.com/role-library#listed-cass-oversight-officer",
+      "in_pack": true
+    },
+    {
+      "id": "customer-operations-manager",
+      "title": "Customer Operations Manager",
+      "line": "Runs customer operations and complaints, and fixes the root causes behind them. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-customer-operations-manager",
+      "in_pack": true
+    },
+    {
+      "id": "complaints-handler",
+      "title": "Complaints Handler",
+      "line": "Investigates and answers customer complaints within the regulatory time limits. Reports to the Customer Operations Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-complaints-handler",
+      "in_pack": true
+    },
+    {
+      "id": "financial-adviser",
+      "title": "Financial Adviser",
+      "line": "Gives personal financial advice once the client's suitability information is complete. Reports to the Head of Advice.",
+      "url": "https://ditchingpeter.com/role-library#listed-financial-adviser",
+      "in_pack": true
+    },
+    {
+      "id": "paraplanner",
+      "title": "Paraplanner",
+      "line": "Researches and drafts suitability reports for the adviser to sign off. Reports to the Financial Adviser.",
+      "url": "https://ditchingpeter.com/role-library#listed-paraplanner",
       "in_pack": true
     }
   ]
