@@ -614,13 +614,30 @@
               "note": "Or the CISO where one exists"
             },
             {
+              "id": "cyber-security-analyst",
+              "title": "Cyber Security Analyst",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "security-architect",
+              "escalatesTo": [
+                "security-architect"
+              ],
+              "line": "Monitors threats, investigates incidents and keeps the security risk register. Reports to the Security Architect.",
+              "note": "Also Information Security Analyst or SOC Analyst. Or the CISO where one exists"
+            },
+            {
               "id": "service-desk-manager",
               "title": "Service Desk Manager",
               "sectorTitle": null,
               "overrides": {},
-              "kind": "context",
-              "reportsTo": null,
-              "escalatesTo": []
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [
+                "head-of-engineering"
+              ],
+              "line": "Runs the service desk against SLAs and prepares it for new services. Reports to the Head of Engineering.",
+              "note": "Also IT Service Desk Manager or Head of Service Desk"
             },
             {
               "id": "service-desk-analyst",
@@ -748,6 +765,20 @@
               "escalatesTo": [],
               "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
               "note": "Also Health and Safety Adviser"
+            },
+            {
+              "id": "facilities-manager",
+              "title": "Facilities Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [
+                "operations-director",
+                "health-and-safety-manager"
+              ],
+              "line": "Keeps buildings, assets and contracted services safe and within budget. Reports to the Operations Director.",
+              "note": "Also Estates Manager, Support Services Manager or FM Contract Manager"
             }
           ]
         },
@@ -833,6 +864,33 @@
               "escalatesTo": [],
               "line": "Runs an accurate, on-time payroll and reports it to HMRC. Reports to the Financial Controller.",
               "note": "Or the Head of People where payroll sits in HR"
+            },
+            {
+              "id": "management-accountant",
+              "title": "Management Accountant",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "financial-controller",
+              "escalatesTo": [
+                "financial-controller",
+                "finance-director"
+              ],
+              "line": "Delivers management accounts, forecasts and variance analysis. Reports to the Financial Controller.",
+              "note": "Also Chartered Management Accountant"
+            },
+            {
+              "id": "credit-controller",
+              "title": "Credit Controller",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "financial-controller",
+              "escalatesTo": [
+                "financial-controller"
+              ],
+              "line": "Sets credit limits within policy and recovers overdue balances. Reports to the Financial Controller.",
+              "note": "Also Debt Collection Agent"
             },
             {
               "id": "unit-head",
@@ -942,6 +1000,28 @@
                 "business-owner"
               ],
               "line": "Reviews contracts before anyone signs. Reports to the General Counsel."
+            },
+            {
+              "id": "audit-committee",
+              "title": "Audit Committee",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "context",
+              "reportsTo": null,
+              "escalatesTo": []
+            },
+            {
+              "id": "internal-auditor",
+              "title": "Internal Auditor",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "audit-committee",
+              "escalatesTo": [
+                "audit-committee"
+              ],
+              "line": "Gives independent assurance on risk, governance and controls to the Audit Committee. Reports to the Audit Committee.",
+              "note": "Functionally to the Audit Committee; administratively to the CEO or Finance Director. Also Internal Audit Manager"
             },
             {
               "id": "cfo",
