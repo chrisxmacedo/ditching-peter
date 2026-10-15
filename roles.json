@@ -1,0 +1,717 @@
+{
+  "name": "Ditching Peter role library",
+  "site": "https://ditchingpeter.com",
+  "framework": "ARA",
+  "ara": {
+    "authority": "MAY and MAY NOT. What the role may decide, the limit, and who it escalates to.",
+    "responsibility": "MUST. What the role delivers, to whom, and when.",
+    "ability": "CAN. The skills, tools, and methods the role requires."
+  },
+  "note": "Money limits in the free specs are examples — set your own. This file includes the full spec for the nine free roles only. The eighteen paid roles are title, one line, and in_pack. Their specs are not published here.",
+  "free_role_count": 9,
+  "in_pack_count": 18,
+  "roles": [
+    {
+      "title": "Sales Director",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#sales-director",
+      "reports_to": "CEO",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Sign contracts",
+          "limit": "up to £150,000",
+          "else": "CEO",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Discount a sale",
+          "limit": "up to 7% of value",
+          "else": "CEO"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Commit the quarterly sales budget",
+          "limit": "up to £50,000 / qtr",
+          "else": "CEO",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Spend the discretionary fund",
+          "limit": "up to £10,000 / yr",
+          "else": "CEO",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Hire into the sales team",
+          "limit": "within the headcount plan",
+          "else": "CEO"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Keep the approved product list current",
+          "to": "Sales Executives",
+          "when": "when it changes"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Set and allocate quarterly quotas",
+          "to": "Sales Executives",
+          "when": "each quarter"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Deliver the quarterly sales forecast",
+          "to": "CEO",
+          "when": "quarterly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Deliver the pipeline report",
+          "to": "CEO",
+          "when": "weekly, Fri 17:00"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Read and challenge pipeline data and forecasts in the CRM (e.g. Salesforce)"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Build reports & dashboards in Salesforce and Excel"
+        }
+      ]
+    },
+    {
+      "title": "Sales Executive",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#sales-executive",
+      "reports_to": "Sales Director",
+      "also_known_as": [
+        "Account Executive",
+        "Business Development Manager"
+      ],
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Agree deals at list price",
+          "limit": "up to £25,000",
+          "else": "Sales Director",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Discount a sale",
+          "limit": "up to 5% of value",
+          "else": "Sales Director"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Sell outside the approved product list",
+          "else": "Sales Director"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Close new business",
+          "to": "Sales Director",
+          "when": "against quarterly target"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Hand over signed deals",
+          "to": "Project Manager",
+          "when": "within 24h of signing"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Keep own deal status current in the CRM",
+          "to": "the shared pipeline",
+          "when": "on every change"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Manage own pipeline and activity in the CRM"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Sales reporting & dashboards in Salesforce and Excel"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Proposal & pitch decks in PowerPoint"
+        }
+      ]
+    },
+    {
+      "title": "Customer Success Manager",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#customer-success-manager",
+      "reports_to": "Head of Customer Success",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Issue account credits",
+          "limit": "up to £2,000",
+          "else": "Head of Customer Success",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Approve renewals at list price",
+          "limit": "up to £50,000 ARR",
+          "else": "Head of Customer Success",
+          "note": "example — set yours"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Run onboarding and quarterly business reviews",
+          "to": "assigned accounts",
+          "when": "onboarding, then each quarter"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Deliver a health-score report per account",
+          "to": "Head of Customer Success",
+          "when": "monthly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Escalate at-risk accounts",
+          "to": "Head of Customer Success",
+          "when": "within 48h of a red signal"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Hand expansion opportunities over",
+          "to": "Account Manager",
+          "when": "as they arise"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Salesforce & Intercom administration"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Churn-risk analysis in Excel"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "QBR decks in PowerPoint / Google Slides"
+        }
+      ]
+    },
+    {
+      "title": "Product Manager",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#product-manager",
+      "reports_to": "Product Director",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Decide what ships next",
+          "limit": "within the agreed roadmap",
+          "else": "Product Director"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Reprioritise the area roadmap",
+          "limit": "within quarterly goals",
+          "else": "Product Director"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Commit client delivery dates externally",
+          "else": "Head of Delivery"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Commit product release dates",
+          "else": "Product Director"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Change pricing",
+          "else": "Product Director"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Deliver a prioritised area roadmap",
+          "to": "delivery teams & stakeholders",
+          "when": "quarterly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Deliver a PRD with the problem, the evidence, the success metric and the scope",
+          "to": "the delivery team",
+          "when": "before build"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Report outcome metrics (adoption, retention)",
+          "to": "Product Director",
+          "when": "monthly"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Product discovery & user research (JTBD, interviews)"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Roadmap & PRD authoring (Productboard, Confluence)"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Product analytics (SQL, Amplitude)"
+        }
+      ]
+    },
+    {
+      "title": "Project Manager",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#project-manager",
+      "reports_to": "Head of Delivery",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Run the project inside the agreed scope, dates and budget",
+          "else": "Head of Delivery"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Commit a client delivery date externally",
+          "else": "Head of Delivery"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Change the project's scope or budget",
+          "else": "the executive sponsor"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Deliver a project plan with scope, milestones, budget and a risk and issue log",
+          "to": "Head of Delivery",
+          "when": "before work starts"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Start the project when a signed deal is handed over",
+          "to": "the delivery team",
+          "when": "on handover from Sales"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Report project status: milestones and spend against budget",
+          "to": "Head of Delivery",
+          "when": "weekly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Hand over the completed project, with sign-off",
+          "to": "Customer Success Manager",
+          "when": "at project close"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Project planning, change control, and a risk and issue log"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Client handover from Sales"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "PRINCE2 or APM Project Management Qualification",
+          "links": [
+            {
+              "text": "PRINCE2",
+              "href": "https://www.axelos.com/certifications/propath/prince2-project-management"
+            },
+            {
+              "text": "APM Project Management Qualification",
+              "href": "https://www.apm.org.uk/qualifications-and-training/project-management-qualification/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Engineering Manager",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#engineering-manager",
+      "reports_to": "Head of Engineering",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Set code-review and merge rules for the team's repos",
+          "limit": "within the organisation's guardrails",
+          "else": "Head of Engineering"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Set the team's technical standards",
+          "limit": "within architecture guardrails",
+          "else": "Head of Engineering"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Shape the engineering team",
+          "limit": "within the headcount plan",
+          "else": "Head of Engineering"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Commit client delivery dates externally",
+          "else": "Head of Delivery"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Commit product release dates",
+          "else": "Product Director"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Ensure the team delivers working, tested increments",
+          "to": "Product Owner",
+          "when": "each sprint"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Run one-to-ones and performance reviews for direct reports",
+          "to": "direct reports",
+          "when": "ongoing"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Report delivery health & risk",
+          "to": "Head of Engineering",
+          "when": "weekly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Keep on-call & incident cover staffed",
+          "to": "the team",
+          "when": "ongoing"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Technical leadership & code review"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Team management & 1:1 coaching"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "CI/CD pipeline design"
+        }
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#software-engineer",
+      "reports_to": "Engineering Manager",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Make implementation decisions within the agreed design",
+          "else": "Engineering Manager"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Merge without an approved peer review",
+          "else": "Engineering Manager"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Deliver tested, reviewed code for assigned tickets",
+          "to": "the codebase",
+          "when": "on completion"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Review teammates' pull requests",
+          "to": "the team",
+          "when": "as they are raised"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Take part in the on-call rota",
+          "to": "the team",
+          "when": "when on the rota"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Develop in Python and TypeScript"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Write automated tests"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Use Git and the pull-request workflow"
+        }
+      ]
+    },
+    {
+      "title": "HR Business Partner",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#hr-business-partner",
+      "reports_to": "CEO · where a Head of People exists, to them",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Advise the line manager on process in a disciplinary, grievance or absence case",
+          "limit": "under company policy and the ACAS Code"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Decide the sanction, including dismissal",
+          "else": "the employee's line manager"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Approve pay outside the published salary band",
+          "else": "Finance Director"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Report headcount, turnover and absence",
+          "to": "CEO",
+          "when": "monthly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Run the annual performance and pay review cycle",
+          "to": "CEO",
+          "when": "annually"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Keep employment policies current with UK employment law",
+          "to": "CEO",
+          "when": "when the law changes"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "UK employment law and the ACAS Code of Practice on disciplinary and grievance",
+          "links": [
+            {
+              "text": "ACAS Code of Practice",
+              "href": "https://www.acas.org.uk/acas-code-of-practice-on-disciplinary-and-grievance-procedures"
+            }
+          ]
+        },
+        {
+          "keyword": "CAN",
+          "clause": "HR information systems (BambooHR, HiBob or Workday)"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "CIPD Level 5 or Level 7",
+          "links": [
+            {
+              "text": "CIPD Level 5 or Level 7",
+              "href": "https://www.cipd.org/uk/the-people-profession/the-profession-map/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Marketing Manager",
+      "in_pack": false,
+      "url": "https://ditchingpeter.com/role-library#marketing-manager",
+      "reports_to": "CEO",
+      "authority": [
+        {
+          "keyword": "MAY",
+          "clause": "Spend the approved marketing budget",
+          "limit": "up to £5,000 per campaign",
+          "else": "CEO",
+          "note": "example — set yours"
+        },
+        {
+          "keyword": "MAY",
+          "clause": "Approve marketing content for publication",
+          "limit": "within the brand guidelines"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Change the price",
+          "else": "Product Director"
+        },
+        {
+          "keyword": "MAY NOT",
+          "clause": "Publish a product claim that is not signed off",
+          "else": "Product Director"
+        }
+      ],
+      "responsibility": [
+        {
+          "keyword": "MUST",
+          "clause": "Deliver qualified leads",
+          "to": "Sales Development Reps",
+          "when": "weekly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Report campaign results (spend, leads, cost per lead, pipeline)",
+          "to": "CEO",
+          "when": "monthly"
+        },
+        {
+          "keyword": "MUST",
+          "clause": "Deliver the marketing plan and budget",
+          "to": "CEO",
+          "when": "annually, reviewed quarterly"
+        }
+      ],
+      "ability": [
+        {
+          "keyword": "CAN",
+          "clause": "Campaign planning across paid, email and social"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "Marketing automation and analytics (HubSpot, Google Analytics)"
+        },
+        {
+          "keyword": "CAN",
+          "clause": "CIM qualification",
+          "links": [
+            {
+              "text": "CIM qualification",
+              "href": "https://www.cim.co.uk/qualifications/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sales Development Rep",
+      "one_line": "Finds and qualifies new conversations for the sales team. Reports to the Sales Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Account Manager",
+      "one_line": "Looks after named customers after the sale. Reports to the Sales Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Support Agent",
+      "one_line": "Handles customer support tickets. Reports to the Head of Customer Success.",
+      "in_pack": true
+    },
+    {
+      "title": "Operations Analyst",
+      "one_line": "Reads how the operation is performing. Reports to the Operations Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Depot Manager",
+      "one_line": "Runs one site. Reports to the Operations Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Operations Manager",
+      "one_line": "Runs the operation across sites. Reports to the Operations Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Chief of Staff",
+      "one_line": "Prepares the board and keeps the executive team's priorities in one place. Reports to the CEO.",
+      "in_pack": true
+    },
+    {
+      "title": "Product Owner",
+      "one_line": "Turns a product plan into work a delivery team can pick up. Reports to the Product Manager.",
+      "in_pack": true
+    },
+    {
+      "title": "Product Designer",
+      "one_line": "Designs how the product looks and behaves. Reports to the Product Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Product Director",
+      "one_line": "Sets product direction for the managers who report to them. Reports to the Chief Product Officer.",
+      "in_pack": true
+    },
+    {
+      "title": "Head of Delivery",
+      "one_line": "Owns delivery across projects. Reports to the COO.",
+      "in_pack": true
+    },
+    {
+      "title": "Delivery Manager",
+      "one_line": "Runs delivery for a team of projects. Reports to the Head of Delivery.",
+      "in_pack": true
+    },
+    {
+      "title": "Head of Engineering",
+      "one_line": "Leads the engineering organisation. Reports to the CEO.",
+      "in_pack": true
+    },
+    {
+      "title": "Tech Lead",
+      "one_line": "Sets the technical approach for a team. Reports to the Engineering Manager.",
+      "in_pack": true
+    },
+    {
+      "title": "QA Engineer",
+      "one_line": "Checks that a build behaves as it should. Reports to the Engineering Manager.",
+      "in_pack": true
+    },
+    {
+      "title": "Legal Counsel",
+      "one_line": "Reviews contracts before anyone signs. Reports to the General Counsel.",
+      "in_pack": true
+    },
+    {
+      "title": "Finance Business Partner",
+      "one_line": "Works the numbers with one part of the business. Reports to the Finance Director.",
+      "in_pack": true
+    },
+    {
+      "title": "Financial Controller",
+      "one_line": "Keeps the accounts and the month-end close. Reports to the Finance Director.",
+      "in_pack": true
+    }
+  ]
+}

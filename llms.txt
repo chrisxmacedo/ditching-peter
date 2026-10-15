@@ -1,0 +1,39 @@
+# Ditching Peter
+
+> ARA (Authority, Responsibility, Ability) is a way to write a role so an organisation knows who may decide, what must be delivered, and what the job requires.
+
+ARA uses three keywords. MAY and MAY NOT are Authority: the decision, the limit, and who it escalates to. MUST is Responsibility: the deliverable, who receives it, and when. CAN is Ability: the named skill, tool, or method. Money limits in the published specs are examples. Set your own.
+
+Nine roles are free, in full, on the role library and in roles.json. The other eighteen are sold in a one-off pack and their specs are not published on this site. The pack is all 27 roles, 7 team structures with reporting and escalation charts, editable DOCX and Markdown files, a 77-page PDF, and JSON and AGENTS.md versions for agent builders. Future updates are included. Prices rise as the library grows.
+
+Launch prices hold until 28 October 2026. After that the standard prices are £29 for an individual, £99 for a team of up to 25 people, and £249 for a commercial licence.
+
+## Role library
+
+- [Role library](https://ditchingpeter.com/role-library): Nine free ARA specs, and a one-line listing of the eighteen roles in the pack
+- [roles.json](https://ditchingpeter.com/roles.json): The nine free specs in full. Paid roles are title, one line, and in_pack true, with no spec content
+- [Sales Director](https://ditchingpeter.com/role-library#sales-director): Reports to the CEO. Contract, discount, budget, and hiring authority for the sales team
+- [Sales Executive](https://ditchingpeter.com/role-library#sales-executive): Reports to the Sales Director. Also called Account Executive or Business Development Manager
+- [Customer Success Manager](https://ditchingpeter.com/role-library#customer-success-manager): Reports to the Head of Customer Success. Onboarding, health scores, credits, and renewals
+- [Product Manager](https://ditchingpeter.com/role-library#product-manager): Reports to the Product Director. What ships next, inside the agreed roadmap
+- [Project Manager](https://ditchingpeter.com/role-library#project-manager): Reports to the Head of Delivery. Runs a project inside the agreed scope, dates, and budget
+- [Engineering Manager](https://ditchingpeter.com/role-library#engineering-manager): Reports to the Head of Engineering. Team standards, delivery health, and on-call cover
+- [Software Engineer](https://ditchingpeter.com/role-library#software-engineer): Reports to the Engineering Manager. Tested, reviewed code for assigned tickets
+- [HR Business Partner](https://ditchingpeter.com/role-library#hr-business-partner): Reports to the CEO, or to a Head of People where that role exists
+- [Marketing Manager](https://ditchingpeter.com/role-library#marketing-manager): Reports to the CEO. Approved budget, qualified leads, and the marketing plan
+
+## Full library
+
+- [Individual licence — £29, launch price £19 until 28 October 2026](https://payhip.com/b/RGbfI): One person. The pack includes JSON and AGENTS.md versions for agent builders
+- [Team licence, up to 25 people — £99, launch price £69 until 28 October 2026](https://payhip.com/b/6LkoT): One purchase for a team of up to 25. The pack includes JSON and AGENTS.md versions for agent builders
+- [Commercial licence — £249, launch price £179 until 28 October 2026](https://payhip.com/b/Qd1Ko): For use with clients, or inside a product you sell. The pack includes JSON and AGENTS.md versions for agent builders
+
+## The framework
+
+- [Home](https://ditchingpeter.com/): What ARA is, and where the library is sold
+- [Getting started](https://ditchingpeter.com/getting-started): Every role defined as a spec — MAY, MUST, and CAN
+- [Format](https://ditchingpeter.com/format): How to write a MAY, a MUST, and a CAN
+- [Prompting AI](https://ditchingpeter.com/prompting-ai): Give an assistant standing authority, ongoing responsibilities, and named abilities
+- [About](https://ditchingpeter.com/about): Christian Macedo, who wrote Ditching Peter
+- [Blog](https://ditchingpeter.com/blog): Notes on roles and organisational health
+- [We took a real Chief of Staff spec and found the bug](https://ditchingpeter.com/blog/chief-of-staff-teardown): A job description sorted into Authority, Responsibility, and Ability
