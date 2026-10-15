@@ -29,6 +29,25 @@
     });
     return node;
   }
+  function markScroll(scroll) {
+    if (!scroll || scroll.dataset.hinted) return;
+    scroll.dataset.hinted = '1';
+    var hint = document.createElement('p');
+    hint.className = 'scroll-hint';
+    hint.textContent = 'Scroll sideways to see the rest.';
+    scroll.parentNode.insertBefore(hint, scroll);
+    function update() {
+      var style = window.getComputedStyle(scroll);
+      if (style.display === 'none') { hint.hidden = true; return; }
+      var over = scroll.scrollWidth > scroll.clientWidth + 8;
+      hint.hidden = !over;
+      scroll.classList.toggle('can-scroll', over);
+    }
+    scroll.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  }
+
   function wrap(text, max) {
     var words = String(text).split(' ');
     var lines = [];
@@ -54,7 +73,7 @@
       var manager = managerId(role);
       if (manager && children[manager]) children[manager].push(role.id);
     });
-    var NW = 176, NH = 58, GX = 18, GY = 72;
+    var NW = 188, NH = 72, GX = 18, GY = 76;
     function widthOf(id) {
       var kids = children[id];
       if (!kids.length) return NW;
@@ -136,7 +155,7 @@
   }
 
   function drawNode(role, box, team) {
-    var lines = wrap(label(role), 20);
+    var lines = wrap(label(role), 16);
     var names = byId(team);
     var aria = label(role);
     if (role.kind === 'context') aria += '. Not a role in this pack.';
@@ -165,14 +184,15 @@
     var tx = box.x + box.w / 2 - (role.kind === 'paid' ? 6 : 0);
     var text = el('text', {
       x: tx,
-      y: box.y + box.h / 2 - (lines.length - 1) * 7.5 + 4,
+      y: box.y + box.h / 2 - (lines.length - 1) * 9 + 5,
       'text-anchor': 'middle',
-      fill: context ? '#374151' : '#0d0d0d',
+      fill: context ? '#1f2937' : '#0d0d0d',
       'font-family': 'DM Sans, sans-serif',
-      'font-size': '12.5'
+      'font-size': '15',
+      'font-weight': '500'
     });
     lines.forEach(function (line, i) {
-      var span = el('tspan', { x: tx, dy: i ? 15 : 0 });
+      var span = el('tspan', { x: tx, dy: i ? 18 : 0 });
       span.textContent = line;
       text.appendChild(span);
     });
@@ -303,6 +323,7 @@
       var tr = document.createElement('tr');
       keys.forEach(function (key) {
         var td = document.createElement('td');
+        td.setAttribute('data-label', headers[keys.indexOf(key)]);
         td.textContent = row[key];
         tr.appendChild(td);
       });
@@ -332,8 +353,11 @@
     section.appendChild(intro);
     var scroll = document.createElement('div');
     scroll.className = 'org-scroll';
+    scroll.setAttribute('tabindex', '0');
+    scroll.setAttribute('aria-label', team.title + ' chart. Scroll sideways if it is wider than the screen.');
     scroll.appendChild(drawChart(team));
     section.appendChild(scroll);
+    markScroll(scroll);
     var legend = document.createElement('p');
     legend.className = 'org-legend';
     legend.innerHTML = '<span class="leg-solid" aria-hidden="true"></span> Reports to <span class="leg-dash" aria-hidden="true"></span> Escalates past a limit';
@@ -351,8 +375,12 @@
     pop.innerHTML = '<h3 tabindex="-1"></h3><p class="role-pop-line"></p><p class="quiet-cta"><a href="/full-library">Get the full library →</a></p>';
     section.appendChild(pop);
     if (team.sample && team.escalationTable && team.handoffs) {
-      section.appendChild(table('Escalation', ['Role', 'Decision', 'Limit', 'Goes to'], team.escalationTable, ['role', 'decision', 'limit', 'to']));
-      section.appendChild(table('Handoffs', ['From', 'Deliverable', 'To', 'When'], team.handoffs, ['from', 'deliverable', 'to', 'when']));
+      var escalation = table('Escalation', ['Role', 'Decision', 'Limit', 'Goes to'], team.escalationTable, ['role', 'decision', 'limit', 'to']);
+      var handoffs = table('Handoffs', ['From', 'Deliverable', 'To', 'When'], team.handoffs, ['from', 'deliverable', 'to', 'when']);
+      section.appendChild(escalation);
+      section.appendChild(handoffs);
+      markScroll(escalation);
+      markScroll(handoffs);
       if (team.gap) {
         var gap = document.createElement('p');
         gap.className = 'sec-intro';
@@ -397,16 +425,16 @@
     tip.textContent = aria;
     node.appendChild(tip);
     node.appendChild(el('rect', {
-      x: x, y: y, width: 210, height: 64, rx: '2', fill: '#ffffff', stroke: '#1d4ed8', 'stroke-width': '1.25'
+      x: x, y: y, width: 210, height: 72, rx: '2', fill: '#ffffff', stroke: '#1d4ed8', 'stroke-width': '1.25'
     }));
     var lines = wrap(title, 22);
     var text = el('text', {
-      x: x + 105, y: y + (lines.length > 1 ? 26 : 36),
+      x: x + 105, y: y + (lines.length > 1 ? 28 : 38),
       'text-anchor': 'middle', fill: '#0d0d0d',
-      'font-family': 'DM Sans, sans-serif', 'font-size': '13'
+      'font-family': 'DM Sans, sans-serif', 'font-size': '16', 'font-weight': '500'
     });
     lines.forEach(function (line, i) {
-      var span = el('tspan', { x: x + 105, dy: i ? 15 : 0 });
+      var span = el('tspan', { x: x + 105, dy: i ? 18 : 0 });
       span.textContent = line;
       text.appendChild(span);
     });
@@ -415,10 +443,21 @@
     return node;
   }
 
+  function stackLink(id, title, teamTitle, data) {
+    var href = FREE[id] ? '/role-library#' + id : '/teams#' + teamSlug(data, teamTitle);
+    var link = document.createElement('a');
+    link.href = href;
+    link.appendChild(document.createTextNode(title));
+    if (!FREE[id]) {
+      link.insertAdjacentHTML('beforeend', '<svg class="lock-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><rect x="3.2" y="7" width="9.6" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.2 7V5a2.8 2.8 0 0 1 5.6 0V7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><span class="visually-hidden">, in the full library</span>');
+    }
+    return link;
+  }
+
   function mountConnect(host, data) {
     var rows = data.crossTeam || [];
     var W = 760;
-    var rowH = 112;
+    var rowH = 148;
     var H = rows.length * rowH + 8;
     var svg = el('svg', {
       viewBox: '0 0 ' + W + ' ' + H,
@@ -448,36 +487,60 @@
       svg.appendChild(connectNode(row.toId, row.toTitle, row.toTeam, W - 218, y, data));
       var mid = wrap(row.deliverable, 26);
       var label = el('text', {
-        x: W / 2, y: y + 18,
-        'text-anchor': 'middle', fill: '#1d4ed8',
-        'font-family': 'DM Sans, sans-serif', 'font-size': '12'
+        x: W / 2, y: y + 16,
+        'text-anchor': 'middle', fill: '#1e3a8a',
+        'font-family': 'DM Sans, sans-serif', 'font-size': '15', 'font-weight': '600'
       });
       mid.forEach(function (line, i) {
-        var span = el('tspan', { x: W / 2, dy: i ? 14 : 0 });
+        var span = el('tspan', { x: W / 2, dy: i ? 17 : 0 });
         span.textContent = line;
         label.appendChild(span);
       });
       svg.appendChild(label);
-      var arrowY = y + 52;
+      var arrowY = y + 86;
       svg.appendChild(el('path', {
         d: 'M 226 ' + arrowY + ' H 530',
         fill: 'none', stroke: '#1d4ed8', 'stroke-width': '1.5',
         'marker-end': 'url(#connect-arrow)'
       }));
       var when = el('text', {
-        x: W / 2, y: arrowY + 16,
-        'text-anchor': 'middle', fill: '#374151',
-        'font-family': 'DM Sans, sans-serif', 'font-size': '11'
+        x: W / 2, y: arrowY + 18,
+        'text-anchor': 'middle', fill: '#111827',
+        'font-family': 'DM Sans, sans-serif', 'font-size': '14', 'font-weight': '500'
       });
       when.textContent = row.when;
       svg.appendChild(when);
     });
     host.innerHTML = '';
     host.classList.add('visible');
+    var stack = document.createElement('div');
+    stack.className = 'connect-stack';
+    rows.forEach(function (row) {
+      var card = document.createElement('article');
+      card.className = 'connect-card';
+      card.appendChild(stackLink(row.fromId, row.fromTitle, row.fromTeam, data));
+      var flow = document.createElement('div');
+      flow.className = 'connect-flow';
+      var deliver = document.createElement('p');
+      deliver.className = 'connect-deliver';
+      deliver.textContent = row.deliverable;
+      var when = document.createElement('p');
+      when.className = 'connect-when';
+      when.textContent = row.when;
+      flow.appendChild(deliver);
+      flow.appendChild(when);
+      card.appendChild(flow);
+      card.appendChild(stackLink(row.toId, row.toTitle, row.toTeam, data));
+      stack.appendChild(card);
+    });
     var scroll = document.createElement('div');
-    scroll.className = 'org-scroll';
+    scroll.className = 'org-scroll connect-wide';
+    scroll.setAttribute('tabindex', '0');
+    scroll.setAttribute('aria-label', 'How the teams connect. Scroll sideways if the diagram is wider than the screen.');
     scroll.appendChild(svg);
+    host.appendChild(stack);
     host.appendChild(scroll);
+    markScroll(scroll);
   }
 
   function boot(data) {
