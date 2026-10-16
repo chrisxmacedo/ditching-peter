@@ -772,6 +772,39 @@
               "note": "Or Head of Data where one exists. Also ML Engineer or MLOps Engineer"
             },
             {
+              "id": "data-engineer",
+              "title": "Data Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds and maintains the data pipelines that analysts and data scientists rely on. Reports to the Head of Engineering.",
+              "note": "Or the Head of Data where one exists"
+            },
+            {
+              "id": "data-scientist",
+              "title": "Data Scientist",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
+              "note": "Or the Head of Data where one exists"
+            },
+            {
+              "id": "data-architect",
+              "title": "Data Architect",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Sets the data models and standards that pipelines and reports are built to. Reports to the Head of Engineering.",
+              "note": "Or Head of Data where one exists. Also Senior Data Architect or Enterprise Data Architect"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -1052,49 +1085,6 @@
                 "financial-controller"
               ],
               "line": "Works the numbers with one part of the business. Reports to the Finance Director."
-            },
-            {
-              "id": "head-of-engineering",
-              "title": "Head of Engineering",
-              "sectorTitle": null,
-              "overrides": {},
-              "kind": "paid",
-              "reportsTo": null,
-              "escalatesTo": [],
-              "line": "Leads the engineering organisation. Reports to the CEO."
-            },
-            {
-              "id": "data-engineer",
-              "title": "Data Engineer",
-              "sectorTitle": null,
-              "overrides": {},
-              "kind": "paid",
-              "reportsTo": "head-of-engineering",
-              "escalatesTo": [],
-              "line": "Builds and maintains the data pipelines that analysts and data scientists rely on. Reports to the Head of Engineering.",
-              "note": "Or the Head of Data where one exists"
-            },
-            {
-              "id": "data-scientist",
-              "title": "Data Scientist",
-              "sectorTitle": null,
-              "overrides": {},
-              "kind": "paid",
-              "reportsTo": "head-of-engineering",
-              "escalatesTo": [],
-              "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
-              "note": "Or the Head of Data where one exists"
-            },
-            {
-              "id": "data-architect",
-              "title": "Data Architect",
-              "sectorTitle": null,
-              "overrides": {},
-              "kind": "paid",
-              "reportsTo": "head-of-engineering",
-              "escalatesTo": [],
-              "line": "Sets the data models and standards that pipelines and reports are built to. Reports to the Head of Engineering.",
-              "note": "Or Head of Data where one exists. Also Senior Data Architect or Enterprise Data Architect"
             },
             {
               "id": "payroll-manager",
