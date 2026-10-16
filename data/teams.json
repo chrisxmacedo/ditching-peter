@@ -406,6 +406,17 @@
               "line": "Designs publish-ready content for user journeys. Reports to the Product Director."
             },
             {
+              "id": "technical-writer",
+              "title": "Technical Writer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "product-director",
+              "escalatesTo": [],
+              "line": "Writes and maintains the user guides, help and release notes for a product. Reports to the Product Director.",
+              "note": "Or an Engineering Manager where documentation sits with engineering. Also Technical Author or Documentation Specialist"
+            },
+            {
               "id": "service-designer",
               "title": "Service Designer",
               "sectorTitle": null,
@@ -906,6 +917,17 @@
               "note": "Also Estates Manager, Support Services Manager or FM Contract Manager"
             },
             {
+              "id": "office-manager",
+              "title": "Office Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs day-to-day office operations, the office budget and admin staff. Reports to the Operations Director.",
+              "note": "Or the CEO in a smaller firm. Also Administration Manager or Business Manager"
+            },
+            {
               "id": "warehouse-manager",
               "title": "Warehouse Manager",
               "sectorTitle": null,
@@ -1018,6 +1040,17 @@
               "escalatesTo": [],
               "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
               "note": "Or the Head of Data where one exists"
+            },
+            {
+              "id": "machine-learning-engineer",
+              "title": "Machine Learning Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds, deploys and monitors machine learning models in live products. Reports to the Head of Engineering.",
+              "note": "Or Head of Data where one exists. Also ML Engineer or MLOps Engineer"
             },
             {
               "id": "data-architect",
@@ -1247,6 +1280,17 @@
               "note": "Also Digital Marketer, SEO Manager or Social Media Manager"
             },
             {
+              "id": "market-research-manager",
+              "title": "Market Research Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Designs and runs customer and market research and turns it into insight. Reports to the Marketing Manager.",
+              "note": "Or a Head of Insight where one exists. Also Insight Manager or Consumer Insight Manager"
+            },
+            {
               "id": "events-manager",
               "title": "Events Manager",
               "sectorTitle": null,
@@ -1255,6 +1299,17 @@
               "reportsTo": "marketing-manager",
               "escalatesTo": [],
               "line": "Plans and runs conferences, exhibitions and business events to budget and on the day. Reports to the Marketing Manager."
+            },
+            {
+              "id": "fundraising-manager",
+              "title": "Fundraising Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [],
+              "line": "Plans and runs a charity's fundraising across donors, trusts, companies and events. Reports to the CEO.",
+              "note": "Or a Director of Fundraising in a larger charity. Also Head of Fundraising or Development Manager"
             },
             {
               "id": "communications-manager",
@@ -1303,6 +1358,17 @@
                 "business-owner"
               ],
               "line": "Reviews contracts before anyone signs. Reports to the General Counsel."
+            },
+            {
+              "id": "paralegal",
+              "title": "Paralegal",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "legal-counsel",
+              "escalatesTo": [],
+              "line": "Researches, drafts and keeps legal matters on track for the lawyers. Reports to Legal Counsel.",
+              "note": "Or a supervising solicitor in a law firm. Also Legal Assistant or Contracts Assistant"
             },
             {
               "id": "audit-committee",
