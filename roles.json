@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the ninety-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the one hundred roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -689,6 +689,13 @@
       "in_pack": true
     },
     {
+      "id": "recruitment-consultant",
+      "title": "Recruitment Consultant",
+      "line": "Wins client vacancies and matches candidates to them, from sourcing to placement. Reports to the Sales Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-recruitment-consultant",
+      "in_pack": true
+    },
+    {
       "id": "head-of-customer-success",
       "title": "Head of Customer Success",
       "line": "Owns retention, customer health and the customer success and support team. Reports to the CEO.",
@@ -819,6 +826,13 @@
       "title": "QA Engineer",
       "line": "Checks that a build behaves as it should. Reports to the Engineering Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-qa-engineer",
+      "in_pack": true
+    },
+    {
+      "id": "test-manager",
+      "title": "Test Manager",
+      "line": "Plans and leads testing so releases ship with known, managed risk. Reports to the Engineering Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-test-manager",
       "in_pack": true
     },
     {
@@ -1004,6 +1018,13 @@
       "in_pack": true
     },
     {
+      "id": "quantity-surveyor",
+      "title": "Quantity Surveyor",
+      "line": "Estimates, controls and certifies construction costs from tender to final account. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-quantity-surveyor",
+      "in_pack": true
+    },
+    {
       "id": "hr-officer",
       "title": "HR Officer",
       "line": "Handles day-to-day HR: recruitment admin, employee records, absence and policy advice. Reports to the HR Business Partner.",
@@ -1043,6 +1064,13 @@
       "title": "Data Architect",
       "line": "Sets the data models and standards that pipelines and reports are built to. Reports to the Head of Engineering.",
       "url": "https://ditchingpeter.com/role-library#listed-data-architect",
+      "in_pack": true
+    },
+    {
+      "id": "data-governance-manager",
+      "title": "Data Governance Manager",
+      "line": "Sets data ownership, quality standards and policies so the organisation's data can be trusted. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-data-governance-manager",
       "in_pack": true
     },
     {
@@ -1172,6 +1200,13 @@
       "in_pack": true
     },
     {
+      "id": "hotel-manager",
+      "title": "Hotel Manager",
+      "line": "Runs rooms, food and beverage, staff and guest service to budget, safely and legally. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-hotel-manager",
+      "in_pack": true
+    },
+    {
       "id": "learning-and-development-business-partner",
       "title": "Learning and Development Business Partner",
       "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
@@ -1218,6 +1253,13 @@
       "title": "Graphic Designer",
       "line": "Turns briefs into on-brand artwork for print, digital and social. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-graphic-designer",
+      "in_pack": true
+    },
+    {
+      "id": "copywriter",
+      "title": "Copywriter",
+      "line": "Writes clear, persuasive copy for adverts, web, email and social from an approved brief. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-copywriter",
       "in_pack": true
     },
     {

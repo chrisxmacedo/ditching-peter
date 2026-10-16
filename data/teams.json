@@ -630,6 +630,17 @@
               "note": "Also Test Automation Engineer"
             },
             {
+              "id": "test-manager",
+              "title": "Test Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "engineering-manager",
+              "escalatesTo": [],
+              "line": "Plans and leads testing so releases ship with known, managed risk. Reports to the Engineering Manager.",
+              "note": "Or the Head of Engineering where testing runs centrally. Also Test Lead or QA Lead"
+            },
+            {
               "id": "technical-architect",
               "title": "Technical Architect",
               "sectorTitle": null,
@@ -805,6 +816,17 @@
               "note": "Or Head of Data where one exists. Also Senior Data Architect or Enterprise Data Architect"
             },
             {
+              "id": "data-governance-manager",
+              "title": "Data Governance Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Sets data ownership, quality standards and policies so the organisation's data can be trusted. Reports to the Head of Engineering.",
+              "note": "Or a Head of Data or Chief Data Officer where one exists. Also Data Governance Lead"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -944,6 +966,17 @@
               "line": "Manages supplier contracts after award: SLAs, KPIs, renewals and change. Reports to the Procurement Manager."
             },
             {
+              "id": "quantity-surveyor",
+              "title": "Quantity Surveyor",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Estimates, controls and certifies construction costs from tender to final account. Reports to the Operations Director.",
+              "note": "Or a Commercial Manager or Project Director in a construction firm. Also Cost Manager"
+            },
+            {
               "id": "health-and-safety-manager",
               "title": "Health and Safety Manager",
               "sectorTitle": null,
@@ -1043,6 +1076,17 @@
               ],
               "line": "Runs a store against sales, labour and brand standards. Reports to the Operations Manager.",
               "note": "Or a Regional / Area Manager. Also Store Manager or Shopkeeper"
+            },
+            {
+              "id": "hotel-manager",
+              "title": "Hotel Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs rooms, food and beverage, staff and guest service to budget, safely and legally. Reports to the Operations Director.",
+              "note": "Or the owner, or an Area General Manager in a hotel group. Also Hotel General Manager"
             }
           ]
         },
@@ -1345,6 +1389,17 @@
               "escalatesTo": [],
               "line": "Turns briefs into on-brand artwork for print, digital and social. Reports to the Marketing Manager.",
               "note": "Or a Creative Director or Brand Manager where one exists. Also Brand Designer or Visual Designer"
+            },
+            {
+              "id": "copywriter",
+              "title": "Copywriter",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Writes clear, persuasive copy for adverts, web, email and social from an approved brief. Reports to the Marketing Manager.",
+              "note": "Or a Creative Director in an agency. Also Advertising Copywriter or Content Writer"
             },
             {
               "id": "events-manager",
