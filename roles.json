@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the seventy-six roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the eighty-two roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -682,6 +682,13 @@
       "in_pack": true
     },
     {
+      "id": "business-development-manager",
+      "title": "Business Development Manager",
+      "line": "Finds new markets, customers and partnerships and turns them into revenue. Reports to the Sales Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-business-development-manager",
+      "in_pack": true
+    },
+    {
       "id": "head-of-customer-success",
       "title": "Head of Customer Success",
       "line": "Owns retention, customer health and the customer success and support team. Reports to the CEO.",
@@ -829,6 +836,13 @@
       "in_pack": true
     },
     {
+      "id": "database-administrator",
+      "title": "Database Administrator",
+      "line": "Keeps databases available, secure and backed up for the people who need them. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-database-administrator",
+      "in_pack": true
+    },
+    {
       "id": "legal-counsel",
       "title": "Legal Counsel",
       "line": "Reviews contracts before anyone signs. Reports to the General Counsel.",
@@ -840,6 +854,13 @@
       "title": "Data Protection Officer",
       "line": "Advises on UK GDPR, monitors compliance and is the contact point for the ICO. Reports to the CEO.",
       "url": "https://ditchingpeter.com/role-library#listed-data-protection-officer",
+      "in_pack": true
+    },
+    {
+      "id": "records-manager",
+      "title": "Records Manager",
+      "line": "Runs retention, classification and lawful access for the organisation's records. Reports to the Data Protection Officer.",
+      "url": "https://ditchingpeter.com/role-library#listed-records-manager",
       "in_pack": true
     },
     {
@@ -913,6 +934,13 @@
       "in_pack": true
     },
     {
+      "id": "solutions-architect",
+      "title": "Solutions Architect",
+      "line": "Designs end-to-end technical solutions for business problems across systems. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-solutions-architect",
+      "in_pack": true
+    },
+    {
       "id": "security-architect",
       "title": "Security Architect",
       "line": "Designs secure solutions and advises on security risk. Reports to the Head of Engineering.",
@@ -938,6 +966,13 @@
       "title": "Category Manager",
       "line": "Owns the strategy and sourcing plan for an assigned spend category. Reports to the Procurement Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-category-manager",
+      "in_pack": true
+    },
+    {
+      "id": "contracts-manager",
+      "title": "Contracts Manager",
+      "line": "Manages supplier contracts after award: SLAs, KPIs, renewals and change. Reports to the Procurement Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-contracts-manager",
       "in_pack": true
     },
     {
@@ -1106,6 +1141,13 @@
       "title": "Digital Marketing Manager",
       "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-digital-marketing-manager",
+      "in_pack": true
+    },
+    {
+      "id": "events-manager",
+      "title": "Events Manager",
+      "line": "Plans and runs conferences, exhibitions and business events to budget and on the day. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-events-manager",
       "in_pack": true
     },
     {
