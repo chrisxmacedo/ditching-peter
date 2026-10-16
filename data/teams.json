@@ -750,6 +750,17 @@
               "line": "Keeps databases available, secure and backed up for the people who need them. Reports to the Head of Engineering."
             },
             {
+              "id": "machine-learning-engineer",
+              "title": "Machine Learning Engineer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Builds, deploys and monitors machine learning models in live products. Reports to the Head of Engineering.",
+              "note": "Or Head of Data where one exists. Also ML Engineer or MLOps Engineer"
+            },
+            {
               "id": "finance-director",
               "title": "Finance Director",
               "sectorTitle": null,
@@ -1040,17 +1051,6 @@
               "escalatesTo": [],
               "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
               "note": "Or the Head of Data where one exists"
-            },
-            {
-              "id": "machine-learning-engineer",
-              "title": "Machine Learning Engineer",
-              "sectorTitle": null,
-              "overrides": {},
-              "kind": "paid",
-              "reportsTo": "head-of-engineering",
-              "escalatesTo": [],
-              "line": "Builds, deploys and monitors machine learning models in live products. Reports to the Head of Engineering.",
-              "note": "Or Head of Data where one exists. Also ML Engineer or MLOps Engineer"
             },
             {
               "id": "data-architect",
