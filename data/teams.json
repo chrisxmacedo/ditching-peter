@@ -629,6 +629,16 @@
               "line": "Sets technical design patterns for services. Reports to the Head of Engineering."
             },
             {
+              "id": "solutions-architect",
+              "title": "Solutions Architect",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Designs end-to-end technical solutions for business problems across systems. Reports to the Head of Engineering."
+            },
+            {
               "id": "security-architect",
               "title": "Security Architect",
               "sectorTitle": null,
@@ -717,6 +727,16 @@
               ],
               "line": "Builds and runs the network, servers and cloud services. Reports to the Head of Engineering.",
               "note": "Also Cloud Engineer, Network Engineer or Network Administrator"
+            },
+            {
+              "id": "database-administrator",
+              "title": "Database Administrator",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Keeps databases available, secure and backed up for the people who need them. Reports to the Head of Engineering."
             },
             {
               "id": "finance-director",
@@ -835,6 +855,16 @@
               ],
               "line": "Owns the strategy and sourcing plan for an assigned spend category. Reports to the Procurement Manager.",
               "note": "Also Category Lead"
+            },
+            {
+              "id": "contracts-manager",
+              "title": "Contracts Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "procurement-manager",
+              "escalatesTo": [],
+              "line": "Manages supplier contracts after award: SLAs, KPIs, renewals and change. Reports to the Procurement Manager."
             },
             {
               "id": "health-and-safety-manager",
@@ -1215,6 +1245,16 @@
               ],
               "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
               "note": "Also Digital Marketer, SEO Manager or Social Media Manager"
+            },
+            {
+              "id": "events-manager",
+              "title": "Events Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Plans and runs conferences, exhibitions and business events to budget and on the day. Reports to the Marketing Manager."
             },
             {
               "id": "communications-manager",
