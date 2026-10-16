@@ -674,6 +674,17 @@
               "note": "Also Information Security Analyst or SOC Analyst. Or the CISO where one exists"
             },
             {
+              "id": "penetration-tester",
+              "title": "Penetration Tester",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "security-architect",
+              "escalatesTo": [],
+              "line": "Runs authorised simulated attacks to find security weaknesses before attackers do. Reports to the Security Architect.",
+              "note": "Or a CISO or security testing lead where one exists. Also Ethical Hacker or Security Tester"
+            },
+            {
               "id": "service-desk-manager",
               "title": "Service Desk Manager",
               "sectorTitle": null,
@@ -879,6 +890,17 @@
               "note": "Also Category Lead"
             },
             {
+              "id": "supply-chain-manager",
+              "title": "Supply Chain Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Plans stock, suppliers and logistics so goods arrive on time and on budget. Reports to the Operations Director.",
+              "note": "Or a Head of Supply Chain in a larger business. Also Supply Chain Planning Manager"
+            },
+            {
               "id": "contracts-manager",
               "title": "Contracts Manager",
               "sectorTitle": null,
@@ -912,6 +934,17 @@
               ],
               "line": "Runs the quality management system, audits and corrective actions. Reports to the Operations Director.",
               "note": "Also Quality Assurance Manager or Head of Quality"
+            },
+            {
+              "id": "production-manager",
+              "title": "Production Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs production schedules, output, quality and safety on the shop floor. Reports to the Operations Director.",
+              "note": "Or a Site Director in a larger manufacturer. Also Manufacturing Manager or Plant Manager"
             },
             {
               "id": "facilities-manager",
@@ -1206,6 +1239,17 @@
               "line": "Advises on people process and reports headcount, turnover, and absence. Reports to the CEO."
             },
             {
+              "id": "hr-officer",
+              "title": "HR Officer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "hr-business-partner",
+              "escalatesTo": [],
+              "line": "Handles day-to-day HR: recruitment admin, employee records, absence and policy advice. Reports to the HR Business Partner.",
+              "note": "Or an HR Manager where one exists. Also HR Adviser or People Officer"
+            },
+            {
               "id": "talent-acquisition-manager",
               "title": "Talent Acquisition Manager",
               "sectorTitle": null,
@@ -1289,6 +1333,28 @@
               "escalatesTo": [],
               "line": "Designs and runs customer and market research and turns it into insight. Reports to the Marketing Manager.",
               "note": "Or a Head of Insight where one exists. Also Insight Manager or Consumer Insight Manager"
+            },
+            {
+              "id": "product-marketing-manager",
+              "title": "Product Marketing Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Positions products, plans launches and equips sales to sell them. Reports to the Marketing Manager.",
+              "note": "Or the Product Director where product marketing sits in product. Also Product Marketer or Go-to-Market Manager"
+            },
+            {
+              "id": "graphic-designer",
+              "title": "Graphic Designer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Turns briefs into on-brand artwork for print, digital and social. Reports to the Marketing Manager.",
+              "note": "Or a Creative Director or Brand Manager where one exists. Also Brand Designer or Visual Designer"
             },
             {
               "id": "events-manager",
