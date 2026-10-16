@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the eighty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the ninety-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -969,6 +969,13 @@
       "in_pack": true
     },
     {
+      "id": "penetration-tester",
+      "title": "Penetration Tester",
+      "line": "Runs authorised simulated attacks to find security weaknesses before attackers do. Reports to the Security Architect.",
+      "url": "https://ditchingpeter.com/role-library#listed-penetration-tester",
+      "in_pack": true
+    },
+    {
       "id": "procurement-manager",
       "title": "Procurement Manager",
       "line": "Sources suppliers and awards contracts within delegated limits. Reports to the Operations Director.",
@@ -983,10 +990,24 @@
       "in_pack": true
     },
     {
+      "id": "supply-chain-manager",
+      "title": "Supply Chain Manager",
+      "line": "Plans stock, suppliers and logistics so goods arrive on time and on budget. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-supply-chain-manager",
+      "in_pack": true
+    },
+    {
       "id": "contracts-manager",
       "title": "Contracts Manager",
       "line": "Manages supplier contracts after award: SLAs, KPIs, renewals and change. Reports to the Procurement Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-contracts-manager",
+      "in_pack": true
+    },
+    {
+      "id": "hr-officer",
+      "title": "HR Officer",
+      "line": "Handles day-to-day HR: recruitment admin, employee records, absence and policy advice. Reports to the HR Business Partner.",
+      "url": "https://ditchingpeter.com/role-library#listed-hr-officer",
       "in_pack": true
     },
     {
@@ -1109,6 +1130,13 @@
       "in_pack": true
     },
     {
+      "id": "production-manager",
+      "title": "Production Manager",
+      "line": "Runs production schedules, output, quality and safety on the shop floor. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-production-manager",
+      "in_pack": true
+    },
+    {
       "id": "facilities-manager",
       "title": "Facilities Manager",
       "line": "Keeps buildings, assets and contracted services safe and within budget. Reports to the Operations Director.",
@@ -1176,6 +1204,20 @@
       "title": "Market Research Manager",
       "line": "Designs and runs customer and market research and turns it into insight. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-market-research-manager",
+      "in_pack": true
+    },
+    {
+      "id": "product-marketing-manager",
+      "title": "Product Marketing Manager",
+      "line": "Positions products, plans launches and equips sales to sell them. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-product-marketing-manager",
+      "in_pack": true
+    },
+    {
+      "id": "graphic-designer",
+      "title": "Graphic Designer",
+      "line": "Turns briefs into on-brand artwork for print, digital and social. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-graphic-designer",
       "in_pack": true
     },
     {
