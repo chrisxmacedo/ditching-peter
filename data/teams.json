@@ -667,6 +667,19 @@
               "note": "Or the Head of IT. Also IT Manager or IT Operations Manager"
             },
             {
+              "id": "change-and-release-manager",
+              "title": "Change and Release Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "it-service-manager",
+              "escalatesTo": [
+                "it-service-manager"
+              ],
+              "line": "Chairs the change advisory board and schedules technical changes and releases. Reports to the IT Service Manager.",
+              "note": "Or Head of Engineering where no IT Service Manager exists. Also Change Manager or Release Manager"
+            },
+            {
               "id": "service-desk-analyst",
               "title": "Service Desk Analyst",
               "sectorTitle": null,
@@ -798,6 +811,19 @@
               "note": "Or the Finance Director where procurement sits under finance"
             },
             {
+              "id": "category-manager",
+              "title": "Category Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "procurement-manager",
+              "escalatesTo": [
+                "procurement-manager"
+              ],
+              "line": "Owns the strategy and sourcing plan for an assigned spend category. Reports to the Procurement Manager.",
+              "note": "Also Category Lead"
+            },
+            {
               "id": "health-and-safety-manager",
               "title": "Health and Safety Manager",
               "sectorTitle": null,
@@ -849,6 +875,32 @@
               ],
               "line": "Runs stock, storage and dispatch safely at a warehouse. Reports to the Operations Manager.",
               "note": "Or the Depot Manager on a shared site. Also Distribution Centre Manager"
+            },
+            {
+              "id": "transport-manager",
+              "title": "Transport Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-manager",
+              "escalatesTo": [
+                "operations-manager"
+              ],
+              "line": "Keeps the fleet legal and on time under the operator licence. Reports to the Operations Manager.",
+              "note": "Or the Depot Manager on a shared site. Also Road Transport Manager"
+            },
+            {
+              "id": "retail-manager",
+              "title": "Retail Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-manager",
+              "escalatesTo": [
+                "operations-manager"
+              ],
+              "line": "Runs a store against sales, labour and brand standards. Reports to the Operations Manager.",
+              "note": "Or a Regional / Area Manager. Also Store Manager or Shopkeeper"
             }
           ]
         },
@@ -1100,6 +1152,32 @@
               ],
               "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
               "note": "Also Digital Marketer, SEO Manager or Social Media Manager"
+            },
+            {
+              "id": "communications-manager",
+              "title": "Communications Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo"
+              ],
+              "line": "Protects reputation through media, statements and crisis playbooks. Reports to the CEO.",
+              "note": "Or Marketing Manager where marketing owns reputation. Also Public Relations Manager, PR Manager or Head of Communications"
+            },
+            {
+              "id": "sustainability-manager",
+              "title": "Sustainability Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo"
+              ],
+              "line": "Sets the sustainability action plan and evidence for disclosures. Reports to the CEO.",
+              "note": "Or Operations Director where sustainability sits in operations. Also Corporate Responsibility and Sustainability Practitioner or Sustainability Officer"
             },
             {
               "id": "general-counsel",

@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the sixty-four roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the seventy roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -913,6 +913,13 @@
       "in_pack": true
     },
     {
+      "id": "category-manager",
+      "title": "Category Manager",
+      "line": "Owns the strategy and sourcing plan for an assigned spend category. Reports to the Procurement Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-category-manager",
+      "in_pack": true
+    },
+    {
       "id": "talent-acquisition-manager",
       "title": "Talent Acquisition Manager",
       "line": "Attracts and assesses candidates for approved vacancies. Reports to the HR Business Partner.",
@@ -990,6 +997,13 @@
       "in_pack": true
     },
     {
+      "id": "change-and-release-manager",
+      "title": "Change and Release Manager",
+      "line": "Chairs the change advisory board and schedules technical changes and releases. Reports to the IT Service Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-change-and-release-manager",
+      "in_pack": true
+    },
+    {
       "id": "health-and-safety-manager",
       "title": "Health and Safety Manager",
       "line": "Sets safety procedures, investigates incidents and makes RIDDOR reports. Reports to the Operations Director.",
@@ -1018,6 +1032,20 @@
       "in_pack": true
     },
     {
+      "id": "transport-manager",
+      "title": "Transport Manager",
+      "line": "Keeps the fleet legal and on time under the operator licence. Reports to the Operations Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-transport-manager",
+      "in_pack": true
+    },
+    {
+      "id": "retail-manager",
+      "title": "Retail Manager",
+      "line": "Runs a store against sales, labour and brand standards. Reports to the Operations Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-retail-manager",
+      "in_pack": true
+    },
+    {
       "id": "learning-and-development-business-partner",
       "title": "Learning and Development Business Partner",
       "line": "Plans training against business priorities and measures its impact. Reports to the HR Business Partner.",
@@ -1036,6 +1064,20 @@
       "title": "Digital Marketing Manager",
       "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-digital-marketing-manager",
+      "in_pack": true
+    },
+    {
+      "id": "communications-manager",
+      "title": "Communications Manager",
+      "line": "Protects reputation through media, statements and crisis playbooks. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-communications-manager",
+      "in_pack": true
+    },
+    {
+      "id": "sustainability-manager",
+      "title": "Sustainability Manager",
+      "line": "Sets the sustainability action plan and evidence for disclosures. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-sustainability-manager",
       "in_pack": true
     },
     {
