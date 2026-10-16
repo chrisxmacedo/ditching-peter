@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the eighty-two roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the eighty-eight roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -850,6 +850,13 @@
       "in_pack": true
     },
     {
+      "id": "paralegal",
+      "title": "Paralegal",
+      "line": "Researches, drafts and keeps legal matters on track for the lawyers. Reports to Legal Counsel.",
+      "url": "https://ditchingpeter.com/role-library#listed-paralegal",
+      "in_pack": true
+    },
+    {
       "id": "data-protection-officer",
       "title": "Data Protection Officer",
       "line": "Advises on UK GDPR, monitors compliance and is the contact point for the ICO. Reports to the CEO.",
@@ -917,6 +924,13 @@
       "title": "Content Designer",
       "line": "Designs publish-ready content for user journeys. Reports to the Product Director.",
       "url": "https://ditchingpeter.com/role-library#listed-content-designer",
+      "in_pack": true
+    },
+    {
+      "id": "technical-writer",
+      "title": "Technical Writer",
+      "line": "Writes and maintains the user guides, help and release notes for a product. Reports to the Product Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-technical-writer",
       "in_pack": true
     },
     {
@@ -994,6 +1008,13 @@
       "title": "Data Scientist",
       "line": "Builds statistical and machine learning models to answer business questions. Reports to the Head of Engineering.",
       "url": "https://ditchingpeter.com/role-library#listed-data-scientist",
+      "in_pack": true
+    },
+    {
+      "id": "machine-learning-engineer",
+      "title": "Machine Learning Engineer",
+      "line": "Builds, deploys and monitors machine learning models in live products. Reports to the Head of Engineering.",
+      "url": "https://ditchingpeter.com/role-library#listed-machine-learning-engineer",
       "in_pack": true
     },
     {
@@ -1095,6 +1116,13 @@
       "in_pack": true
     },
     {
+      "id": "office-manager",
+      "title": "Office Manager",
+      "line": "Runs day-to-day office operations, the office budget and admin staff. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-office-manager",
+      "in_pack": true
+    },
+    {
       "id": "warehouse-manager",
       "title": "Warehouse Manager",
       "line": "Runs stock, storage and dispatch safely at a warehouse. Reports to the Operations Manager.",
@@ -1144,10 +1172,24 @@
       "in_pack": true
     },
     {
+      "id": "market-research-manager",
+      "title": "Market Research Manager",
+      "line": "Designs and runs customer and market research and turns it into insight. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-market-research-manager",
+      "in_pack": true
+    },
+    {
       "id": "events-manager",
       "title": "Events Manager",
       "line": "Plans and runs conferences, exhibitions and business events to budget and on the day. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-events-manager",
+      "in_pack": true
+    },
+    {
+      "id": "fundraising-manager",
+      "title": "Fundraising Manager",
+      "line": "Plans and runs a charity's fundraising across donors, trusts, companies and events. Reports to the CEO.",
+      "url": "https://ditchingpeter.com/role-library#listed-fundraising-manager",
       "in_pack": true
     },
     {
