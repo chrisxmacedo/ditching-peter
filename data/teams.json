@@ -456,6 +456,19 @@
               "line": "Owns delivery across projects. Reports to the COO."
             },
             {
+              "id": "programme-manager",
+              "title": "Programme Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-delivery",
+              "escalatesTo": [
+                "head-of-delivery"
+              ],
+              "line": "Runs a programme of related projects against one plan, budget and set of benefits. Reports to the Head of Delivery.",
+              "note": "Or the programme's senior responsible owner. Also Programme Delivery Manager"
+            },
+            {
               "id": "delivery-manager",
               "title": "Delivery Manager",
               "sectorTitle": null,
@@ -977,6 +990,17 @@
               "note": "Or the Head of Data where one exists"
             },
             {
+              "id": "data-architect",
+              "title": "Data Architect",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "head-of-engineering",
+              "escalatesTo": [],
+              "line": "Sets the data models and standards that pipelines and reports are built to. Reports to the Head of Engineering.",
+              "note": "Or Head of Data where one exists. Also Senior Data Architect or Enterprise Data Architect"
+            },
+            {
               "id": "payroll-manager",
               "title": "Payroll Manager",
               "sectorTitle": null,
@@ -1041,6 +1065,19 @@
               "note": "Or a Head of Tax in a larger group. Also Corporate Tax Manager or Tax Adviser"
             },
             {
+              "id": "treasury-manager",
+              "title": "Treasury Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "finance-director",
+              "escalatesTo": [
+                "finance-director"
+              ],
+              "line": "Manages cash, bank facilities and currency and interest-rate risk within policy. Reports to the Finance Director.",
+              "note": "Or a Group Treasurer in a larger group. Also Corporate Treasurer or Head of Treasury"
+            },
+            {
               "id": "unit-head",
               "title": "The unit head",
               "sectorTitle": null,
@@ -1078,6 +1115,19 @@
                 "cfo"
               ],
               "line": "Prepares the board and keeps the executive team's priorities in one place. Reports to the CEO."
+            },
+            {
+              "id": "executive-assistant",
+              "title": "Executive Assistant",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "ceo",
+              "escalatesTo": [
+                "ceo"
+              ],
+              "line": "Runs a senior executive's diary, travel and meeting logistics. Reports to the CEO.",
+              "note": "Or the senior executive they support. Also EA, Personal Assistant or PA"
             },
             {
               "id": "hr-business-partner",
@@ -1126,6 +1176,19 @@
               ],
               "line": "Sets pay within the structure, runs the pay review and owns benefits. Reports to the HR Business Partner.",
               "note": "Where a Head of People exists, to them. Also Reward and Benefits Manager"
+            },
+            {
+              "id": "employee-relations-manager",
+              "title": "Employee Relations Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "hr-business-partner",
+              "escalatesTo": [
+                "hr-business-partner"
+              ],
+              "line": "Runs disciplinary, grievance and consultation cases fairly and lawfully. Reports to the HR Business Partner.",
+              "note": "Or the Head of People where one exists. Also Employee Relations Lead or Head of Employee Relations"
             },
             {
               "id": "marketing-manager",
@@ -1235,6 +1298,19 @@
               ],
               "line": "Keeps the risk register and reports the top risks to the board. Reports to the Finance Director.",
               "note": "Or the Chief Risk Officer where one exists. Also Enterprise Risk Manager"
+            },
+            {
+              "id": "business-continuity-manager",
+              "title": "Business Continuity Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "risk-manager",
+              "escalatesTo": [
+                "risk-manager"
+              ],
+              "line": "Keeps continuity plans current and tested for every critical service. Reports to the Risk Manager.",
+              "note": "Or the COO or CIO where resilience sits in operations or IT. Also Business Continuity and Resilience Manager or Operational Resilience Manager"
             },
             {
               "id": "company-secretary",
