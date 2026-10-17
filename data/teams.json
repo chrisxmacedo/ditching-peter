@@ -977,6 +977,16 @@
               "note": "Or a Commercial Manager or Project Director in a construction firm. Also Cost Manager"
             },
             {
+              "id": "construction-manager",
+              "title": "Construction Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs the building site safely, to programme, budget and quality. Reports to the Operations Director."
+            },
+            {
               "id": "health-and-safety-manager",
               "title": "Health and Safety Manager",
               "sectorTitle": null,
@@ -1078,6 +1088,16 @@
               "note": "Or a Regional / Area Manager. Also Store Manager or Shopkeeper"
             },
             {
+              "id": "retail-buyer",
+              "title": "Retail Buyer",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Chooses the range and negotiates with suppliers to hit sales, margin and stock targets. Reports to the Operations Director."
+            },
+            {
               "id": "hotel-manager",
               "title": "Hotel Manager",
               "sectorTitle": null,
@@ -1087,6 +1107,36 @@
               "escalatesTo": [],
               "line": "Runs rooms, food and beverage, staff and guest service to budget, safely and legally. Reports to the Operations Director.",
               "note": "Or the owner, or an Area General Manager in a hotel group. Also Hotel General Manager"
+            },
+            {
+              "id": "restaurant-manager",
+              "title": "Restaurant Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs the restaurant's service, staff, stock and budget, safely and legally. Reports to the Operations Director."
+            },
+            {
+              "id": "care-home-manager",
+              "title": "Care Home Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Leads a registered care home so residents get safe, good-quality care. Reports to the Operations Director."
+            },
+            {
+              "id": "nursery-manager",
+              "title": "Nursery Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "operations-director",
+              "escalatesTo": [],
+              "line": "Runs an early years setting so children are safe, learning and well cared for. Reports to the Operations Director."
             }
           ]
         },
@@ -1356,6 +1406,16 @@
               ],
               "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
               "note": "Also Digital Marketer, SEO Manager or Social Media Manager"
+            },
+            {
+              "id": "social-media-manager",
+              "title": "Social Media Manager",
+              "sectorTitle": null,
+              "overrides": {},
+              "kind": "paid",
+              "reportsTo": "marketing-manager",
+              "escalatesTo": [],
+              "line": "Runs the organisation's social channels, content and community, within the brand and the advertising rules. Reports to the Marketing Manager."
             },
             {
               "id": "market-research-manager",
