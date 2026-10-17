@@ -3,7 +3,7 @@
     "id": "https://ditchingpeter.com/roles.json#schema",
     "version": "1.0",
     "framework": "ARA",
-    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the one hundred roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
+    "description": "Catalogue of ARA roles published on ditchingpeter.com. A role with in_pack false is one of the nine free roles and includes the full public spec: authority (MAY / MAY NOT), responsibility (MUST), and ability (CAN). A role with in_pack true is one of the one hundred and six roles sold in the full library. Those entries are title, line, and in_pack only. They do not include authority, responsibility, or ability.",
     "money_limits": "Where limit_is_example is true, the figure is an example. Set your own.",
     "free_role": {
       "id": "string slug",
@@ -1025,6 +1025,13 @@
       "in_pack": true
     },
     {
+      "id": "construction-manager",
+      "title": "Construction Manager",
+      "line": "Runs the building site safely, to programme, budget and quality. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-construction-manager",
+      "in_pack": true
+    },
+    {
       "id": "hr-officer",
       "title": "HR Officer",
       "line": "Handles day-to-day HR: recruitment admin, employee records, absence and policy advice. Reports to the HR Business Partner.",
@@ -1200,10 +1207,38 @@
       "in_pack": true
     },
     {
+      "id": "retail-buyer",
+      "title": "Retail Buyer",
+      "line": "Chooses the range and negotiates with suppliers to hit sales, margin and stock targets. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-retail-buyer",
+      "in_pack": true
+    },
+    {
       "id": "hotel-manager",
       "title": "Hotel Manager",
       "line": "Runs rooms, food and beverage, staff and guest service to budget, safely and legally. Reports to the Operations Director.",
       "url": "https://ditchingpeter.com/role-library#listed-hotel-manager",
+      "in_pack": true
+    },
+    {
+      "id": "restaurant-manager",
+      "title": "Restaurant Manager",
+      "line": "Runs the restaurant's service, staff, stock and budget, safely and legally. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-restaurant-manager",
+      "in_pack": true
+    },
+    {
+      "id": "care-home-manager",
+      "title": "Care Home Manager",
+      "line": "Leads a registered care home so residents get safe, good-quality care. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-care-home-manager",
+      "in_pack": true
+    },
+    {
+      "id": "nursery-manager",
+      "title": "Nursery Manager",
+      "line": "Runs an early years setting so children are safe, learning and well cared for. Reports to the Operations Director.",
+      "url": "https://ditchingpeter.com/role-library#listed-nursery-manager",
       "in_pack": true
     },
     {
@@ -1232,6 +1267,13 @@
       "title": "Digital Marketing Manager",
       "line": "Runs search, social and email channels and reports their return. Reports to the Marketing Manager.",
       "url": "https://ditchingpeter.com/role-library#listed-digital-marketing-manager",
+      "in_pack": true
+    },
+    {
+      "id": "social-media-manager",
+      "title": "Social Media Manager",
+      "line": "Runs the organisation's social channels, content and community, within the brand and the advertising rules. Reports to the Marketing Manager.",
+      "url": "https://ditchingpeter.com/role-library#listed-social-media-manager",
       "in_pack": true
     },
     {
